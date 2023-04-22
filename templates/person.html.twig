@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Person Profile{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/200" class="img-fluid rounded-circle" alt="Person's Picture">
+            </div>
+            <div class="col-md-8">
+                <h2>Name Surname</h2>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Age:</strong> 30</p>
+                <p><strong>Favorite Library:</strong> Main Library</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Books of Interest</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Book Title 1 - Author 1</li>
+                    <li class="list-group-item">Book Title 2 - Author 2</li>
+                    <li class="list-group-item">Book Title 3 - Author 3</li>
+                    <li class="list-group-item">Book Title 4 - Author 4</li>
+                    <!-- Add more books of interest as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

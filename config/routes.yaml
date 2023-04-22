@@ -11,3 +11,7 @@ home:
 book:
     path: /book
     controller: App\Controller\BookBinderController::renderBook
+
+person:
+    path: /person
+    controller: App\Controller\BookBinderController::renderPerson

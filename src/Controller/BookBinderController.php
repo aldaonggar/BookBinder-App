@@ -19,4 +19,8 @@ class BookBinderController extends AbstractController
         return $this->render('book.html.twig');
     }
 
+    public function renderPerson(){
+        return $this->render('person.html.twig');
+    }
+
 }
