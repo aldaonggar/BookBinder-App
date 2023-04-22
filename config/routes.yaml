@@ -7,3 +7,7 @@ controllers:
 home:
     path: /booklist
     controller: App\Controller\BookBinderController::renderBookList
+
+book:
+    path: /book
+    controller: App\Controller\BookBinderController::renderBook
