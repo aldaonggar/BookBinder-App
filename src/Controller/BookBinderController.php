@@ -23,4 +23,8 @@ class BookBinderController extends AbstractController
         return $this->render('person.html.twig');
     }
 
+    public function renderUserSettings(){
+        return $this->render('usersettings.html.twig');
+    }
+
 }

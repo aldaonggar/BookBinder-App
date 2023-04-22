@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+{% block title %}User Settings{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">User Settings</h2>
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" value="John">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" class="form-control" id="surname" value="Doe">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" id="age" value="30">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="sex">Sex</label>
+                        <select class="form-control" id="sex">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="favoriteLibrary">Favorite Library</label>
+                <input type="text" class="form-control" id="favoriteLibrary" value="Main Library">
+            </div>
+            <div class="form-group">
+                <label for="favoriteBooks">Favorite Books</label>
+                <textarea class="form-control" id="favoriteBooks" rows="3">Book Title 1, Book Title 2, Book Title 3</textarea>
+            </div>
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture</label>
+                <input type="file" class="form-control-file" id="profilePicture">
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary" onclick="window.history.back();">Discard Changes</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

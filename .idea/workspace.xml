@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="basic html is added for the book page">
-      <change afterPath="$PROJECT_DIR$/templates/person.html.twig" afterDir="false" />
+    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="basic html for other users' page is done">
+      <change afterPath="$PROJECT_DIR$/templates/usersettings.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
     </list>
@@ -106,7 +106,7 @@
       <workItem from="1682080858769" duration="933000" />
       <workItem from="1682178837654" duration="3534000" />
       <workItem from="1682188513426" duration="72000" />
-      <workItem from="1682188612101" duration="1769000" />
+      <workItem from="1682188612101" duration="2171000" />
     </task>
     <task id="LOCAL-00001" summary="basic html template for the book list is added">
       <created>1682189802085</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682190192276</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="basic html for other users' page is done">
+      <created>1682190533984</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682190533984</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +138,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic html template for the book list is added" />
     <MESSAGE value="basic html is added for the book page" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic html is added for the book page" />
+    <MESSAGE value="basic html for other users' page is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic html for other users' page is done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
