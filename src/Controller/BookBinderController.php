@@ -27,4 +27,8 @@ class BookBinderController extends AbstractController
         return $this->render('usersettings.html.twig');
     }
 
+    public function renderHomepage(){
+        return $this->render('homepage.html.twig');
+    }
+
 }

@@ -4,7 +4,7 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-home:
+listofbooks:
     path: /booklist
     controller: App\Controller\BookBinderController::renderBookList
 
@@ -19,3 +19,7 @@ person:
 usersettings:
     path: /usersettings
     controller: App\Controller\BookBinderController::renderUserSettings
+
+home:
+    path: /home
+    controller: App\Controller\BookBinderController::renderHomepage
