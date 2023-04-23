@@ -1,0 +1,69 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-body {
+    background-color: #F0F0F0;
+}
+
+/* Top menu color and size */
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem;
+}
+
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+/* User settings page styles */
+.settings-title {
+    color: #4B4B4B;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.settings-form {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.settings-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="password"],
+.settings-form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.settings-form input[type="file"] {
+    margin-bottom: 1rem;
+}
+
+.save-changes-button,
+.discard-changes-button {
+    background-color: #4E0707;
+    color: #F0F0F0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.save-changes-button:hover,
+.discard-changes-button:hover {
+    background-color: #6A0D0D;
+}

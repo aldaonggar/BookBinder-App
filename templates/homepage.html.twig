@@ -2,35 +2,38 @@
 
 {% block title %}Homepage{% endblock %}
 
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+{% endblock %}
+
 {% block content %}
-    <div class="container mt-4">
-        <h2>Welcome to Book Finder</h2>
-        <p>
-            Book Finder is a platform for searching, discovering, and discussing your favorite books. Browse our extensive collection, find recommendations from fellow readers, and connect with people who share your passion for literature. Join our community today and explore the world of books like never before.
-        </p>
+<div class="container mt-4">
+    <h2 class="title">Welcome to BookBinder</h2>
+    <p class="description">
+        BookBinder is a platform for searching, discovering, and discussing your favorite books. Browse our extensive collection, find recommendations from fellow readers, and connect with people who share your passion for literature. Join our community today and explore the world of books like never before.
+    </p>
 
-        <h3 class="mt-5">Participating Libraries</h3>
-        <ul>
-            <li>Main Library</li>
-            <li>City Library</li>
-            <li>Regional Library</li>
-            <!-- Add more libraries as needed -->
-        </ul>
+    <h3 class="mt-5 libraries-title">Participating Libraries</h3>
+    <ul class="libraries-list">
+        <li>Main Library</li>
+        <li>City Library</li>
+        <li>Regional Library</li>
+        <!-- Add more libraries as needed -->
+    </ul>
 
-        <h3 class="mt-5">Featured Books</h3>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" class="img-fluid" alt="Book 1">
-                <p class="text-center">Book Title 1</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" class="img-fluid" alt="Book 2">
-                <p class="text-center">Book Title 2</p>
-            </div>
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/150" class="img-fluid" alt="Book 3">
-                <p class="text-center">Book Title 3</p>
-            </div>
+    <h3 class="mt-5 featured-books-title">Featured Books</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/150" class="img-fluid book-image" alt="Book 1">
+            <p class="text-center book-title">Book Title 1</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/150" class="img-fluid book-image" alt="Book 2">
+            <p class="text-center book-title">Book Title 2</p>
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/150" class="img-fluid book-image" alt="Book 3">
+            <p class="text-center book-title">Book Title 3</p>
         </div>
     </div>
 {% endblock %}

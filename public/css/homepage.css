@@ -1,0 +1,42 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-body {
+    background-color: #F0F0F0;
+}
+
+/* Top menu color and size */
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem; /* Add padding to the top, bottom, left, and right */
+}
+
+/* Highlight the 'Home' text on the menu */
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+/* Homepage styles */
+.title {
+    color: #4B4B4B;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: #333;
+    padding: 1rem 0;
+    line-height: 1.6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.libraries-title {
+    color: #333;
+    margin-top: 2rem;
+}

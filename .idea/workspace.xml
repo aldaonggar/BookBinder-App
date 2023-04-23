@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="basic html for user settings page is done">
+    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="basic html for the homepage + interconnection between booklist, book, and homepage is added">
+      <change afterPath="$PROJECT_DIR$/public/css/book.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/booklist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/homepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/person.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booklist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booklist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/person.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/person.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,11 +27,24 @@
       <phar pharPath="C:\Users\User\Desktop\University documents\Year 3 Semester 2\a22web35\composer.phar" interpreterId="38891663-e4c9-4470-abfb-935304f6b6d8" />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="fdac117e-d4a8-41f9-b76d-d2f2f030cdf5" name="localhost" port="8080" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2.3">
     <include_path>
@@ -79,6 +101,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/User/Desktop/University documents/Year 3 Semester 2/a22web35/public",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,7 +127,11 @@
       <workItem from="1682080858769" duration="933000" />
       <workItem from="1682178837654" duration="3534000" />
       <workItem from="1682188513426" duration="72000" />
-      <workItem from="1682188612101" duration="2492000" />
+      <workItem from="1682188612101" duration="2871000" />
+      <workItem from="1682191884114" duration="183000" />
+      <workItem from="1682192461229" duration="92000" />
+      <workItem from="1682203147690" duration="13000" />
+      <workItem from="1682263969555" duration="2742000" />
     </task>
     <task id="LOCAL-00001" summary="basic html template for the book list is added">
       <created>1682189802085</created>
@@ -134,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682190820861</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="basic html for the homepage + interconnection between booklist, book, and homepage is added">
+      <created>1682191416181</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682191416181</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +179,8 @@
     <MESSAGE value="basic html is added for the book page" />
     <MESSAGE value="basic html for other users' page is done" />
     <MESSAGE value="basic html for user settings page is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic html for user settings page is done" />
+    <MESSAGE value="basic html for the homepage + interconnection between booklist, book, and homepage is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic html for the homepage + interconnection between booklist, book, and homepage is added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
