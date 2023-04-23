@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="css styling files are added for all pages">
-      <change afterPath="$PROJECT_DIR$/templates/login.html.twig" afterDir="false" />
+    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="css for login page is added">
+      <change afterPath="$PROJECT_DIR$/templates/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
       <workItem from="1682191884114" duration="183000" />
       <workItem from="1682192461229" duration="92000" />
       <workItem from="1682203147690" duration="13000" />
-      <workItem from="1682263969555" duration="3097000" />
+      <workItem from="1682263969555" duration="3728000" />
     </task>
     <task id="LOCAL-00001" summary="basic html template for the book list is added">
       <created>1682189802085</created>
@@ -168,7 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682266878060</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="html file for login is added">
+      <created>1682267279486</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682267279486</updated>
+    </task>
+    <task id="LOCAL-00008" summary="css for login page is added">
+      <created>1682267416901</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682267416901</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +197,9 @@
     <MESSAGE value="basic html for user settings page is done" />
     <MESSAGE value="basic html for the homepage + interconnection between booklist, book, and homepage is added" />
     <MESSAGE value="css styling files are added for all pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="css styling files are added for all pages" />
+    <MESSAGE value="html file for login is added" />
+    <MESSAGE value="css for login page is added" />
+    <option name="LAST_COMMIT_MESSAGE" value="css for login page is added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

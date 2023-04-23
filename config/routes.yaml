@@ -27,3 +27,7 @@ home:
 login:
     path: /login
     controller: App\Controller\BookBinderController::renderLogin
+
+register:
+    path: /register
+    controller: App\Controller\BookBinderController::renderRegister

@@ -18,9 +18,9 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter your password" required>
         </div>
-        <button type="submit" class="login-button">Log in</button>
+        <button href="{{ path('home') }}" type="submit" class="login-button">Log in</button>
     </form>
-    <p class="register-text">Don't have an account? <button class="register-button">Register</button></p>
+    <p class="register-text">Don't have an account? <button href="{{ path('register') }}" class="register-button">Register</button></p>
 </div>
 </body>
 </html>
