@@ -23,3 +23,7 @@ usersettings:
 home:
     path: /home
     controller: App\Controller\BookBinderController::renderHomepage
+
+login:
+    path: /login
+    controller: App\Controller\BookBinderController::renderLogin
