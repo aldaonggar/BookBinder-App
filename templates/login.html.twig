@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="login-container">
-    <h2>Log in</h2>
+    <h2>Login</h2>
     <form class="login-form" method="post" action="#">
         <div class="form-group">
             <label for="email">Email</label>
@@ -18,9 +18,9 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter your password" required>
         </div>
-        <button href="{{ path('home') }}" type="submit" class="login-button">Log in</button>
+        <button href="{{ path('home') }}" type="submit" class="login-button">Login</button>
     </form>
-    <p class="register-text">Don't have an account? <button href="{{ path('register') }}" class="register-button">Register</button></p>
+    <p class="register-text">Don't have an account? <a href="{{ path('register') }}" class="register-button">Register</a></p>
 </div>
 </body>
 </html>

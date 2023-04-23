@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="path/to/your/register.css">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
 <div class="register-container">
@@ -36,7 +36,7 @@
         </div>
         <button href="{{ path('home') }}" type="submit" class="register-button">Register</button>
     </form>
-    <p class="login-text">Already have an account? <button href="{{ path('login') }}" class="login-button">Log in</button></p>
+    <p class="login-text">Already have an account? <a href="{{ path('login') }}" class="login-button">Log in</a></p>
 </div>
 </body>
 </html>

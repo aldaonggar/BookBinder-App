@@ -12,7 +12,7 @@ body {
     margin: 0;
 }
 
-.login-container {
+.register-container {
     background-color: #FFFFFF;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -38,8 +38,10 @@ label {
     margin-bottom: 0.5rem;
 }
 
+input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -47,7 +49,7 @@ input[type="password"] {
     font-size: 0.9rem;
 }
 
-.login-button {
+.register-button {
     background-color: #4E0707;
     color: #F0F0F0;
     padding: 0.5rem 1rem;
@@ -59,18 +61,18 @@ input[type="password"] {
     margin-top: 1rem;
 }
 
-.login-button:hover {
+.register-button:hover {
     background-color: #6A0D0D;
 }
 
-.register-text {
+.login-text {
     text-align: center;
     margin-top: 1rem;
     color: #777;
     font-size: 0.9rem;
 }
 
-.register-button {
+.login-button {
     background-color: transparent;
     border: none;
     color: #4E0707;
@@ -79,6 +81,6 @@ input[type="password"] {
     text-decoration: none;
 }
 
-.register-button:hover {
+.login-button:hover {
     text-decoration: underline;
 }
