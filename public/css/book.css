@@ -1,0 +1,77 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-body {
+    background-color: #F0F0F0;
+}
+
+/* Top menu color and size */
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem;
+}
+
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+/* Book page styles */
+.book-title {
+    color: #4B4B4B;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.book-description {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.average-rating {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.reserve-button,
+.add-to-reading-list-button {
+    background-color: #4E0707;
+    color: #F0F0F0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.reserve-button:hover,
+.add-to-reading-list-button:hover {
+    background-color: #6A0D0D;
+}
+
+.interested-people-list {
+    list-style: none;
+    padding: 0;
+}
+
+.interested-people-list li {
+    color: #333;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.interested-people-list li:last-child {
+    border-bottom: none;
+}

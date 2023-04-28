@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/book.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/300" class="img-fluid" alt="Book Cover">
+            </div>
+            <div class="col-md-8">
+                <h2>Book Title</h2>
+                <h4>Author Name</h4>
+                <p><strong>Average Rating:</strong> 4.5/5</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at nisi vestibulum, efficitur velit eu, bibendum purus.
+                    Fusce lacinia lorem sed lacus sodales, non ultrices mi pellentesque. Curabitur tincidunt ex eu dapibus venenatis.
+                    Mauris tincidunt lacus a libero volutpat, nec posuere enim fermentum. Sed et sapien dolor. Nunc pretium auctor lacus.
+                </p>
+                <button type="button" class="btn btn-primary">Reserve</button>
+                <button type="button" class="btn btn-secondary">Add to Reading List</button>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>People Interested</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">John Doe</li>
+                    <li class="list-group-item">Jane Smith</li>
+                    <li class="list-group-item">Alice Johnson</li>
+                    <li class="list-group-item">Bob Brown</li>
+                    <!-- Add more interested people as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

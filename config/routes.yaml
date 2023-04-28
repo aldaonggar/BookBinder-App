@@ -3,3 +3,31 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+listofbooks:
+    path: /booklist
+    controller: App\Controller\BookBinderController::renderBookList
+
+book:
+    path: /book
+    controller: App\Controller\BookBinderController::renderBook
+
+person:
+    path: /person
+    controller: App\Controller\BookBinderController::renderPerson
+
+usersettings:
+    path: /usersettings
+    controller: App\Controller\BookBinderController::renderUserSettings
+
+home:
+    path: /home
+    controller: App\Controller\BookBinderController::renderHomepage
+
+login:
+    path: /login
+    controller: App\Controller\BookBinderController::renderLogin
+
+register:
+    path: /register
+    controller: App\Controller\BookBinderController::renderRegister

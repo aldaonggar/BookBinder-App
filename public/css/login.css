@@ -1,0 +1,84 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    color: #777;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.login-button {
+    background-color: #4E0707;
+    color: #F0F0F0;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.login-button:hover {
+    background-color: #6A0D0D;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 1rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.register-button {
+    background-color: transparent;
+    border: none;
+    color: #4E0707;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.register-button:hover {
+    text-decoration: underline;
+}

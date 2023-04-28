@@ -1,0 +1,42 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-body {
+    background-color: #F0F0F0;
+}
+
+/* Top menu color and size */
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem;
+}
+
+/* Highlight the 'Books' text on the menu */
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+/* Book list styles */
+.book-title {
+    color: #4B4B4B;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.book-description {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
