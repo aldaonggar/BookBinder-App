@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="added css styling for the registration page">
+    <list default="true" id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="books are placed to the right of the homepage.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +125,9 @@
       <workItem from="1682263969555" duration="4176000" />
       <workItem from="1682448900439" duration="310000" />
       <workItem from="1682449788912" duration="195000" />
-      <workItem from="1682450521280" duration="1124000" />
+      <workItem from="1682450521280" duration="1372000" />
+      <workItem from="1682515768506" duration="469000" />
+      <workItem from="1682681156386" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="basic html template for the book list is added">
       <created>1682189802085</created>
@@ -200,11 +199,29 @@
       <option name="project" value="LOCAL" />
       <updated>1682268102432</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="books are placed to the right of the homepage.">
+      <created>1682451787663</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682451787663</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic html template for the book list is added" />
@@ -217,7 +234,8 @@
     <MESSAGE value="css for login page is added" />
     <MESSAGE value="added html file for registration" />
     <MESSAGE value="added css styling for the registration page" />
-    <option name="LAST_COMMIT_MESSAGE" value="added css styling for the registration page" />
+    <MESSAGE value="books are placed to the right of the homepage." />
+    <option name="LAST_COMMIT_MESSAGE" value="books are placed to the right of the homepage." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
