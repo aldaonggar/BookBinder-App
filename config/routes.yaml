@@ -13,7 +13,7 @@ book:
     controller: App\Controller\BookBinderController::renderBook
 
 person:
-    path: /person
+    path: /person/{id}
     controller: App\Controller\BookBinderController::renderPerson
 
 usersettings:
