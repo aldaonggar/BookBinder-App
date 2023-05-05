@@ -35,3 +35,7 @@ register:
 myprofile:
     path: /myprofile
     controller: App\Controller\BookBinderController::renderMyprofile
+
+libraries:
+    path: /libraries
+    controller: App\Controller\BookBinderController::renderLibraries
