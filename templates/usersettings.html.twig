@@ -4,6 +4,7 @@
 
 {% block additional_styles %}
     <link rel="stylesheet" href="{{ asset('css/usersettings.css') }}">
+    <script src="{{ asset('javascript/checkUserSettings.js') }}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -14,13 +15,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" value={{ user['firstName'] }}>
+                        <input type="text" class="form-control" id="firstName" name="name" value={{ user['firstName'] }}>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="surname">Surname</label>
-                        <input type="text" class="form-control" id="surname" name="surname" value={{ user['lastName'] }}>
+                        <input type="text" class="form-control" id="lastName" name="surname" value={{ user['lastName'] }}>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,7 @@
                 <input type="file" class="form-control-file" id="profilePicture">
             </div>
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="submit" id="submitBtn" class="btn btn-primary">Save Changes</button>
                 <button type="button" class="btn btn-secondary" onclick="window.history.back();">Discard Changes</button>
             </div>
         </form>

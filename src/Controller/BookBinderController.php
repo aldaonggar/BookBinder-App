@@ -58,11 +58,14 @@ class BookBinderController extends AbstractController
         foreach ($users as &$u) {
             if ($u['id'] == $id) {
                 $u['firstName'] = $_POST['name'];
+                if (!preg_match("/^[a-zA-Z ]*$/", "&&&&&")) {
+                    echo '<script>alert("Name should only contain letters");</script>';
+                }
                 $u['lastName'] = $_POST['surname'];
                 $u['age'] = $_POST['age'];
                 $u['sex'] = $_POST['sex'];
                 $u['favoriteBooks'] = $_POST['favoriteBooks'];
-
+                $temp = $this->getParameter('kernel.project_dir') . '\public\testingdata\user.json';
                 file_put_contents($this->getParameter('kernel.project_dir') . '/public/testingdata/user.json', json_encode($users));
                 return $this->redirectToRoute('usersettings', ['id' => $id]);
             }
