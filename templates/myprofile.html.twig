@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/myprofile.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="title">My Profile</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/150" class="img-fluid profile-picture" alt="Profile Picture">
+            </div>
+            <div class="col-md-8">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Surname:</strong> Smith</p>
+                <p><strong>Age:</strong> 30</p>
+                <p><strong>Gender:</strong> Male</p>
+                <a href="{{ path('usersettings') }}" class="btn btn-primary change-settings">Change Settings</a>
+            </div>
+        </div>
+
+        <h3 class="mt-5">Favorite Books</h3>
+        <ul>
+            <li>Book Title 1</li>
+            <li>Book Title 2</li>
+            <li>Book Title 3</li>
+            <!-- Add more favorite books as needed -->
+        </ul>
+
+        <h3 class="mt-5">Favorite Libraries</h3>
+        <ul>
+            <li>Main Library</li>
+            <li>City Library</li>
+            <!-- Add more favorite libraries as needed -->
+        </ul>
+    </div>
+{% endblock %}
