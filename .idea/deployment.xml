@@ -59,12 +59,8 @@
       <paths name="studev">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/var" />
-            <excludedPath local="true" path="$PROJECT_DIR$/vendor" />
-          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
