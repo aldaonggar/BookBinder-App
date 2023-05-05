@@ -1,0 +1,58 @@
+/* myprofile.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4E0707;
+}
+
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem;
+}
+
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+.profile-picture {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4E0707;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 5px 0;
+}
+
+.change-settings {
+    background-color: #4E0707;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    color: #ffffff;
+}
