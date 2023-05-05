@@ -17,7 +17,7 @@ person:
     controller: App\Controller\BookBinderController::renderPerson
 
 usersettings:
-    path: /usersettings
+    path: /usersettings/{id}
     controller: App\Controller\BookBinderController::renderUserSettings
 
 home:
