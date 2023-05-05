@@ -11,6 +11,7 @@ class BookBinderController extends AbstractController
 //    /**
 //     * @Route("/booklist.html.twig")
 //     */
+// comment test
     public function renderBookList(){
         return $this->render('booklist.html.twig');
     }
