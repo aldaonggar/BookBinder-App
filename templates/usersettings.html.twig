@@ -9,18 +9,18 @@
 {% block content %}
     <div class="container mt-4">
         <h2 class="text-center mb-4">User Settings</h2>
-        <form>
+        <form method="post" action="{{ path('editUserSettings', {'id': user['id']}) }}">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" value={{ user['firstName'] }}>
+                        <input type="text" class="form-control" id="name" name="name" value={{ user['firstName'] }}>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="surname">Surname</label>
-                        <input type="text" class="form-control" id="surname" value={{ user['lastName'] }}>
+                        <input type="text" class="form-control" id="surname" name="surname" value={{ user['lastName'] }}>
                     </div>
                 </div>
             </div>
@@ -28,13 +28,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="age">Age</label>
-                        <input type="number" class="form-control" id="age" value={{ user['age'] }}>
+                        <input type="number" class="form-control" id="age" name="age" value={{ user['age'] }}>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="sex">Sex</label>
-                        <select class="form-control" id="sex">
+                        <select class="form-control" id="sex" name="sex">
                             <option value="Male" {{ user.sex == 'male' ? 'selected' : '' }}>Male</option>
                             <option value="Female" {{ user.sex == 'female' ? 'selected' : '' }}>Female</option>
                             <option value="Other" {{ user.sex == 'other' ? 'selected' : '' }}>Other</option>
@@ -44,11 +44,11 @@
             </div>
             <div class="form-group">
                 <label for="favoriteLibrary">Favorite Library</label>
-                <input type="text" class="form-control" id="favoriteLibrary" value={{ user['favoriteLibrary'] }}>
+                <input type="text" class="form-control" id="favoriteLibrary" name="favoriteLibrary" value={{ user['favoriteLibrary'] }}>
             </div>
             <div class="form-group">
                 <label for="favoriteBooks">Favorite Books</label>
-                <textarea class="form-control" id="favoriteBooks" rows="3">{{ user['favoriteBooks'] }}</textarea>
+                <textarea class="form-control" id="favoriteBooks" name="favoriteBooks" rows="3">{{ user['favoriteBooks'] }}</textarea>
             </div>
             <div class="form-group">
                 <label for="profilePicture">Profile Picture</label>

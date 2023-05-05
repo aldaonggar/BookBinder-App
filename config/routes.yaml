@@ -20,6 +20,10 @@ usersettings:
     path: /usersettings/{id}
     controller: App\Controller\BookBinderController::renderUserSettings
 
+editUserSettings:
+    path: /editUserSettings/[{id}
+    controller: App\Controller\BookBinderController::userSettings
+
 home:
     path: /home
     controller: App\Controller\BookBinderController::renderHomepage

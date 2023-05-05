@@ -52,6 +52,24 @@ class BookBinderController extends AbstractController
         return $this->render('usersettings.html.twig', ['user' => $user]);
     }
 
+    public function userSettings($id): Response {
+        $users = json_decode(file_get_contents($this->getParameter('kernel.project_dir') . '/public/testingdata/user.json'), true);
+
+        foreach ($users as &$u) {
+            if ($u['id'] == $id) {
+                $u['firstName'] = $_POST['name'];
+                $u['lastName'] = $_POST['surname'];
+                $u['age'] = $_POST['age'];
+                $u['sex'] = $_POST['sex'];
+                $u['favoriteBooks'] = $_POST['favoriteBooks'];
+
+                file_put_contents($this->getParameter('kernel.project_dir') . '/public/testingdata/user.json', json_encode($users));
+                return $this->redirectToRoute('usersettings', ['id' => $id]);
+            }
+        }
+        throw $this->createNotFoundException('User not found');
+    }
+
     public function renderHomepage(){
         return $this->render('homepage.html.twig');
     }
