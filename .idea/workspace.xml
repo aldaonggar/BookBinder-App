@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="added real books to the homepage">
-      <change afterPath="$PROJECT_DIR$/public/css/libraries.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/libraries.html.twig" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="added libraries page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/libraries.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/libraries.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683291670704</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added libraries page">
+      <created>1683293879749</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683293879749</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +220,8 @@
     <MESSAGE value="need to commit for pull" />
     <MESSAGE value="fixed composer issues" />
     <MESSAGE value="added real books to the homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="added real books to the homepage" />
+    <MESSAGE value="added libraries page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added libraries page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
