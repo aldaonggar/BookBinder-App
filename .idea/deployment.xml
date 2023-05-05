@@ -35,27 +35,6 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="student@raspberrypi.local:22 (5)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="student@raspberrypi.local:22 (6)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="student@raspberrypi.local:22 (7)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="studev">
         <serverdata>
           <mappings>

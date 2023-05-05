@@ -6,6 +6,8 @@ use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User
 {
@@ -25,6 +27,9 @@ class User
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
 
     public function getId(): ?int
     {
@@ -72,9 +77,22 @@ class User
         return $this->birthday;
     }
 
-    public function setBirthday(?\DateTimeInterface $birthday): self
+    public function setBirthday(?string $birthday): self
     {
-        $this->birthday = $birthday;
+        $date = new \DateTimeImmutable($birthday.' 00:00:00');
+        $this->birthday = $date;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
     }
