@@ -1,1 +1,1 @@
-FallbackResource /public/index.php
+FallbackResource /src/Controller/BookBinderController.php
