@@ -40,4 +40,9 @@ class BookBinderController extends AbstractController
         return $this->render('register.html.twig');
     }
 
+    public function testFunctionForTests(): int{
+
+        return 0;
+    }
+
 }

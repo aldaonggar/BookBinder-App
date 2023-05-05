@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="htaccess added">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/a22web35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/a22web35.iml" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="composer updated">
+      <change afterPath="$PROJECT_DIR$/tests/Controller/BookBinderControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +153,7 @@
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/yeska/Documents/second year/first sem/a22web35/vendor",
+    "last_opened_file_path": "C:/Users/yeska/Documents/second year/first sem/a22web35/phpunit.xml.dist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -172,10 +168,23 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.testings">
+    <configuration name="testings" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
+      <method v="2" />
+    </configuration>
     <configuration name="bookbinder" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" port="88">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PHP Built-in Web Server.bookbinder" />
+      <item itemvalue="PHPUnit.testings" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -212,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683284298980</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="composer updated">
+      <created>1683294885562</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683294885562</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +262,8 @@
     <MESSAGE value="need to commit for pull" />
     <MESSAGE value="fixed composer issues" />
     <MESSAGE value="htaccess added" />
-    <option name="LAST_COMMIT_MESSAGE" value="htaccess added" />
+    <MESSAGE value="composer updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="composer updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
