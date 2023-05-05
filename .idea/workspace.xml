@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="books are placed to the right of the homepage.">
-      <change afterPath="$PROJECT_DIR$/public/css/myprofile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/myprofile.html.twig" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="fixed composer issues">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,22 +18,10 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="C:\Users\User\Desktop\University documents\Year 3 Semester 2\a22web35\composer.phar" interpreterId="38891663-e4c9-4470-abfb-935304f6b6d8" />
+      <phar pharPath="$PROJECT_DIR$/composer_2.phar" interpreterId="371939bf-8ca3-4311-9120-86292a63f3e2" />
     </execution>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,9 +31,10 @@
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="fdac117e-d4a8-41f9-b76d-d2f2f030cdf5" name="localhost" port="8080" />
+      <server host="localhost" id="675bb680-d037-4f99-8d9f-2a4bfc719787" name="localhost (1)" port="88" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2.3">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -80,17 +67,40 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
-      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
-  <component name="ProjectId" id="2OjjOwUR3BoNOXo9dHMODXnHm67" />
+  <component name="ProjectId" id="2OjjLxkrTszGeUOujk0A6c50Oyo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -100,123 +110,55 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/University documents/Year 3 Semester 2/a22web35/public&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yeska/Documents/second year/first sem/a22web35/var&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$/public" port="8080">
+    <configuration name="bookbinder" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" port="88">
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eba5c837-556b-4846-aa5f-dced7c0a13cf" name="Changes" comment="" />
-      <created>1682080857228</created>
+      <changelist id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="" />
+      <created>1682080832620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682080857228</updated>
-      <workItem from="1682080858769" duration="933000" />
-      <workItem from="1682178837654" duration="3534000" />
-      <workItem from="1682188513426" duration="72000" />
-      <workItem from="1682188612101" duration="2871000" />
-      <workItem from="1682191884114" duration="183000" />
-      <workItem from="1682192461229" duration="92000" />
-      <workItem from="1682203147690" duration="13000" />
-      <workItem from="1682263969555" duration="4176000" />
-      <workItem from="1682448900439" duration="310000" />
-      <workItem from="1682449788912" duration="195000" />
-      <workItem from="1682450521280" duration="1372000" />
-      <workItem from="1682515768506" duration="469000" />
-      <workItem from="1682681156386" duration="630000" />
+      <updated>1682080832620</updated>
+      <workItem from="1682080833849" duration="4748000" />
+      <workItem from="1682686040107" duration="579000" />
+      <workItem from="1682692384168" duration="3299000" />
+      <workItem from="1682696178322" duration="5606000" />
+      <workItem from="1682963814942" duration="1061000" />
     </task>
-    <task id="LOCAL-00001" summary="basic html template for the book list is added">
-      <created>1682189802085</created>
+    <task id="LOCAL-00001" summary="fixed composer issues">
+      <created>1682698806178</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1682189802086</updated>
+      <updated>1682698806178</updated>
     </task>
-    <task id="LOCAL-00002" summary="basic html is added for the book page">
-      <created>1682190192276</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1682190192276</updated>
-    </task>
-    <task id="LOCAL-00003" summary="basic html for other users' page is done">
-      <created>1682190533984</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1682190533984</updated>
-    </task>
-    <task id="LOCAL-00004" summary="basic html for user settings page is done">
-      <created>1682190820861</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1682190820861</updated>
-    </task>
-    <task id="LOCAL-00005" summary="basic html for the homepage + interconnection between booklist, book, and homepage is added">
-      <created>1682191416181</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1682191416181</updated>
-    </task>
-    <task id="LOCAL-00006" summary="css styling files are added for all pages">
-      <created>1682266878060</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1682266878060</updated>
-    </task>
-    <task id="LOCAL-00007" summary="html file for login is added">
-      <created>1682267279486</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1682267279486</updated>
-    </task>
-    <task id="LOCAL-00008" summary="css for login page is added">
-      <created>1682267416901</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1682267416901</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added html file for registration">
-      <created>1682267723505</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1682267723505</updated>
-    </task>
-    <task id="LOCAL-00010" summary="added css styling for the registration page">
-      <created>1682268102432</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1682268102432</updated>
-    </task>
-    <task id="LOCAL-00011" summary="books are placed to the right of the homepage.">
-      <created>1682451787663</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1682451787663</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,25 +169,29 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic html template for the book list is added" />
-    <MESSAGE value="basic html is added for the book page" />
-    <MESSAGE value="basic html for other users' page is done" />
-    <MESSAGE value="basic html for user settings page is done" />
-    <MESSAGE value="basic html for the homepage + interconnection between booklist, book, and homepage is added" />
-    <MESSAGE value="css styling files are added for all pages" />
-    <MESSAGE value="html file for login is added" />
-    <MESSAGE value="css for login page is added" />
-    <MESSAGE value="added html file for registration" />
-    <MESSAGE value="added css styling for the registration page" />
-    <MESSAGE value="books are placed to the right of the homepage." />
-    <option name="LAST_COMMIT_MESSAGE" value="books are placed to the right of the homepage." />
+    <MESSAGE value="start of the database" />
+    <MESSAGE value="need to commit for pull" />
+    <MESSAGE value="fixed composer issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed composer issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

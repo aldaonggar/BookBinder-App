@@ -25,7 +25,7 @@ editUserSettings:
     controller: App\Controller\BookBinderController::userSettings
 
 home:
-    path: /home
+    path: /
     controller: App\Controller\BookBinderController::renderHomepage
 
 login:
