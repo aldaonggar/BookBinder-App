@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="register-container">
+    <h2>Register</h2>
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    {{ form_start(registrationForm, {'attr': {'class': 'register-form'}}) }}
+    <div class="form-group">
+        {{ form_label(registrationForm.firstname, 'First Name') }}
+        {{ form_widget(registrationForm.firstname, {'attr': {'placeholder': 'Enter your first name', 'class': 'form-control', 'id': 'firstname'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(registrationForm.lastname, 'Last Name') }}
+        {{ form_widget(registrationForm.lastname, {'attr': {'placeholder': 'Enter your last name', 'class': 'form-control', 'id': 'lastname'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(registrationForm.email, 'Email') }}
+        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Enter your email', 'class': 'form-control', 'id': 'email'}}) }}
+        {% if registrationForm.email.vars.errors is not empty %}
+            <div class="error-message">
+                {{ registrationForm.email.vars.errors|first.message }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        {{ form_label(registrationForm.plainPassword.first, 'Password') }}
+        {{ form_widget(registrationForm.plainPassword.first, {'attr': {'placeholder': 'Enter your password', 'class': 'form-control', 'id': 'password'}}) }}
+        <ul id="password-requirements" class="text-danger">
+            <li>Minimum 8 characters long</li>
+            <li>At least one special character</li>
+            <li>At least one uppercase letter</li>
+            <li>At least one lowercase letter</li>
+            <li>At least one digit</li>
+        </ul>
+        <p id="password-error" class="text-danger hidden">Password does not follow requirements</p>
+    </div>
+    <div class="form-group">
+        {{ form_label(registrationForm.plainPassword.second, 'Repeat Password') }}
+        {{ form_widget(registrationForm.plainPassword.second, {'attr': {'placeholder': 'Repeat your password', 'class': 'form-control', 'id': 'repeat-password'}}) }}
+        <p id="password-match" class="text-danger"></p>
+    </div>
+    <div class="form-group">
+        {{ form_label(registrationForm.birthday, 'Birthday') }}
+        {{ form_widget(registrationForm.birthday, {'attr': {'class': 'form-control', 'id': 'birthday'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(registrationForm.agreeTerms) }}
+    </div>
+    <button type="submit" id="register-button" class="register-button" disabled>Register</button> {# Add the "disabled" attribute initially #}
+    {{ form_end(registrationForm) }}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.register-form');
+            form.addEventListener('submit', function (event) {
+                const isValid = validatePasswords();
+
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            // Add event listeners for the password and repeat-password fields
+            const password = document.getElementById('registration_form_plainPassword_first');
+            const repeatPassword = document.getElementById('registration_form_plainPassword_second');
+            const registerButton = document.getElementById('register-button');
+
+            password.addEventListener('input', validatePasswords);
+            repeatPassword.addEventListener('input', validatePasswords);
+
+            function validatePasswords() {
+                const passwordValue = password.value;
+                const repeatPasswordValue = repeatPassword.value;
+                const passwordMatch = document.getElementById('password-match');
+                const passwordError = document.getElementById('password-error');
+
+                let passwordsMatch = false;
+                let passwordIsValid = false;
+
+                if (repeatPasswordValue.length > 0) {
+                    if (passwordValue !== repeatPasswordValue) {
+                        passwordMatch.textContent = 'Passwords do not match';
+                        passwordMatch.classList.remove('success');
+                        passwordMatch.classList.add('error');
+                    } else {
+                        passwordMatch.textContent = 'Passwords match';
+                        passwordMatch.classList.remove('error');
+                        passwordMatch.classList.add('success');
+                        passwordsMatch = true;
+                    }
+                } else {
+                    passwordMatch.textContent = '';
+                }
+
+                const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+                if (!regex.test(passwordValue)) {
+                    passwordError.classList.remove('hidden');
+                } else {
+                    passwordError.classList.add('hidden');
+                    passwordIsValid = true;
+                }
+
+                registerButton.disabled = !(passwordsMatch && passwordIsValid);
+            }
+        });
+    </script>
+
+    <p class="login-text">Already have an account? <a href="{{ path('login') }}" class="login-button">Log in</a></p>
+</div>
+</body>
+</html>
