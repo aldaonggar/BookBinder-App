@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\ExtraClasses\BookGeneratorForTests;
 
 class BookBinderController extends AbstractController
 {
@@ -14,6 +16,9 @@ class BookBinderController extends AbstractController
 // comment test
     public function renderBookList(){
         return $this->render('booklist.html.twig');
+        /*$bookGenerator = new BookGeneratorForTests();
+        $stringResponse = $bookGenerator->createStringResponse();
+        return new Response($stringResponse);*/
     }
 
     public function renderBook(){
@@ -39,5 +44,6 @@ class BookBinderController extends AbstractController
     public function renderRegister(){
         return $this->render('register.html.twig');
     }
+
 
 }
