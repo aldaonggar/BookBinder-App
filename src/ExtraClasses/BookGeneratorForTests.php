@@ -16,6 +16,7 @@ class BookGeneratorForTests
             $book->setTitle($title);
             $author = 'author'.$i;
             $book->setAuthor($author);
+            $book->setId($i);
             $bookArray[] = $book;
         }
         $this->bookArray = $bookArray;
@@ -27,5 +28,13 @@ class BookGeneratorForTests
             $retString .= $book->getAuthor().' '.$book->getTitle();
         }
         return $retString;
+    }
+
+    /**
+     * @return array
+     */
+    public function getBookArray(): array
+    {
+        return $this->bookArray;
     }
 }

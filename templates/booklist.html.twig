@@ -16,73 +16,37 @@
 
     <div class="mt-4">
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 1</h5>
-                        <p class="card-text">Author 1</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
+            {% for book in bookArray %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">{{ book.author }}</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                            <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 2</h5>
-                        <p class="card-text">Author 2</p>
-                        <p class="card-text">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 3</h5>
-                        <p class="card-text">Author 3</p>
-                        <p class="card-text">Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 4</h5>
-                        <p class="card-text">Author 4</p>
-                        <p class="card-text">Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 5</h5>
-                        <p class="card-text">Author 5</p>
-                        <p class="card-text">Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Book Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Book Title 6</h5>
-                        <p class="card-text">Author 6</p>
-                        <p class="card-text">Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-                        <a href="{{ path('book') }}" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
             <!-- Add more book cards with descriptions as needed -->
         </div>
+        <ul>
+            {% for i in range(1, numberOfPages) %}
+
+                {% if numberOfPages > 3%}
+                    {% if i < 3 %}
+                        <li><a href="">{{ i }}</a></li>
+                    {% elseif i == numberOfPages %}
+                        <li><a href="">{{ i }}</a></li>
+                    {% elseif i == 3 %}
+                        <li>...</li>
+                    {% endif %}
+                {% else %}
+                    <li><a href="">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}

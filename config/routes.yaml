@@ -9,7 +9,7 @@ listofbooks:
     controller: App\Controller\BookBinderController::renderBookList
 
 book:
-    path: /book
+    path: /book/{id}
     controller: App\Controller\BookBinderController::renderBook
 
 person:

@@ -15,13 +15,23 @@ class BookBinderController extends AbstractController
 //     */
 // comment test
     public function renderBookList(){
-        return $this->render('booklist.html.twig');
-        /*$bookGenerator = new BookGeneratorForTests();
+        $bookGenerator = new BookGeneratorForTests();
+        $numberOfPages = 9;
+        return $this->render('booklist.html.twig', [
+            'bookArray'=>$bookGenerator->getBookArray(),
+            'numberOfPages'=> $numberOfPages
+        ]);
+
+        /*
+         * This chunk is just to see if the book generator works fine
+         *
+         * $bookGenerator = new BookGeneratorForTests();
         $stringResponse = $bookGenerator->createStringResponse();
         return new Response($stringResponse);*/
     }
 
-    public function renderBook(){
+    public function renderBook($id){
+
         return $this->render('book.html.twig');
     }
 

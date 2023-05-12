@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="add very basic unit test and integration test">
-      <change afterPath="$PROJECT_DIR$/src/ExtraClasses/BookGeneratorForTests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59__Changes_.xml" beforeDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="create book generator funciton for place holder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExtraClasses/BookGeneratorForTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExtraClasses/BookGeneratorForTests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/booklist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booklist.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683294885562</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="create book generator funciton for place holder">
+      <created>1683898676221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683898676221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +271,8 @@
     <MESSAGE value="fixed composer issues" />
     <MESSAGE value="htaccess added" />
     <MESSAGE value="composer updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="composer updated" />
+    <MESSAGE value="create book generator funciton for place holder" />
+    <option name="LAST_COMMIT_MESSAGE" value="create book generator funciton for place holder" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
