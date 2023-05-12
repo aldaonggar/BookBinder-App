@@ -1,0 +1,62 @@
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/reset_password.css') }}">
+    <div class="register-container">
+        <h2>Reset your password</h2>
+        {{ form_start(resetForm) }}
+        <div class="form-group">
+            {{ form_label(resetForm.plainPassword.first, 'New Password') }}
+            {{ form_widget(resetForm.plainPassword.first) }}
+        </div>
+        <ul id="password-requirements">
+            <li>Minimum 8 characters long</li>
+            <li>At least one special character</li>
+            <li>At least one uppercase letter</li>
+            <li>At least one lowercase letter</li>
+            <li>At least one digit</li>
+        </ul>
+        <p id="password-validation-message"></p> {# Add this line for displaying the password validation message #}
+        <div class="form-group">
+            {{ form_label(resetForm.plainPassword.second, 'Repeat New Password') }}
+            {{ form_widget(resetForm.plainPassword.second) }}
+        </div>
+        <p id="password-match-message"></p> {# Add this line for displaying the password matching message #}
+        <button id="reset-password-button" class="register-button" disabled>Reset password</button> {# Add the "disabled" attribute initially #}
+        {{ form_end(resetForm) }}
+    </div>
+
+    <script>
+        const passwordInput = document.querySelector('#{{ resetForm.plainPassword.first.vars.id }}');
+        const confirmPasswordInput = document.querySelector('#{{ resetForm.plainPassword.second.vars.id }}');
+        const passwordValidationMessage = document.querySelector('#password-validation-message');
+        const passwordMatchMessage = document.querySelector('#password-match-message');
+        const resetPasswordButton = document.querySelector('#reset-password-button');
+
+        passwordInput.addEventListener('input', validatePassword);
+        confirmPasswordInput.addEventListener('input', validatePassword);
+
+        function validatePassword() {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            const requirements = [
+                /.{8,}/, // Minimum 8 characters long
+                /.*[!@#$%^&*(){}[\]<>?/|,:;~]/, // At least one special character
+                /.*[A-Z]/, // At least one uppercase letter
+                /.*[a-z]/, // At least one lowercase letter
+                /.*\d/ // At least one digit
+            ];
+
+            const isValid = requirements.every(regex => regex.test(password));
+
+            passwordValidationMessage.textContent = isValid ? 'Password follows requirements' : 'Password does not follow requirements';
+            passwordValidationMessage.style.color = isValid ? 'green' : 'red';
+            passwordValidationMessage.style.fontWeight = 'bold';
+
+            passwordMatchMessage.textContent = password === confirmPassword ? 'Passwords match' : 'Passwords do not match';
+            passwordMatchMessage.style.color = password === confirmPassword ? 'green' : 'red';
+            passwordMatchMessage.style.fontWeight = 'bold';
+
+            resetPasswordButton.disabled = !(isValid && password === confirmPassword); // Enable/disable the button based on validation
+        }
+    </script>
+{% endblock %}
