@@ -16,15 +16,12 @@
                 <a class="nav-link" href="{{ path('listofbooks') }}">Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">People</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Libraries</a>
+                <a class="nav-link" href="{{ path('libraries') }}">Libraries</a>
             </li>
         </ul>
     </div>
     <div class="navbar-nav ml-auto">
-        <a href="{{ path('usersettings') }}" class="btn btn-outline-primary mr-2 user-settings-btn">User Settings</a>
+        <a href="{{ path('myprofile') }}" class="btn btn-outline-primary mr-2 user-settings-btn">User Profile</a>
         <a href="{{ path('login') }}" class="btn btn-outline-danger logout-btn">Log Out</a>
     </div>
 </nav>
