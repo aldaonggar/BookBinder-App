@@ -31,7 +31,19 @@ class BookBinderController extends AbstractController
     }
 
     public function renderBook($id){
-
+        $bookGenerator = new BookGeneratorForTests();
+        $bookArray = $bookGenerator->getBookArray();
+        $bookForPage = null;
+        foreach ($bookArray as $book){
+            if ($book->getId() == $id){
+                $bookForPage = $book;
+            }
+        }
+        if ($bookForPage != null){
+            return $this->render('book.html.twig',[
+                'book'=>$bookForPage
+            ]);
+        }
         return $this->render('book.html.twig');
     }
 
