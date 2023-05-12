@@ -24,18 +24,14 @@ home:
     path: /
     controller: App\Controller\BookBinderController::renderHomepage
 
-login:
-    path: /login
-    controller: App\Controller\BookBinderController::renderLogin
-
 register:
     path: /register
-    controller: App\Controller\BookBinderController::renderRegister
+    controller: App\Controller\RegistrationController::register
 
-myprofile:
-    path: /myprofile
-    controller: App\Controller\BookBinderController::renderMyprofile
+login:
+    path: /login
+    controller: App\Controller\LoginController::index
 
-libraries:
-    path: /libraries
-    controller: App\Controller\BookBinderController::renderLibraries
+app_logout:
+    path: /logout
+    methods: GET
