@@ -39,23 +39,6 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
-    public function findBooksWithSameLabelAsUser(int $userId,): array
-    {
-        $conn = $this->getEntityManager()->getConnection();
-
-        $sql = 'SELECT b.*
-                FROM book b
-                INNER JOIN label_book l_b 
-                ON b.id = l_b.book_id
-                INNER JOIN user_label
-                ON l_b.label_id = user_label.label_id 
-                WHERE user_label.user_id = :id';
-        $stmt = $conn->prepare($sql);
-        $resultSet = $stmt->executeQuery(['id' => $userId]);
-
-        return $resultSet->fetchAllAssociative();
-    }
-
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */
