@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\BookRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
@@ -32,6 +33,12 @@ class Book
 
     #[ORM\ManyToMany(targetEntity: Label::class, mappedBy: 'bookLabel')]
     private Collection $labels;
+
+    #[ORM\Column(length: 5000, nullable: true)]
+    private ?string $Synopsis = null;
+
+    #[ORM\Column(type: Types::BLOB, nullable: true)]
+    private $cover = null;
 
     public function __construct()
     {
@@ -150,6 +157,30 @@ class Book
         if ($this->labels->removeElement($label)) {
             $label->removeBookLabel($this);
         }
+
+        return $this;
+    }
+
+    public function getSynopsis(): ?string
+    {
+        return $this->Synopsis;
+    }
+
+    public function setSynopsis(?string $Synopsis): self
+    {
+        $this->Synopsis = $Synopsis;
+
+        return $this;
+    }
+
+    public function getCover()
+    {
+        return $this->cover;
+    }
+
+    public function setCover($cover): self
+    {
+        $this->cover = $cover;
 
         return $this;
     }

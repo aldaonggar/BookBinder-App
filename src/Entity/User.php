@@ -31,6 +31,12 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
+    #[ORM\Column(length: 25, nullable: true)]
+    private ?string $sex = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $favoriteLibrary = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -98,6 +104,30 @@ class User
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getSex(): ?string
+    {
+        return $this->sex;
+    }
+
+    public function setSex(?string $sex): self
+    {
+        $this->sex = $sex;
+
+        return $this;
+    }
+
+    public function getFavoriteLibrary(): ?string
+    {
+        return $this->favoriteLibrary;
+    }
+
+    public function setFavoriteLibrary(?string $favoriteLibrary): self
+    {
+        $this->favoriteLibrary = $favoriteLibrary;
 
         return $this;
     }

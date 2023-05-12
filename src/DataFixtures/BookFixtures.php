@@ -17,7 +17,7 @@ class BookFixtures extends Fixture
         $book1->setAuthor('Helena Fox');
         $book1->setGenre('Fiction');
         $book1->setId(1);
-        $book1->setIsbn(978-1471403989);
+        $book1->setIsbn(9781471403989);
 
         $rating1 = new Rating();
         $rating1->setBook($book1);
@@ -42,7 +42,7 @@ class BookFixtures extends Fixture
         $book2->setAuthor('E. Lockhart');
         $book2->setGenre('Fiction');
         $book2->setId(2);
-        $book2->setIsbn(978-1471403989);
+        $book2->setIsbn(9781471403989);
 
         $rating3 = new Rating();
         $rating3->setBook($book2);

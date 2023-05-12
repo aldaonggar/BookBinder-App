@@ -49,7 +49,7 @@ class LabelFixtures extends Fixture
 
         $label8 = new Label();
         $label8->setLabelName('Non-fiction');
-        $label8->setLabelName(8);
+        $label8->setId(8);
         $manager->persist($label8);
 
         $label9 = new Label();
