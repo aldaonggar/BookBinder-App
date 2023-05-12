@@ -6,9 +6,8 @@
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>a22web35</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">

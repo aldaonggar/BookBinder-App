@@ -21,7 +21,7 @@ usersettings:
     controller: App\Controller\BookBinderController::renderUserSettings
 
 home:
-    path: /home
+    path: /
     controller: App\Controller\BookBinderController::renderHomepage
 
 register:
