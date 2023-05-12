@@ -28,8 +28,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
+
+    #[ORM\Column(length: 25, nullable: true)]
+    private ?string $sex = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $favoriteLibrary = null;
 
     #[ORM\Column]
     private array $roles = [];
@@ -54,6 +66,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
     }
 
     public function getFirstname(): ?string
@@ -97,9 +114,46 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->birthday;
     }
 
-    public function setBirthday(?\DateTimeInterface $birthday): self
+    public function setBirthday(?string $birthday): self
     {
-        $this->birthday = $birthday;
+        $date = new \DateTimeImmutable($birthday.' 00:00:00');
+        $this->birthday = $date;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getSex(): ?string
+    {
+        return $this->sex;
+    }
+
+    public function setSex(?string $sex): self
+    {
+        $this->sex = $sex;
+
+        return $this;
+    }
+
+    public function getFavoriteLibrary(): ?string
+    {
+        return $this->favoriteLibrary;
+    }
+
+    public function setFavoriteLibrary(?string $favoriteLibrary): self
+    {
+        $this->favoriteLibrary = $favoriteLibrary;
 
         return $this;
     }

@@ -1,0 +1,250 @@
+Index: src/Repository/UserRepository.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Repository;\r\n\r\nuse App\\Entity\\User;\r\nuse Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository;\r\nuse Doctrine\\Persistence\\ManagerRegistry;\r\n\r\n/**\r\n * @extends ServiceEntityRepository<User>\r\n *\r\n * @method User|null find($id, $lockMode = null, $lockVersion = null)\r\n * @method User|null findOneBy(array $criteria, array $orderBy = null)\r\n * @method User[]    findAll()\r\n * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)\r\n */\r\nclass UserRepository extends ServiceEntityRepository\r\n{\r\n    public function __construct(ManagerRegistry $registry)\r\n    {\r\n        parent::__construct($registry, User::class);\r\n    }\r\n\r\n    public function save(User $entity, bool $flush = false): void\r\n    {\r\n        $this->getEntityManager()->persist($entity);\r\n\r\n        if ($flush) {\r\n            $this->getEntityManager()->flush();\r\n        }\r\n    }\r\n\r\n    public function remove(User $entity, bool $flush = false): void\r\n    {\r\n        $this->getEntityManager()->remove($entity);\r\n\r\n        if ($flush) {\r\n            $this->getEntityManager()->flush();\r\n        }\r\n    }\r\n\r\n//    /**\r\n//     * @return User[] Returns an array of User objects\r\n//     */\r\n//    public function findByExampleField($value): array\r\n//    {\r\n//        return $this->createQueryBuilder('u')\r\n//            ->andWhere('u.exampleField = :val')\r\n//            ->setParameter('val', $value)\r\n//            ->orderBy('u.id', 'ASC')\r\n//            ->setMaxResults(10)\r\n//            ->getQuery()\r\n//            ->getResult()\r\n//        ;\r\n//    }\r\n\r\n//    public function findOneBySomeField($value): ?User\r\n//    {\r\n//        return $this->createQueryBuilder('u')\r\n//            ->andWhere('u.exampleField = :val')\r\n//            ->setParameter('val', $value)\r\n//            ->getQuery()\r\n//            ->getOneOrNullResult()\r\n//        ;\r\n//    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Repository/UserRepository.php b/src/Repository/UserRepository.php
+--- a/src/Repository/UserRepository.php	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/src/Repository/UserRepository.php	(date 1683285558287)
+@@ -39,6 +39,23 @@
+         }
+     }
+ 
++    public function findBooksWithSameLabelAsUser(int $userId,): array
++    {
++        $conn = $this->getEntityManager()->getConnection();
++
++        $sql = 'SELECT b.*
++                FROM book b
++                INNER JOIN label_book l_b 
++                ON b.id = l_b.book_id
++                INNER JOIN user_label
++                ON l_b.label_id = user_label.label_id 
++                WHERE user_label.user_id = :id';
++        $stmt = $conn->prepare($sql);
++        $resultSet = $stmt->executeQuery(['id' => $userId]);
++
++        return $resultSet->fetchAllAssociative();
++    }
++
+ //    /**
+ //     * @return User[] Returns an array of User objects
+ //     */
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-223.8617.56\">\r\n    <data-source name=\"a22web35\" uuid=\"168d8eee-1ec9-45ee-adc8-5f2416245d20\">\r\n      <database-info product=\"MySQL\" version=\"8.0.30\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)\" dbms=\"MYSQL\" exact-version=\"8.0.30\" exact-driver-version=\"8.0\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"exact\" quoted-identifiers=\"exact\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>a22web35</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"a22web35\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/.idea/dataSources.local.xml	(date 1683285559131)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-223.8617.56">
++  <component name="dataSourceStorageLocal" created-in="IU-221.5787.30">
+     <data-source name="a22web35" uuid="168d8eee-1ec9-45ee-adc8-5f2416245d20">
+       <database-info product="MySQL" version="8.0.30" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.30" exact-driver-version="8.0">
+         <extra-name-characters>#@</extra-name-characters>
+Index: .env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># In all environments, the following files are loaded if they exist,\r\n# the latter taking precedence over the former:\r\n#\r\n#  * .env                contains default values for the environment variables needed by the app\r\n#  * .env.local          uncommitted file with local overrides\r\n#  * .env.$APP_ENV       committed environment-specific defaults\r\n#  * .env.$APP_ENV.local uncommitted environment-specific overrides\r\n#\r\n# Real environment variables win over .env files.\r\n#\r\n# DO NOT DEFINE PRODUCTION SECRETS IN THIS FILE NOR IN ANY OTHER COMMITTED FILES.\r\n# https://symfony.com/doc/current/configuration/secrets.html\r\n#\r\n# Run \"composer dump-env prod\" to compile .env files for production use (requires symfony/flex >=1.2).\r\n# https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration\r\n\r\n###> symfony/framework-bundle ###\r\nAPP_ENV=dev\r\nAPP_SECRET=9afd8cadc16f73a016fb28df5995b9f2\r\n###< symfony/framework-bundle ###\r\nDATABASE_URL=\"mysql://a22web35:V4wWN3ix@mysql.studev.groept.be:3306/a22web35?serverVersion=8&charset=utf8mb4\"\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.env b/.env
+--- a/.env	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/.env	(date 1683285593685)
+@@ -18,5 +18,15 @@
+ APP_ENV=dev
+ APP_SECRET=9afd8cadc16f73a016fb28df5995b9f2
+ ###< symfony/framework-bundle ###
++
++###> doctrine/doctrine-bundle ###
++# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
++# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
++#
++# DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
++ DATABASE_URL="mysql://a22web35:V4wWN3ix@mysql.studev.groept.be:3306/a22web35?serverVersion=8&charset=utf8mb4"
++# DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=15&charset=utf8"
++###< doctrine/doctrine-bundle ###
++
+ DATABASE_URL="mysql://a22web35:V4wWN3ix@mysql.studev.groept.be:3306/a22web35?serverVersion=8&charset=utf8mb4"
+ 
+Index: src/Controller/BookBinderController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Controller;\r\n\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\n\r\nclass BookBinderController extends AbstractController\r\n{\r\n//    /**\r\n//     * @Route(\"/booklist.html.twig\")\r\n//     */\r\n// comment test\r\n    public function renderBookList(){\r\n        return $this->render('booklist.html.twig');\r\n    }\r\n\r\n    public function renderBook(){\r\n        return $this->render('book.html.twig');\r\n    }\r\n\r\n    public function renderPerson(){\r\n        return $this->render('person.html.twig');\r\n    }\r\n\r\n    public function renderUserSettings(){\r\n        return $this->render('usersettings.html.twig');\r\n    }\r\n\r\n    public function renderHomepage(){\r\n        return $this->render('homepage.html.twig');\r\n    }\r\n\r\n    public function renderLogin(){\r\n        return $this->render('login.html.twig');\r\n    }\r\n\r\n    public function renderRegister(){\r\n        return $this->render('register.html.twig');\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Controller/BookBinderController.php b/src/Controller/BookBinderController.php
+--- a/src/Controller/BookBinderController.php	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/src/Controller/BookBinderController.php	(date 1683285593699)
+@@ -2,9 +2,12 @@
+ 
+ namespace App\Controller;
+ 
++use App\Entity\User;
++use App\Repository\UserRepository;
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+ use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\Routing\Annotation\Route;
++use Symfony\Component\Security\Core\User\UserInterface;
+ 
+ class BookBinderController extends AbstractController
+ {
+Index: .idea/deployment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PublishConfigData\" serverName=\"studev\" remoteFilesAllowedToDisappearOnAutoupload=\"false\" confirmBeforeUploading=\"false\">\r\n    <option name=\"confirmBeforeUploading\" value=\"false\" />\r\n    <serverData>\r\n      <paths name=\"student@raspberrypi.local:22\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n          <excludedPaths>\r\n            <excludedPath local=\"true\" path=\"$PROJECT_DIR$/var\" />\r\n            <excludedPath local=\"true\" path=\"$PROJECT_DIR$/vendor\" />\r\n          </excludedPaths>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (2)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (3)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (4)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (5)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (6)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"student@raspberrypi.local:22 (7)\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n      <paths name=\"studev\">\r\n        <serverdata>\r\n          <mappings>\r\n            <mapping local=\"$PROJECT_DIR$\" web=\"/\" />\r\n          </mappings>\r\n        </serverdata>\r\n      </paths>\r\n    </serverData>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deployment.xml b/.idea/deployment.xml
+--- a/.idea/deployment.xml	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/.idea/deployment.xml	(date 1683285754566)
+@@ -35,27 +35,6 @@
+           </mappings>
+         </serverdata>
+       </paths>
+-      <paths name="student@raspberrypi.local:22 (5)">
+-        <serverdata>
+-          <mappings>
+-            <mapping local="$PROJECT_DIR$" web="/" />
+-          </mappings>
+-        </serverdata>
+-      </paths>
+-      <paths name="student@raspberrypi.local:22 (6)">
+-        <serverdata>
+-          <mappings>
+-            <mapping local="$PROJECT_DIR$" web="/" />
+-          </mappings>
+-        </serverdata>
+-      </paths>
+-      <paths name="student@raspberrypi.local:22 (7)">
+-        <serverdata>
+-          <mappings>
+-            <mapping local="$PROJECT_DIR$" web="/" />
+-          </mappings>
+-        </serverdata>
+-      </paths>
+       <paths name="studev">
+         <serverdata>
+           <mappings>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"eb9002e2-75b1-432b-9932-32d4a77d8622\" name=\"Changes\" comment=\"fixed composer issues\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/deployment.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/deployment.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/sshConfigs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/sshConfigs.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/config/routes.yaml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/config/routes.yaml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n    <execution>\r\n      <phar pharPath=\"$PROJECT_DIR$/composer_2.phar\" interpreterId=\"371939bf-8ca3-4311-9120-86292a63f3e2\" />\r\n    </execution>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpDebugGeneral\" listening_started=\"true\" />\r\n  <component name=\"PhpServers\">\r\n    <servers>\r\n      <server host=\"localhost\" id=\"fdac117e-d4a8-41f9-b76d-d2f2f030cdf5\" name=\"localhost\" port=\"8080\" />\r\n      <server host=\"localhost\" id=\"675bb680-d037-4f99-8d9f-2a4bfc719787\" name=\"localhost (1)\" port=\"88\" />\r\n    </servers>\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"PHP\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/runtime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/deprecations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OjjLxkrTszGeUOujk0A6c50Oyo\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,\r\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/yeska/Documents/second year/first sem/a22web35/var&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"bookbinder\" type=\"PhpBuiltInWebServerConfigurationType\" factoryName=\"PHP Built-in Web Server\" document_root=\"$PROJECT_DIR$/public\" port=\"88\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"eb9002e2-75b1-432b-9932-32d4a77d8622\" name=\"Changes\" comment=\"\" />\r\n      <created>1682080832620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682080832620</updated>\r\n      <workItem from=\"1682080833849\" duration=\"4748000\" />\r\n      <workItem from=\"1682686040107\" duration=\"579000\" />\r\n      <workItem from=\"1682692384168\" duration=\"3299000\" />\r\n      <workItem from=\"1682696178322\" duration=\"5606000\" />\r\n      <workItem from=\"1682963814942\" duration=\"1061000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"fixed composer issues\">\r\n      <created>1682698806178</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682698806178</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"start of the database\" />\r\n    <MESSAGE value=\"need to commit for pull\" />\r\n    <MESSAGE value=\"fixed composer issues\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fixed composer issues\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4cfdec081f90282bac42f5c51c58e53ad70a52f3)
++++ b/.idea/workspace.xml	(date 1683286174112)
+@@ -4,11 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="fixed composer issues">
++    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="Added properties to tables label, library and user">
++      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_04_2023_14_59__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -18,7 +22,7 @@
+   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+     <execution>
+-      <phar pharPath="$PROJECT_DIR$/composer_2.phar" interpreterId="371939bf-8ca3-4311-9120-86292a63f3e2" />
++      <phar pharPath="$PROJECT_DIR$/composer_3.phar" interpreterId="ca45b030-6e64-4082-b97c-6bf9c810782e" />
+     </execution>
+   </component>
+   <component name="Git.Settings">
+@@ -31,10 +35,9 @@
+   <component name="PhpServers">
+     <servers>
+       <server host="localhost" id="fdac117e-d4a8-41f9-b76d-d2f2f030cdf5" name="localhost" port="8080" />
+-      <server host="localhost" id="675bb680-d037-4f99-8d9f-2a4bfc719787" name="localhost (1)" port="88" />
+     </servers>
+   </component>
+-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
++  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
+     <include_path>
+       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+@@ -111,19 +114,14 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yeska/Documents/second year/first sem/a22web35/var&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/KULEUVEN/SoftwareEngineering/BookBinder/a22web35/public&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.composer&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+   &quot;keyToStringList&quot;: {
+@@ -147,18 +145,7 @@
+       <updated>1682080832620</updated>
+       <workItem from="1682080833849" duration="4748000" />
+       <workItem from="1682686040107" duration="579000" />
+-      <workItem from="1682692384168" duration="3299000" />
+-      <workItem from="1682696178322" duration="5606000" />
+-      <workItem from="1682963814942" duration="1061000" />
+     </task>
+-    <task id="LOCAL-00001" summary="fixed composer issues">
+-      <created>1682698806178</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1682698806178</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -175,7 +162,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="origin/master" />
++                        <option value="origin/develop" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -189,9 +176,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="start of the database" />
+-    <MESSAGE value="need to commit for pull" />
+-    <MESSAGE value="fixed composer issues" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fixed composer issues" />
++    <option name="LAST_COMMIT_MESSAGE" value="start of the database" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
