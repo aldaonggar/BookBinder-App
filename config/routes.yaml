@@ -13,16 +13,12 @@ book:
     controller: App\Controller\BookBinderController::renderBook
 
 person:
-    path: /person/{id}
+    path: /person
     controller: App\Controller\BookBinderController::renderPerson
 
 usersettings:
-    path: /usersettings/{id}
+    path: /usersettings
     controller: App\Controller\BookBinderController::renderUserSettings
-
-editUserSettings:
-    path: /editUserSettings/[{id}
-    controller: App\Controller\BookBinderController::userSettings
 
 home:
     path: /
@@ -39,3 +35,7 @@ register:
 myprofile:
     path: /myprofile
     controller: App\Controller\BookBinderController::renderMyprofile
+
+libraries:
+    path: /libraries
+    controller: App\Controller\BookBinderController::renderLibraries
