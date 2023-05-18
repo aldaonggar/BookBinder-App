@@ -28,9 +28,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $email = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
 
@@ -56,8 +53,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *      message="Your password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
      * )
      */
-    #[ORM\Column]
-    private ?string $password = null;
+
 
 
     #[ORM\Column(type: 'boolean')]
@@ -118,18 +114,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $date = new \DateTimeImmutable($birthday.' 00:00:00');
         $this->birthday = $date;
-
-        return $this;
-    }
-
-    public function getPassword(): ?string
-    {
-        return $this->password;
-    }
-
-    public function setPassword(string $password): self
-    {
-        $this->password = $password;
 
         return $this;
     }

@@ -13,10 +13,10 @@
                 <img src="https://via.placeholder.com/200" class="img-fluid rounded-circle" alt="Person's Picture">
             </div>
             <div class="col-md-8">
-                <h2>{{ user['firstName'] }} {{ user['lastName'] }}</h2>
-                <p><strong>Gender:</strong> {{ user['sex'] }}</p>
-                <p><strong>Age:</strong> {{ user['age'] }}</p>
-                <p><strong>Favorite Library:</strong> {{ user['favoriteLibrary'] }} </p>
+                <h2>{{ app.user.firstname() }} {{ app.user.lastname() }}</h2>
+                <p><strong>Gender:</strong> {{ app.user.sex() }}</p>
+                <p><strong>Age:</strong> {{ app.user.birthday()|date('Y-m-d') }}</p>
+                <p><strong>Favorite Library:</strong> {{ app.user.favoriteLibrary() }} </p>
             </div>
         </div>
 
@@ -24,9 +24,9 @@
             <div class="col-12">
                 <h3>Books of Interest</h3>
                 <ul class="list-group">
-                    {% for book in user['favoriteBooks']|split(',') %}
+                    {#{% for book in app.user.favoriteBooks()|split(',') %}
                         <li class="list-group-item">{{ book }}</li>
-                    {% endfor %}
+                    {% endfor %}#}
                 </ul>
             </div>
         </div>

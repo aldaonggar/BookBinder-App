@@ -33,6 +33,12 @@ class BookBinderController extends AbstractController
         return $this->render('person.html.twig');
     }
 
+    #[Route('/myprofile', name: 'myprofile')]
+    public function renderMyProfile()
+    {
+        return $this->render('myprofile.html.twig');
+    }
+
     #[Route('/usersettings', name: 'usersettings')]
     public function renderUserSettings()
     {
