@@ -5,29 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="commit before pull">
-      <change afterPath="$PROJECT_DIR$/tests/Controller/RegistrationControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Form/RegistrationFormTypeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/a22web35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/a22web35.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/RegistrationControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Controller/RegistrationControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Form/RegistrationFormTypeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Form/RegistrationFormTypeTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" showQuickActionsPanel="false" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer_2.phar" interpreterId="38891663-e4c9-4470-abfb-935304f6b6d8" />
+      <phar pharPath="$PROJECT_DIR$/composer_2.phar" interpreterId="48a6d343-8adf-46b4-8700-717658cac8b6" />
     </execution>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -50,7 +50,7 @@
       <server host="localhost" id="675bb680-d037-4f99-8d9f-2a4bfc719787" name="localhost (1)" port="88" />
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2.3">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -160,6 +160,12 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/dbrekelmans/bdi" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/panther" />
     </include_path>
   </component>
   <component name="ProjectId" id="2OjjLxkrTszGeUOujk0A6c50Oyo" />
@@ -196,6 +202,10 @@
   }
 }]]></component>
   <component name="RunManager" selected="PHP Built-in Web Server.bookbinder">
+    <configuration name="LoginControllerTest.testIndex" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Controller\LoginControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Controller/LoginControllerTest.php" method="testIndex" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="RegistrationFormTypeTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="App\Tests\Form\RegistrationFormTypeTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Form/RegistrationFormTypeTest.php" scope="Class" />
       <method v="2" />
@@ -203,23 +213,24 @@
     <configuration name="UnitTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <CommandLine>
         <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 8.2.3" />
+          <option name="interpreterName" value="PHP 8.1" />
         </PhpTestInterpreterSettings>
       </CommandLine>
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
       <method v="2" />
     </configuration>
-    <configuration name="bookbinder" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" port="8080">
+    <configuration name="bookbinder" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" port="88">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="PHP Built-in Web Server.bookbinder" />
       <item itemvalue="PHPUnit.UnitTest" />
+      <item itemvalue="PHPUnit.LoginControllerTest.testIndex" />
       <item itemvalue="PHPUnit.RegistrationFormTypeTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.RegistrationFormTypeTest" />
+        <item itemvalue="PHPUnit.LoginControllerTest.testIndex" />
       </list>
     </recent_temporary>
   </component>
@@ -246,6 +257,13 @@
       <workItem from="1683894585500" duration="316000" />
       <workItem from="1683894950669" duration="3337000" />
       <workItem from="1683899895371" duration="6169000" />
+      <workItem from="1684159734023" duration="71000" />
+      <workItem from="1684159820526" duration="196000" />
+      <workItem from="1684160040912" duration="35000" />
+      <workItem from="1684160088838" duration="3701000" />
+      <workItem from="1684492077741" duration="63000" />
+      <workItem from="1684496229074" duration="1102000" />
+      <workItem from="1684497359891" duration="1467000" />
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -288,8 +306,5 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/a22web35@UnitTest.xml" NAME="UnitTest Coverage Results" MODIFIED="1683899131412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
