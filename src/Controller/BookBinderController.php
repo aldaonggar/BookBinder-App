@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,11 +15,14 @@ class BookBinderController extends AbstractController
 //     * @Route("/booklist.html.twig")
 //     */
 // comment test
-    public function renderBookList($page){
-        $bookGenerator = new BookGeneratorForTests($page);
+    public function renderBookList(EntityManagerInterface $entityManager, int $page){
+        $repository = $entityManager->getRepository(Book::class);
+        $books = $repository->get20Books($page);
+
+        //$bookGenerator = new BookGeneratorForTests($page);
         $numberOfPages = 3;
         return $this->render('booklist.html.twig', [
-            'bookArray'=>$bookGenerator->getBookArray(),
+            'bookArray'=>$books,
             'numberOfPages'=> $numberOfPages,
             'currentPage'=>$page
         ]);
@@ -31,7 +35,9 @@ class BookBinderController extends AbstractController
         return new Response($stringResponse);*/
     }
 
-    public function renderBook($id){
+    public function renderBook(EntityManagerInterface $entityManager, int $id){
+
+
         $bookGenerator = new BookGeneratorForTests($id/20);
         $bookArray = $bookGenerator->getBookArray();
         $bookForPage = null;

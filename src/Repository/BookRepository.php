@@ -39,6 +39,14 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
+    public function get20Books(int $page): array{
+        $qb = $this->createQueryBuilder('b')
+            ->setMaxResults(20);
+
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */

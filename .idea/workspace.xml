@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="each book in booklist page goes to appropriate book page (still using book generator)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_05_2023_13_32_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_05_2023_13_32__Changes_.xml" beforeDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="update book entity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExtraClasses/BookGeneratorForTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExtraClasses/BookGeneratorForTests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booklist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booklist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +198,7 @@
       <workItem from="1682692384168" duration="3299000" />
       <workItem from="1682696178322" duration="5606000" />
       <workItem from="1682963814942" duration="1061000" />
-      <workItem from="1684496871735" duration="691000" />
+      <workItem from="1684496871735" duration="3157000" />
     </task>
     <task id="LOCAL-00001" summary="fixed composer issues">
       <created>1682698806178</created>
@@ -254,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683904297081</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update book entity">
+      <created>1684502063097</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684502063097</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +294,8 @@
     <MESSAGE value="create book generator funciton for place holder" />
     <MESSAGE value="display books from BookGeneratorForTests.php in the booklist page" />
     <MESSAGE value="each book in booklist page goes to appropriate book page (still using book generator)" />
-    <option name="LAST_COMMIT_MESSAGE" value="each book in booklist page goes to appropriate book page (still using book generator)" />
+    <MESSAGE value="update book entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="update book entity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
