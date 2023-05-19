@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="update book entity">
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="book list depends on db now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +196,7 @@
       <workItem from="1682692384168" duration="3299000" />
       <workItem from="1682696178322" duration="5606000" />
       <workItem from="1682963814942" duration="1061000" />
-      <workItem from="1684496871735" duration="3157000" />
+      <workItem from="1684496871735" duration="4434000" />
     </task>
     <task id="LOCAL-00001" summary="fixed composer issues">
       <created>1682698806178</created>
@@ -256,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684502063097</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="book list depends on db now">
+      <created>1684507132934</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684507132934</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +300,8 @@
     <MESSAGE value="display books from BookGeneratorForTests.php in the booklist page" />
     <MESSAGE value="each book in booklist page goes to appropriate book page (still using book generator)" />
     <MESSAGE value="update book entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="update book entity" />
+    <MESSAGE value="book list depends on db now" />
+    <option name="LAST_COMMIT_MESSAGE" value="book list depends on db now" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
