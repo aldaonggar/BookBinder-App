@@ -1,0 +1,28 @@
+Index: src/Controller/LoginController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Controller;\r\n\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\nuse Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\r\n\r\nclass LoginController extends AbstractController\r\n{\r\n    #[Route('/login', name: 'app_login')]\r\n    public function index(AuthenticationUtils $authenticationUtils): Response\r\n    {\r\n        // get the login error if there is one\r\n        $error = $authenticationUtils->getLastAuthenticationError();\r\n        // last username entered by the user\r\n        $lastUsername = $authenticationUtils->getLastUsername();\r\n\r\n        return $this->render('login/index.html.twig', [\r\n            'last_username' => $lastUsername,\r\n            'error'         => $error,\r\n        ]);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Controller/LoginController.php b/src/Controller/LoginController.php
+--- a/src/Controller/LoginController.php	
++++ b/src/Controller/LoginController.php	
+@@ -6,9 +6,17 @@
+ use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\Routing\Annotation\Route;
+ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
++use Twig\Environment;
+ 
+ class LoginController extends AbstractController
+ {
++    private $twig;
++
++    public function __construct(Environment $twig)
++    {
++        $this->twig = $twig;
++    }
++
+     #[Route('/login', name: 'app_login')]
+     public function index(AuthenticationUtils $authenticationUtils): Response
+     {
