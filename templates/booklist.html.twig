@@ -44,7 +44,7 @@
                         <li>...</li>
                     {% endif %}
                 {% else %}
-                    <li><a href="">{{ i }}</a></li>
+                    <li><a href="{{ path('listofbooks', {'page': i}) }}">{{ i }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

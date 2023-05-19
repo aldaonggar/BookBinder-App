@@ -5,7 +5,7 @@ controllers:
     type: attribute
 
 listofbooks:
-    path: /booklist
+    path: /booklist/{page}
     controller: App\Controller\BookBinderController::renderBookList
 
 book:

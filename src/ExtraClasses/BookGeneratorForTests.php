@@ -8,9 +8,9 @@ class BookGeneratorForTests
 {
     public array $bookArray;
 
-    public function __construct() {
+    public function __construct($pageNumber) {
         $bookArray = array();
-        for($i = 0; $i<20; $i ++){
+        for($i = ($pageNumber-1)*20; $i<(20+($pageNumber-1)*20); $i ++){
             $book = new Book();
             $title = 'title'.$i;
             $book->setTitle($title);

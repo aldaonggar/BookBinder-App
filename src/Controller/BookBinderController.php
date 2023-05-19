@@ -14,12 +14,13 @@ class BookBinderController extends AbstractController
 //     * @Route("/booklist.html.twig")
 //     */
 // comment test
-    public function renderBookList(){
-        $bookGenerator = new BookGeneratorForTests();
-        $numberOfPages = 9;
+    public function renderBookList($page){
+        $bookGenerator = new BookGeneratorForTests($page);
+        $numberOfPages = 3;
         return $this->render('booklist.html.twig', [
             'bookArray'=>$bookGenerator->getBookArray(),
-            'numberOfPages'=> $numberOfPages
+            'numberOfPages'=> $numberOfPages,
+            'currentPage'=>$page
         ]);
 
         /*
@@ -31,7 +32,7 @@ class BookBinderController extends AbstractController
     }
 
     public function renderBook($id){
-        $bookGenerator = new BookGeneratorForTests();
+        $bookGenerator = new BookGeneratorForTests($id/20);
         $bookArray = $bookGenerator->getBookArray();
         $bookForPage = null;
         foreach ($bookArray as $book){

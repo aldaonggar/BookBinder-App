@@ -33,6 +33,9 @@ class Book
     #[ORM\ManyToMany(targetEntity: Label::class, mappedBy: 'bookLabel')]
     private Collection $labels;
 
+    #[ORM\Column(length: 10000, nullable: true)]
+    private ?string $synopsis = null;
+
     public function __construct()
     {
         $this->ratings = new ArrayCollection();
@@ -145,6 +148,18 @@ class Book
         if ($this->labels->removeElement($label)) {
             $label->removeBookLabel($this);
         }
+
+        return $this;
+    }
+
+    public function getSynopsis(): ?string
+    {
+        return $this->synopsis;
+    }
+
+    public function setSynopsis(?string $synopsis): self
+    {
+        $this->synopsis = $synopsis;
 
         return $this;
     }
