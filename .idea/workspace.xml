@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="LoginController Unit testing done. ;)">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Form/ChangePasswordFormTypeTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +252,7 @@
       <workItem from="1684160088838" duration="3701000" />
       <workItem from="1684492077741" duration="63000" />
       <workItem from="1684496229074" duration="1102000" />
-      <workItem from="1684497359891" duration="1973000" />
+      <workItem from="1684497359891" duration="4538000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -261,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684498920162</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="LoginController Unit testing done. ;)">
+      <created>1684499557595</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684499557595</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +280,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -285,6 +297,11 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+        <entry key="f63717c5-3bd5-4d7a-88ab-5bdc8d693561">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
