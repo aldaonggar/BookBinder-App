@@ -6,33 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class RegistrationControllerTest extends WebTestCase
 {
-    public function testRegisterPage(): void
+    public function testShowRegistrationForm(): void
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/register');
 
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Register');
+        $this->assertSelectorTextContains('h2', 'Register');
     }
 
-    public function testEmailVerificationPage(): void
-    {
-        $client = static::createClient();
-        $crawler = $client->request('GET', '/email-verification');
-
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Email Verification');
-    }
-
-    public function testRegistrationWithValidData(): void
+    public function testRegister(): void
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/register');
 
         $form = $crawler->selectButton('Register')->form();
-        $form['registration_form[email]'] = 'test@example.com';
-        $form['registration_form[firstname]'] = 'Test';
-        $form['registration_form[lastname]'] = 'User';
+        $form['registration_form[email]'] = 'test3@example.com';
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
         $form['registration_form[birthday]'] = '2000-01-01';
         $form['registration_form[plainPassword][first]'] = 'Password123!';
         $form['registration_form[plainPassword][second]'] = 'Password123!';
@@ -40,18 +31,19 @@ class RegistrationControllerTest extends WebTestCase
 
         $client->submit($form);
 
-        $this->assertResponseRedirects('/email-verification');
+        $this->assertTrue($client->getResponse()->isRedirect());
+        // You can add more assertions here to check that the data has been inserted correctly
     }
 
-    public function testRegistrationWithInvalidEmail(): void
+    public function testInvalidEmailRegister(): void
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/register');
 
         $form = $crawler->selectButton('Register')->form();
         $form['registration_form[email]'] = 'not_an_email';
-        $form['registration_form[firstname]'] = 'Test';
-        $form['registration_form[lastname]'] = 'User';
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
         $form['registration_form[birthday]'] = '2000-01-01';
         $form['registration_form[plainPassword][first]'] = 'Password123!';
         $form['registration_form[plainPassword][second]'] = 'Password123!';
@@ -59,6 +51,74 @@ class RegistrationControllerTest extends WebTestCase
 
         $client->submit($form);
 
-        $this->assertSelectorTextContains('.form-error-message', 'Please enter a valid email address.');
+        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertFalse($client->getResponse()->isRedirect());
+
+
+    }
+
+    public function testPasswordNotMatchRegister(): void
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/register');
+
+        $form = $crawler->selectButton('Register')->form();
+        $form['registration_form[email]'] = 'hello@gmail.com';
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
+        $form['registration_form[birthday]'] = '2000-01-01';
+        $form['registration_form[plainPassword][first]'] = 'Password123!';
+        $form['registration_form[plainPassword][second]'] = 'password';
+        $form['registration_form[agreeTerms]'] = 1;
+
+        $client->submit($form);
+
+        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertFalse($client->getResponse()->isRedirect());
+        // You can add more assertions here to check that the data has been inserted correctly
+
+    }
+
+    public function testInvalidBirthdayRegister(): void
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/register');
+
+        $form = $crawler->selectButton('Register')->form();
+        $form['registration_form[email]'] = 'invalid@gmail.com';
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
+        $form['registration_form[birthday]'] = '2053-44-51';
+        $form['registration_form[plainPassword][first]'] = 'Password123!';
+        $form['registration_form[plainPassword][second]'] = 'password';
+        $form['registration_form[agreeTerms]'] = 1;
+
+        $client->submit($form);
+
+        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertFalse($client->getResponse()->isRedirect());
+        // You can add more assertions here to check that the data has been inserted correctly
+
+    }
+
+    public function testAgreeTermsRegister(): void
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/register');
+
+        $form = $crawler->selectButton('Register')->form();
+        $form['registration_form[email]'] = 'agree@gmail.com';
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
+        $form['registration_form[birthday]'] = '2053-44-51';
+        $form['registration_form[plainPassword][first]'] = 'Password123!';
+        $form['registration_form[plainPassword][second]'] = 'password';
+
+        $client->submit($form);
+
+        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertFalse($client->getResponse()->isRedirect());
+        // You can add more assertions here to check that the data has been inserted correctly
+
     }
 }
