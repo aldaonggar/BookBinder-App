@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="LoginController Unit testing done. ;)">
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Form/ChangePasswordFormTypeTest.php" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="ChangePasswordFormType Unit testing done. ;)">
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Form/ResetPasswordRequestFormTypeTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/a22web35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/a22web35.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password/request.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +158,6 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
       <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
-      <path value="$PROJECT_DIR$/vendor/dbrekelmans/bdi" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
@@ -252,7 +259,7 @@
       <workItem from="1684160088838" duration="3701000" />
       <workItem from="1684492077741" duration="63000" />
       <workItem from="1684496229074" duration="1102000" />
-      <workItem from="1684497359891" duration="4538000" />
+      <workItem from="1684497359891" duration="8248000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -268,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684499557595</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ChangePasswordFormType Unit testing done. ;)">
+      <created>1684502887476</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684502887477</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +329,8 @@
     <MESSAGE value="added libraries page" />
     <MESSAGE value="commit before pull" />
     <MESSAGE value="LoginController Unit testing done. ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginController Unit testing done. ;)" />
+    <MESSAGE value="ChangePasswordFormType Unit testing done. ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChangePasswordFormType Unit testing done. ;)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

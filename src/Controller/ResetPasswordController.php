@@ -39,11 +39,18 @@ class ResetPasswordController extends AbstractController
         $form = $this->createForm(ResetPasswordRequestFormType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            return $this->processSendingPasswordResetEmail(
-                $form->get('email')->getData(),
-                $mailer
-            );
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                return $this->processSendingPasswordResetEmail(
+                    $form->get('email')->getData(),
+                    $mailer
+                );
+            } else {
+                // if the form has errors, add them as flash messages
+                foreach ($form->getErrors(true) as $error) {
+                    $this->addFlash('reset_password_error', $error->getMessage());
+                }
+            }
         }
 
         return $this->render('reset_password/request.html.twig', [
