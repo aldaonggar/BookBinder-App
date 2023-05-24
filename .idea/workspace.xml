@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="ChangePasswordFormType Unit testing done. ;)">
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Form/ResetPasswordRequestFormTypeTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/a22web35.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/a22web35.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="ResetPasswordRequestFormType Unit testing done. ;)">
+      <change afterPath="$PROJECT_DIR$/tests/Functional/Controller/ResetPasswordControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM_[Changes]1/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reset_password/request.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Controller/LoginControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functional/Controller/LoginControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Controller/RegistrationControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Functional/Controller/RegistrationControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +182,7 @@
     &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test__login__registration&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/University documents/Year 3 Semester 2/a22web35/phpunit.xml.dist&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -188,7 +190,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -198,14 +200,6 @@
   }
 }</component>
   <component name="RunManager" selected="PHP Built-in Web Server.bookbinder">
-    <configuration name="LoginControllerTest.testIndex" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Unit\Controller\LoginControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Controller/LoginControllerTest.php" method="testIndex" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RegistrationFormTypeTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="App\Tests\Form\RegistrationFormTypeTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Form/RegistrationFormTypeTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
     <configuration name="UnitTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -221,14 +215,7 @@
     <list>
       <item itemvalue="PHP Built-in Web Server.bookbinder" />
       <item itemvalue="PHPUnit.UnitTest" />
-      <item itemvalue="PHPUnit.LoginControllerTest.testIndex" />
-      <item itemvalue="PHPUnit.RegistrationFormTypeTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHPUnit.LoginControllerTest.testIndex" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -259,7 +246,13 @@
       <workItem from="1684160088838" duration="3701000" />
       <workItem from="1684492077741" duration="63000" />
       <workItem from="1684496229074" duration="1102000" />
-      <workItem from="1684497359891" duration="8248000" />
+      <workItem from="1684497359891" duration="9011000" />
+      <workItem from="1684600842231" duration="3845000" />
+      <workItem from="1684607726571" duration="111000" />
+      <workItem from="1684607850266" duration="3444000" />
+      <workItem from="1684766361068" duration="2811000" />
+      <workItem from="1684866678514" duration="2523000" />
+      <workItem from="1684944007127" duration="3071000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -282,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684502887477</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ResetPasswordRequestFormType Unit testing done. ;)">
+      <created>1684506353707</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684506353707</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +330,8 @@
     <MESSAGE value="commit before pull" />
     <MESSAGE value="LoginController Unit testing done. ;)" />
     <MESSAGE value="ChangePasswordFormType Unit testing done. ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChangePasswordFormType Unit testing done. ;)" />
+    <MESSAGE value="ResetPasswordRequestFormType Unit testing done. ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ResetPasswordRequestFormType Unit testing done. ;)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
