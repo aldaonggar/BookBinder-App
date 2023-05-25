@@ -21,8 +21,8 @@ class Book
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $author = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $isbn = null;
+    #[ORM\Column(length: 30, nullable: true)]
+    private ?string $isbn = null;
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $genre = null;
@@ -35,6 +35,9 @@ class Book
 
     #[ORM\Column(length: 10000, nullable: true)]
     private ?string $synopsis = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $cover = null;
 
     public function __construct()
     {
@@ -170,5 +173,17 @@ class Book
     public function setId(?int $id): void
     {
         $this->id = $id;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(?string $cover): self
+    {
+        $this->cover = $cover;
+
+        return $this;
     }
 }
