@@ -31,22 +31,37 @@
             {% endfor %}
 
             <!-- Add more book cards with descriptions as needed -->
+        {#
+            <ul>
+                {% for i in range(1, numberOfPages) %}
+
+                    {% if numberOfPages > 3%}
+                        {% if i < 3 %}
+                            <li><a href="">{{ i }}</a></li>
+                        {% elseif i == numberOfPages %}
+                            <li><a href="">{{ i }}</a></li>
+                        {% elseif i == 3 %}
+                            <li>...</li>
+                        {% endif %}
+                    {% else %}
+                        <li><a href="{{ path('listofbooks', {'page': i}) }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        #}
         </div>
         <ul>
-            {% for i in range(1, numberOfPages) %}
-
-                {% if numberOfPages > 3%}
-                    {% if i < 3 %}
-                        <li><a href="">{{ i }}</a></li>
-                    {% elseif i == numberOfPages %}
-                        <li><a href="">{{ i }}</a></li>
-                    {% elseif i == 3 %}
-                        <li>...</li>
-                    {% endif %}
-                {% else %}
-                    <li><a href="{{ path('listofbooks', {'page': i}) }}">{{ i }}</a></li>
-                {% endif %}
-            {% endfor %}
+            {% if currentPage != 1 %}
+                <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
+                <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
+                <li>page {{ currentPage }}/{{ numberOfPages }}</li>
+            {% elseif currentPage == numberOfPages %}
+                <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
+                <li>page {{ numberOfPages }}/{{ numberOfPages }}</li>
+            {% elseif currentPage <= 1 %}
+                <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
+                <li>page 1/{{ numberOfPages }}</li>
+            {% endif %}
         </ul>
     </div>
 {% endblock %}

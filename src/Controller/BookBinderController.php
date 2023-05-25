@@ -17,10 +17,10 @@ class BookBinderController extends AbstractController
 // comment test
     public function renderBookList(EntityManagerInterface $entityManager, int $page){
         $repository = $entityManager->getRepository(Book::class);
-        $books = $repository->get20Books($page);
+        $books = $repository->get21Books($page);
 
         //$bookGenerator = new BookGeneratorForTests($page);
-        $numberOfPages = 3;
+        $numberOfPages = ceil(($repository->getNumberOfBooks())/21);
         return $this->render('booklist.html.twig', [
             'bookArray'=>$books,
             'numberOfPages'=> $numberOfPages,

@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -39,12 +40,23 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
-    public function get20Books(int $page): array{
-        $qb = $this->createQueryBuilder('b')
-            ->setMaxResults(20);
+    public function get21Books(int $page): array{
+        $query = $this->createQueryBuilder('b')
+            ->getQuery();
 
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult(($page-1)*21)
+            ->setMaxResults(21);
+
+        return $paginator->getIterator()->getArrayCopy();
+    }
+
+    public function getNumberOfBooks(): int{
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('COUNT(b)');
         $query = $qb->getQuery();
-        return $query->execute();
+        return (int) $query->getSingleScalarResult();
     }
 
 //    /**
