@@ -39,6 +39,19 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
+    public function getBooksForPage(int $page): array
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->where('20*(:page-1)+1 < b.id < 20*:page')
+            ->setParameter('page', $page)
+        ;
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+
+
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */
