@@ -36,22 +36,11 @@ class BookBinderController extends AbstractController
     }
 
     public function renderBook(EntityManagerInterface $entityManager, int $id){
-
-
-        $bookGenerator = new BookGeneratorForTests($id/20);
-        $bookArray = $bookGenerator->getBookArray();
-        $bookForPage = null;
-        foreach ($bookArray as $book){
-            if ($book->getId() == $id){
-                $bookForPage = $book;
-            }
-        }
-        if ($bookForPage != null){
-            return $this->render('book.html.twig',[
-                'book'=>$bookForPage
-            ]);
-        }
-        return $this->render('book.html.twig');
+        $repository = $entityManager->getRepository(Book::class);
+        $book = $repository->find($id);
+        return $this->render('book.html.twig',[
+            'book' => $book
+        ]);
     }
 
     public function renderPerson(){
