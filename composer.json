@@ -41,7 +41,8 @@
         "symfony/maker-bundle": "*",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "6.2.*",
-        "symfony/web-profiler-bundle": "6.2.*"
+        "symfony/web-profiler-bundle": "6.2.*",
+        "symfony/panther": "*"
     },
     "config": {
         "allow-plugins": {

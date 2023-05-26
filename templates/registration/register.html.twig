@@ -61,8 +61,9 @@
     <div class="form-group">
         {{ form_row(registrationForm.agreeTerms) }}
     </div>
-    <button type="submit" id="register-button" class="register-button" disabled>Register</button> {# Add the "disabled" attribute initially #}
+    <button type="submit" id="register-button" class="register-button">Register</button> {# Add the "disabled" attribute initially #}
     {{ form_end(registrationForm) }}
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -75,7 +76,6 @@
                 }
             });
 
-            // Add event listeners for the password and repeat-password fields
             const password = document.getElementById('registration_form_plainPassword_first');
             const repeatPassword = document.getElementById('registration_form_plainPassword_second');
             const registerButton = document.getElementById('register-button');
@@ -115,11 +115,10 @@
                     passwordIsValid = true;
                 }
 
-                registerButton.disabled = !(passwordsMatch && passwordIsValid);
+                return (passwordsMatch && passwordIsValid);
             }
         });
     </script>
-
     <p class="login-text">Already have an account? <a href="{{ path('login') }}" class="login-button">Log in</a></p>
 </div>
 </body>
