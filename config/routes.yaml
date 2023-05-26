@@ -31,3 +31,7 @@ login:
 register:
     path: /register
     controller: App\Controller\BookBinderController::renderRegister
+
+search:
+    path: /booklist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderBookListSearch
