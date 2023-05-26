@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Functional\Controller;
+namespace App\Tests\Integration\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -19,9 +19,10 @@ class RegistrationControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/register');
+        $email = 'test' . uniqid() . '@example.com';
 
         $form = $crawler->selectButton('Register')->form();
-        $form['registration_form[email]'] = 'testhello5353@gmail.com';
+        $form['registration_form[email]'] = $email;
         $form['registration_form[firstname]'] = 'John';
         $form['registration_form[lastname]'] = 'Doe';
         $form['registration_form[birthday]'] = '2000-01-01';
@@ -252,9 +253,10 @@ class RegistrationControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/register');
+        $email = 'test' . uniqid() . '@example.com';
 
         $form = $crawler->selectButton('Register')->form();
-        $form['registration_form[email]'] = 'correctpassword53@gmail.com';
+        $form['registration_form[email]'] = $email;
         $form['registration_form[firstname]'] = 'Michael';
         $form['registration_form[lastname]'] = 'Scofield';
         $form['registration_form[birthday]'] = '1998-05-05';

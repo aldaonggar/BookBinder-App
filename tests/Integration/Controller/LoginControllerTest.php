@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Functional\Controller;
+namespace App\Tests\Integration\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -10,7 +10,7 @@ class LoginControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/login');
+        $client->request('GET', '/login');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h2', 'Login');
@@ -65,13 +65,28 @@ class LoginControllerTest extends WebTestCase
     public function testLoginWithGoodCredentials()
     {
         $client = static::createClient();
+        $email = 'test' . uniqid() . '@example.com';
+
+        // Request the registration page
+        $crawler = $client->request('GET', '/register');
+
+        // Fill in the registration form
+        $form = $crawler->selectButton('Register')->form();
+        $form['registration_form[email]'] = $email;
+        $form['registration_form[firstname]'] = 'John';
+        $form['registration_form[lastname]'] = 'Doe';
+        $form['registration_form[birthday]'] = '2000-01-01';
+        $form['registration_form[plainPassword][first]'] = 'Password123!';
+        $form['registration_form[plainPassword][second]'] = 'Password123!';
+        $form['registration_form[agreeTerms]'] = 1;
+        $client->submit($form);
 
         $crawler = $client->request('GET', '/login');
 
         // Submit the form with valid credentials
         $form = $crawler->selectButton('Login')->form([
-            '_username' => 'aldaonggarnur7@gmail.com',
-            '_password' => 'Qwerty124*',
+            '_username' => $email,
+            '_password' => 'Password123!',
         ]);
         $client->submit($form);
 
