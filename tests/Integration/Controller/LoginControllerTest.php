@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Functional\Controller;
+namespace App\Tests\Integration\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -10,7 +10,7 @@ class LoginControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/login');
+        $client->request('GET', '/login');
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h2', 'Login');

@@ -38,6 +38,7 @@ security:
         - { path: ^/booklist, roles: PUBLIC_ACCESS }
         - { path: ^/email-verification, roles: PUBLIC_ACCESS }
         - { path: ^/reset-password, roles: PUBLIC_ACCESS }
+        - { path: ^/verify/email, roles: PUBLIC_ACCESS}
         - { path: ^/, roles: ROLE_USER }
 #    role_hierarchy:
  #       ROLE_ADMIN:       ROLE_USER
