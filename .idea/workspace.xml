@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="ResetPasswordRequestFormType Unit testing done. ;)">
-      <change afterPath="$PROJECT_DIR$/tests/Integration/Security/EmailVerifierTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Security/EmailVerifierTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_2_26_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_2_26_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_4_17_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_4_17_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="EmailVerifierTest done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functional/Controller/LoginControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integration/Controller/LoginControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functional/Controller/RegistrationControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integration/Controller/RegistrationControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Functional/Controller/ResetPasswordControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integration/Controller/ResetPasswordControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Integration/Controller/LoginControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integration/Controller/LoginControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +256,7 @@
       <workItem from="1684866678514" duration="2523000" />
       <workItem from="1684944007127" duration="3071000" />
       <workItem from="1685046513505" duration="640000" />
-      <workItem from="1685101235553" duration="3483000" />
+      <workItem from="1685101235553" duration="5654000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -295,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684506353707</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="EmailVerifierTest done">
+      <created>1685105480086</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685105480086</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +342,8 @@
     <MESSAGE value="LoginController Unit testing done. ;)" />
     <MESSAGE value="ChangePasswordFormType Unit testing done. ;)" />
     <MESSAGE value="ResetPasswordRequestFormType Unit testing done. ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ResetPasswordRequestFormType Unit testing done. ;)" />
+    <MESSAGE value="EmailVerifierTest done" />
+    <option name="LAST_COMMIT_MESSAGE" value="EmailVerifierTest done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

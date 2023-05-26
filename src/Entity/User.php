@@ -29,11 +29,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $lastname = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    /**
+     * @Assert\LessThan("-5 years")
+     * @Assert\GreaterThan("-100 years")
+     */
     private ?\DateTimeInterface $birthday = null;
 
     #[ORM\Column]
     private array $roles = [];
 
+    #[ORM\Column]
     /**
      * @Assert\Length(
      *      min = 8,
@@ -44,7 +49,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *      message="Your password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
      * )
      */
-    #[ORM\Column]
     private ?string $password = null;
 
 
