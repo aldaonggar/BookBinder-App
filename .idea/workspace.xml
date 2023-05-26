@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="book list depends on db now">
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/migrations/Version20230524170003.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20230421133426.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20230421134710.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20230426143710.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20230426144638.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booklist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booklist.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dbFixturePoints" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -293,7 +288,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dbFixturePoints" />
+                        <option value="booklist" />
                       </list>
                     </value>
                   </entry>
