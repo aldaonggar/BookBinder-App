@@ -39,7 +39,10 @@ class UserRepository extends ServiceEntityRepository
         }
     }
 
-
+    public function findAllAlphabeticly()
+    {
+        return $this->findBy(array(), array('firstname' => 'ASC'));
+    }
 
 //    /**
 //     * @return User[] Returns an array of User objects
