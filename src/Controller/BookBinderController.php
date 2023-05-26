@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Library;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,6 +17,13 @@ class BookBinderController extends AbstractController
 //     * @Route("/booklist.html.twig")
 //     */
 // comment test
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/booklist', name: 'booklist')]
     public function renderBookList()
     {
@@ -30,19 +39,22 @@ class BookBinderController extends AbstractController
     #[Route('/person', name: 'person')]
     public function renderPerson()
     {
-        return $this->render('person.html.twig');
+        return $this->render('person.html.twig', ['entityManager' => $this->entityManager,]);
     }
 
     #[Route('/myprofile', name: 'myprofile')]
     public function renderMyProfile()
     {
-        return $this->render('myprofile.html.twig');
+        return $this->render('myprofile.html.twig', ['entityManager' => $this->entityManager,]);
     }
 
     #[Route('/usersettings', name: 'usersettings')]
     public function renderUserSettings()
     {
-        return $this->render('usersettings.html.twig');
+        $libraries = $this->entityManager->getRepository(Library::class)->findAll();
+
+        return $this->render('usersettings.html.twig', [
+            'libraries' => $libraries,]);
     }
 
     #[Route('/home', name: 'home')]

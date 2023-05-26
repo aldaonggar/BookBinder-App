@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Library;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +20,7 @@ class UserSettingsController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
+
     /**
      * @Route("/editUserSettings", name="editUserSettings", methods={"POST"})
      */
@@ -28,6 +30,8 @@ class UserSettingsController extends AbstractController
         $userId = $request->request->get('id');
 
         $user = $this->entityManager->getRepository(User::class)->find($userId);
+        $libraries = $this->entityManager->getRepository(Library::class)->findAll();
+
 
         if (!$user) {
             throw $this->createNotFoundException(
@@ -51,6 +55,7 @@ class UserSettingsController extends AbstractController
 //        $user->($favoriteBooks);
         $this->entityManager->flush();
 
-        return $this->redirectToRoute('usersettings');
+        return $this->redirectToRoute('usersettings', [
+            'libraries' => $libraries,]);
     }
 }

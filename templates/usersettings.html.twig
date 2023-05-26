@@ -44,9 +44,15 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="favoriteLibrary">Favorite Library</label>
-                <input type="text" class="form-control" id="favoriteLibrary" name="favoriteLibrary" value="{{ app.user.favoriteLibrary }}">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="favoriteLibrary">Favorite Library</label>
+                    <select class="form-control" id="favoriteLibrary" name="favoriteLibrary">
+                        {% for library in libraries %}
+                            <option value="{{ library.id }}" {% if library.id == app.user.favoriteLibrary %}selected{% endif %}>{{ library.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label for="favoriteBooks">Favorite Books</label>
