@@ -69,6 +69,30 @@ class BookRepository extends ServiceEntityRepository
         return $queryBuilder->getQuery()->getResult();
     }
 
+    public function searchBooks($searchTerm)
+    {
+        $queryBuilder = $this->createQueryBuilder('book');
+        $queryBuilder
+            ->andWhere(
+                $queryBuilder->expr()->orX(
+                    $queryBuilder->expr()->like('book.title', ':searchTerm'),
+                    $queryBuilder->expr()->like('book.author', ':searchTerm'),
+                    $queryBuilder->expr()->eq('book.isbn', ':searchTerm')
+                )
+            )
+            ->setParameter('searchTerm', '%' . $searchTerm . '%')
+            ->addOrderBy(
+                'CASE
+                    WHEN book.title LIKE :searchTerm THEN 1
+                    WHEN book.author LIKE :searchTerm THEN 2
+                    WHEN book.isbn = :searchTerm THEN 3
+                    ELSE 4
+                END'
+            );
+
+        return $queryBuilder->getQuery()->getResult();
+
+    }
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */
