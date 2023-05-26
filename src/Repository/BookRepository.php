@@ -44,14 +44,12 @@ class BookRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('b')
             ->where('20*(:page-1)+1 < b.id < 20*:page')
             ->setParameter('page', $page)
-            // order by average rating
-            ;
+        ;
 
         $query = $qb->getQuery();
 
         return $query->execute();
     }
-
 
 
 //    /**

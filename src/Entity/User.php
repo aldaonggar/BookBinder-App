@@ -31,6 +31,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
 
+    /**
+     * @Assert\Length(
+     *      min = 8,
+     *      minMessage = "Your password must be at least {{ limit }} characters long"
+     * )
+     * @Assert\Regex(
+     *      pattern="/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+_!@#$%^&*., ?]).*$/",
+     *      message="Your password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
+     * )
+     */
+
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
@@ -43,30 +54,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
-    /**
-     * @Assert\Length(
-     *      min = 8,
-     *      minMessage = "Your password must be at least {{ limit }} characters long"
-     * )
-     * @Assert\Regex(
-     *      pattern="/(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+_!@#$%^&*., ?]).*$/",
-     *      message="Your password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
-     * )
-     */
-
-
-
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+
+
+
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function setId(?int $id): void
-    {
-        $this->id = $id;
     }
 
     public function getFirstname(): ?string
@@ -110,9 +107,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->birthday;
     }
 
-    public function setBirthday(?\DateTimeInterface $birthday): self
+    public function setBirthday(?string $birthday): self
     {
-        $this->birthday = $birthday;
+        $date = new \DateTimeImmutable($birthday.' 00:00:00');
+        $this->birthday = $date;
 
         return $this;
     }
@@ -207,3 +205,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 }
+
