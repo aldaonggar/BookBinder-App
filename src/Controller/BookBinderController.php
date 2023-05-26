@@ -18,7 +18,7 @@ class BookBinderController extends AbstractController
 //     * @Route("/booklist.html.twig")
 //     */
 // comment test
-    public function renderBookList(EntityManagerInterface $entityManager, int $page, Request $request){
+    public function renderBookList(EntityManagerInterface $entityManager, int $page, Request $request): Response{
         $repository = $entityManager->getRepository(Book::class);
         $books = $repository->get21Books($page);
         $numberOfPages = ceil(($repository->getNumberOfBooks())/21);
@@ -29,10 +29,6 @@ class BookBinderController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $searchTerm = $form->getData()['searchTerm'];
 
-            // Perform search logic with the $searchTerm
-            // ...
-
-            //return $this->redirectToRoute('search_results', ['searchTerm' => $searchTerm]);
             return $this->redirectToRoute('search', ['searchTerm' => $searchTerm]);
         }
 
@@ -41,6 +37,7 @@ class BookBinderController extends AbstractController
             'numberOfPages'=> $numberOfPages,
             'currentPage'=>$page,
             'form'=>$form->createView(),
+            'search' => false,
         ]);
 
         /*
@@ -51,10 +48,9 @@ class BookBinderController extends AbstractController
         return new Response($stringResponse);*/
     }
 
-    public function renderBookListSearch(EntityManagerInterface $entityManager, string $searchTerm, Request $request){
+    public function renderBookListSearch(EntityManagerInterface $entityManager, string $searchTerm, Request $request): Response{
         $repository = $entityManager->getRepository(Book::class);
-        $books = $repository->get21Books(3);
-        $numberOfPages = ceil(($repository->getNumberOfBooks())/21);
+        $books = $repository->searchByTitle($searchTerm);
 
         $form = $this->createForm(SearchFormType::class);
         $form->handleRequest($request);
@@ -62,18 +58,13 @@ class BookBinderController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $searchTerm = $form->getData()['searchTerm'];
 
-            // Perform search logic with the $searchTerm
-            // ...
-
-            //return $this->redirectToRoute('search_results', ['searchTerm' => $searchTerm]);
             return $this->redirectToRoute('search', ['searchTerm' => $searchTerm]);
         }
 
         return $this->render('booklist.html.twig', [
             'bookArray'=>$books,
-            'numberOfPages'=> $numberOfPages,
-            'currentPage'=>3,
             'form'=>$form->createView(),
+            'search'=>true
         ]);
     }
 

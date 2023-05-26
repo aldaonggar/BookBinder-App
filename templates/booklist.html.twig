@@ -55,18 +55,20 @@
             </ul>
         #}
         </div>
-        <ul>
-            {% if currentPage != 1 %}
-                <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
-                <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                <li>page {{ currentPage }}/{{ numberOfPages }}</li>
-            {% elseif currentPage == numberOfPages %}
-                <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
-                <li>page {{ numberOfPages }}/{{ numberOfPages }}</li>
-            {% elseif currentPage <= 1 %}
-                <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                <li>page 1/{{ numberOfPages }}</li>
-            {% endif %}
-        </ul>
+        {% if search == false %}
+            <ul>
+                {% if currentPage != 1 %}
+                    <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
+                    <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
+                    <li>page {{ currentPage }}/{{ numberOfPages }}</li>
+                {% elseif currentPage == numberOfPages %}
+                    <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
+                    <li>page {{ numberOfPages }}/{{ numberOfPages }}</li>
+                {% elseif currentPage <= 1 %}
+                    <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
+                    <li>page 1/{{ numberOfPages }}</li>
+                {% endif %}
+            </ul>
+        {% endif %}
     </div>
 {% endblock %}
