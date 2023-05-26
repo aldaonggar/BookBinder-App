@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="EmailVerifierTest done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Integration/Controller/LoginControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Integration/Controller/LoginControllerTest.php" afterDir="false" />
-    </list>
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="changed the birthday range in registration form" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +250,7 @@
       <workItem from="1684866678514" duration="2523000" />
       <workItem from="1684944007127" duration="3071000" />
       <workItem from="1685046513505" duration="640000" />
-      <workItem from="1685101235553" duration="5654000" />
+      <workItem from="1685101235553" duration="6015000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -293,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685105480086</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed the birthday range in registration form">
+      <created>1685108220064</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685108220064</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +344,8 @@
     <MESSAGE value="ChangePasswordFormType Unit testing done. ;)" />
     <MESSAGE value="ResetPasswordRequestFormType Unit testing done. ;)" />
     <MESSAGE value="EmailVerifierTest done" />
-    <option name="LAST_COMMIT_MESSAGE" value="EmailVerifierTest done" />
+    <MESSAGE value="changed the birthday range in registration form" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the birthday range in registration form" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
