@@ -93,7 +93,7 @@ class SettingsControllerTest extends WebTestCase
         $entityManager = $client->getContainer()->get('doctrine.orm.entity_manager');
         $user = $entityManager->getRepository(User::class)->find(1);
 
-        $this->assertNotSame('John123', $user->getFirstname());
+        $this->assertNotSame('John@#§', $user->getFirstname());
     }
 
     public function editUserSettingsTestInvalidSurname (){
@@ -126,7 +126,7 @@ class SettingsControllerTest extends WebTestCase
         $entityManager = $client->getContainer()->get('doctrine.orm.entity_manager');
         $user = $entityManager->getRepository(User::class)->find(1);
 
-        $this->assertNotSame('John123', $user->getFirstname());
+        $this->assertNotSame('Doe678', $user->getLastname());
 
         // Test case 1: Invalid name with signs
         $client->request('POST', '/editUserSettings', [
@@ -144,6 +144,6 @@ class SettingsControllerTest extends WebTestCase
         $entityManager = $client->getContainer()->get('doctrine.orm.entity_manager');
         $user = $entityManager->getRepository(User::class)->find(1);
 
-        $this->assertNotSame('John123', $user->getFirstname());
+        $this->assertNotSame('Doe@@@', $user->getLastname());
     }
 }
