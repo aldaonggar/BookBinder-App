@@ -39,10 +39,14 @@ class Book
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
 
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'favoriteBooks')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->ratings = new ArrayCollection();
         $this->labels = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -182,6 +186,33 @@ class Book
     public function setCover(?string $cover): self
     {
         $this->cover = $cover;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addFavoriteBookss($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeFavoriteBookss($this);
+        }
 
         return $this;
     }

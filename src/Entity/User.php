@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -56,6 +58,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\ManyToMany(targetEntity: book::class, inversedBy: 'users')]
+    private Collection $favoriteBooks;
+
+
+    public function __construct()
+    {
+        $this->favoriteBooks = new ArrayCollection();
+    }
 
 
 
@@ -201,6 +212,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, book>
+     */
+    public function getFavoriteBookss(): Collection
+    {
+        return $this->favoriteBooks;
+    }
+
+    public function addFavoriteBookss(book $favoriteBookss): self
+    {
+        if (!$this->favoriteBooks->contains($favoriteBookss)) {
+            $this->favoriteBooks->add($favoriteBookss);
+        }
+
+        return $this;
+    }
+
+    public function removeFavoriteBookss(book $favoriteBookss): self
+    {
+        $this->favoriteBooks->removeElement($favoriteBookss);
 
         return $this;
     }
