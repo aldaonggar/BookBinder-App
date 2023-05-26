@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
@@ -13,12 +14,17 @@ class SearchFormType extends AbstractType
     {
         $builder
             ->add('searchTerm', SearchType::class, [
-                'label' => 'Search',
+                'label' => false,
                 'attr' => [
                     'placeholder' => 'Enter search term',
                     'class'=> 'form-control mr-sm-2 w-50',
                     'aria-label' => 'Search'
                 ],
+            ])
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-outline-success my-2 my-sm-0'
+                ]
             ]);
     }
 
@@ -26,6 +32,9 @@ class SearchFormType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
+            'attr' => [
+                'class' => 'form-inline d-flex justify-content-center mt-4 mb-4',
+            ],
         ]);
     }
 }

@@ -50,7 +50,7 @@ class BookBinderController extends AbstractController
 
     public function renderBookListSearch(EntityManagerInterface $entityManager, string $searchTerm, Request $request): Response{
         $repository = $entityManager->getRepository(Book::class);
-        $books = $repository->searchBooks($searchTerm);
+        $books = $repository->searchBooksByAuthorAndTitle($searchTerm);
 
         $form = $this->createForm(SearchFormType::class);
         $form->handleRequest($request);

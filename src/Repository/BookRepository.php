@@ -69,7 +69,7 @@ class BookRepository extends ServiceEntityRepository
         return $queryBuilder->getQuery()->getResult();
     }
 
-    public function searchBooks($searchTerm)
+    public function searchBooksByAuthorAndTitle($searchTerm)
     {
         $queryBuilder = $this->createQueryBuilder('book');
         $queryBuilder
