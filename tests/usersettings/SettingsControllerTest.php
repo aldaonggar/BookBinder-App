@@ -29,7 +29,6 @@ class SettingsControllerTest extends WebTestCase
             'surname' => 'Doe',
             'age' => '1990-01-01',
             'sex' => 'Male',
-            'favoriteLibrary' => 'Library X',
         ]);
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
@@ -42,7 +41,6 @@ class SettingsControllerTest extends WebTestCase
         $this->assertSame('Doe', $user->getLastname());
         $this->assertSame('1990-01-01', $user->getBirthday()->format('Y-m-d'));
         $this->assertSame('Male', $user->getSex());
-        $this->assertSame('Library X', $user->getFavoriteLibrary());
     }
 
     public function editUserSettingsTestInvalidName (){
@@ -66,7 +64,6 @@ class SettingsControllerTest extends WebTestCase
             'surname' => 'Doe',
             'age' => '1990-01-01',
             'sex' => 'Male',
-            'favoriteLibrary' => 'Library X',
         ]);
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
@@ -84,7 +81,6 @@ class SettingsControllerTest extends WebTestCase
             'surname' => 'Doe',
             'age' => '1990-01-01',
             'sex' => 'Male',
-            'favoriteLibrary' => 'Library X',
         ]);
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
@@ -117,7 +113,6 @@ class SettingsControllerTest extends WebTestCase
             'surname' => 'Doe678',
             'age' => '1990-01-01',
             'sex' => 'Male',
-            'favoriteLibrary' => 'Library X',
         ]);
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());
@@ -135,7 +130,6 @@ class SettingsControllerTest extends WebTestCase
             'surname' => 'Doe@@@',
             'age' => '1990-01-01',
             'sex' => 'Male',
-            'favoriteLibrary' => 'Library X',
         ]);
 
         $this->assertSame(302, $client->getResponse()->getStatusCode());

@@ -19,7 +19,11 @@
                 <p><strong>Favourite Library:</strong>
                     {% if app.user.favoriteLibrary() is not null %}
                         {% set library = entityManager.find('App\\Entity\\Library', app.user.favoriteLibrary()) %}
-                        {{ library.name }}
+                        {% if library is not null %}
+                            {{ library.getName() }}
+                        {% else %}
+                            Unknown Library
+                        {% endif %}
                     {% else %}
                         No favorite library selected
                     {% endif %}
