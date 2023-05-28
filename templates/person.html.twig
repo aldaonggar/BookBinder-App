@@ -16,7 +16,18 @@
                 <h2>{{ app.user.firstname() }} {{ app.user.lastname() }}</h2>
                 <p><strong>Gender:</strong> {{ app.user.sex() }}</p>
                 <p><strong>Age:</strong> {{ app.user.birthday()|date('Y-m-d') }}</p>
-                <p><strong>Favorite Library:</strong> {{ app.user.favoriteLibrary() }} </p>
+                <p><strong>Favourite Library:</strong>
+                    {% if app.user.favoriteLibrary() is not null %}
+                        {% set library = entityManager.find('App\\Entity\\Library', app.user.favoriteLibrary()) %}
+                        {% if library is not null %}
+                            {{ library.getName() }}
+                        {% else %}
+                            Unknown Library
+                        {% endif %}
+                    {% else %}
+                        No favorite library selected
+                    {% endif %}
+                </p>
             </div>
         </div>
 

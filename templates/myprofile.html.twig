@@ -19,7 +19,18 @@
                 <p><strong>Surname:</strong> {{ app.user.lastname() }}</p>
                 <p><strong>Age:</strong> {{ app.user.birthday()|date('Y-m-d') }}</p>
                 <p><strong>Gender:</strong> {{ app.user.sex() }}</p>
-                <p><strong>Favourite Library:</strong> {{ app.user.favoriteLibrary() }}</p>
+                <p><strong>Favourite Library:</strong>
+                    {% if app.user.favoriteLibrary() is not null %}
+                        {% set library = entityManager.find('App\\Entity\\Library', app.user.favoriteLibrary()) %}
+                        {% if library is not null %}
+                            {{ library.getName() }}
+                        {% else %}
+                            Unknown Library
+                        {% endif %}
+                    {% else %}
+                        No favorite library selected
+                    {% endif %}
+                </p>
                 <a href="{{ path('usersettings') }}" class="btn btn-primary change-settings">Change Settings</a>
             </div>
         </div>

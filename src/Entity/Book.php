@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\BookRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
@@ -22,8 +21,8 @@ class Book
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $author = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $isbn = null;
+    #[ORM\Column(length: 30 ,nullable: true)]
+    private ?string $isbn = null;
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $genre = null;
@@ -34,11 +33,11 @@ class Book
     #[ORM\ManyToMany(targetEntity: Label::class, mappedBy: 'bookLabel')]
     private Collection $labels;
 
-    #[ORM\Column(length: 5000, nullable: true)]
-    private ?string $Synopsis = null;
+    #[ORM\Column(length: 10000, nullable: true)]
+    private ?string $synopsis = null;
 
-    #[ORM\Column(type: Types::BLOB, nullable: true)]
-    private $cover = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cover = null;
 
     public function __construct()
     {
@@ -51,9 +50,11 @@ class Book
         return $this->id;
     }
 
-    public function setId(?int $id): void
+    public function setId(int $id): self
     {
         $this->id = $id;
+
+        return $this;
     }
 
     public function getTitle(): ?string
@@ -80,12 +81,12 @@ class Book
         return $this;
     }
 
-    public function getIsbn(): ?int
+    public function getIsbn(): ?string
     {
         return $this->isbn;
     }
 
-    public function setIsbn(?int $isbn): self
+    public function setIsbn(?string $isbn): self
     {
         $this->isbn = $isbn;
 
@@ -163,22 +164,22 @@ class Book
 
     public function getSynopsis(): ?string
     {
-        return $this->Synopsis;
+        return $this->synopsis;
     }
 
-    public function setSynopsis(?string $Synopsis): self
+    public function setSynopsis(?string $synopsis): self
     {
-        $this->Synopsis = $Synopsis;
+        $this->synopsis = $synopsis;
 
         return $this;
     }
 
-    public function getCover()
+    public function getCover(): ?string
     {
         return $this->cover;
     }
 
-    public function setCover($cover): self
+    public function setCover(?string $cover): self
     {
         $this->cover = $cover;
 
