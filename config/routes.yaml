@@ -12,6 +12,10 @@ book:
     path: /book/{id}
     controller: App\Controller\BookBinderController::renderBook
 
+myprofile:
+    path: /myprofile
+    controller: App\Controller\BookBinderController::renderMyProfile
+
 person:
     path: /person
     controller: App\Controller\BookBinderController::renderPerson
@@ -21,12 +25,8 @@ usersettings:
     controller: App\Controller\BookBinderController::renderUserSettings
 
 home:
-    path: /
+    path: /home
     controller: App\Controller\BookBinderController::renderHomepage
-
-login:
-    path: /login
-    controller: App\Controller\BookBinderController::renderLogin
 
 register:
     path: /register
@@ -35,3 +35,11 @@ register:
 search:
     path: /booklist/search/{searchTerm}
     controller: App\Controller\BookBinderController::renderBookListSearch
+
+login:
+    path: /login
+    controller: App\Controller\LoginController::index
+
+app_logout:
+    path: /logout
+    methods: GET

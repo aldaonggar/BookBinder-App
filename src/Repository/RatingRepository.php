@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Book;
 use App\Entity\Rating;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -37,6 +38,28 @@ class RatingRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function getAverageRating(Book $book): int
+    {
+        $bookId = $book->getId();
+
+        $qb = $this->createQueryBuilder('r')
+            ->where('r.book == :book')
+            ->setParameter('book', $bookId);
+
+        $query = $qb->getQuery();
+
+        $ratings = array($query->execute());
+
+        $length = count($ratings);
+        $sumRating = 0;
+        for ($i = 0; $i < $length; $i ++){
+            $sumRating += $ratings[$i]->getScore();
+        }
+
+        $avRating = $sumRating/$length;
+        return $avRating;
     }
 
 //    /**

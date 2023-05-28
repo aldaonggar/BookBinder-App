@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/myprofile.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="title">My Profile</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/150" class="img-fluid profile-picture" alt="Profile Picture">
+            </div>
+            <div class="col-md-8">
+                <p><strong>Name:</strong> {{ app.user.firstname() }}</p>
+                <p><strong>Surname:</strong> {{ app.user.lastname() }}</p>
+                <p><strong>Age:</strong> {{ app.user.birthday()|date('Y-m-d') }}</p>
+                <p><strong>Gender:</strong> {{ app.user.sex() }}</p>
+                <p><strong>Favourite Library:</strong>
+                    {% if app.user.favoriteLibrary() is not null %}
+                        {% set library = entityManager.find('App\\Entity\\Library', app.user.favoriteLibrary()) %}
+                        {% if library is not null %}
+                            {{ library.getName() }}
+                        {% else %}
+                            Unknown Library
+                        {% endif %}
+                    {% else %}
+                        No favorite library selected
+                    {% endif %}
+                </p>
+                <a href="{{ path('usersettings') }}" class="btn btn-primary change-settings">Change Settings</a>
+            </div>
+        </div>
+
+        <h3 class="mt-5">Favorite Books</h3>
+        <ul class="list-group">
+            {#{% for book in app.user.favoriteBooks()|split(',') %}
+                <li class="list-group-item">{{ book }}</li>
+            {% endfor %}#}
+        </ul>
+
+        {#<h3 class="mt-5">Favorite Libraries</h3>
+        <ul>
+            <li> {{ user['favoriteLibrary'] }} </li>
+            <li>City Library</li>
+            <!-- Add more favorite libraries as needed -->
+        </ul>#}
+    </div>
+{% endblock %}

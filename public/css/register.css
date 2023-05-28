@@ -84,3 +84,29 @@ input[type="number"] {
 .login-button:hover {
     text-decoration: underline;
 }
+
+.hidden {
+    display: none;
+}
+
+#password-match,
+#password-error {
+    font-weight: bold;
+}
+
+#password-match.error {
+    color: red;
+}
+
+#password-match.success {
+    color: green;
+}
+
+#password-error {
+    color: red;
+}
+
+.error-message {
+    color: red !important;
+    font-weight: bold !important;
+}

@@ -1,0 +1,19 @@
+{# templates/reset_password/request.html.twig #}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <div class="login-container">
+        <h2>Reset your password</h2>
+        {{ form_start(requestForm) }}
+        {{ form_label(requestForm.email) }}
+        {{ form_widget(requestForm.email, {'attr': {'placeholder': 'Enter your email'}}) }}
+        {% for flash_error in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert" style="color: red; font-weight: bold; margin-top: 1em;">{{ flash_error }}</div>
+        {% endfor %}
+        <button class="login-button">Reset password</button>
+        {{ form_end(requestForm) }}
+    </div>
+{% endblock %}
+
+
+

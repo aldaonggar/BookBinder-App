@@ -39,6 +39,13 @@ class LibraryRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllAlphabeticly()
+    {
+        return $this->findBy(array(), array('name' => 'ASC'));
+    }
+
+
+
 //    /**
 //     * @return Library[] Returns an array of Library objects
 //     */

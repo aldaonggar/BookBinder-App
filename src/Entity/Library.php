@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\LibraryRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LibraryRepository::class)]
@@ -18,16 +17,13 @@ class Library
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $streetname = null;
-
-    #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $houseNr = null;
+    private ?string $address = null;
 
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $country = null;
+    private ?string $email = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $website = null;
@@ -49,26 +45,14 @@ class Library
         return $this;
     }
 
-    public function getStreetname(): ?string
+    public function getAddress(): ?string
     {
-        return $this->streetname;
+        return $this->address;
     }
 
-    public function setStreetname(string $streetname): self
+    public function setAddress(string $address): self
     {
-        $this->streetname = $streetname;
-
-        return $this;
-    }
-
-    public function getHouseNr(): ?int
-    {
-        return $this->houseNr;
-    }
-
-    public function setHouseNr(int $houseNr): self
-    {
-        $this->houseNr = $houseNr;
+        $this->address = $address;
 
         return $this;
     }
@@ -85,14 +69,14 @@ class Library
         return $this;
     }
 
-    public function getCountry(): ?string
+    public function getEmail(): ?string
     {
-        return $this->country;
+        return $this->email;
     }
 
-    public function setCountry(string $country): self
+    public function setEmail(string $email): self
     {
-        $this->country = $country;
+        $this->email = $email;
 
         return $this;
     }

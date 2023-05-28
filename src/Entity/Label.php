@@ -31,6 +31,12 @@ class Label
         return $this->id;
     }
 
+
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getLabelName(): ?string
     {
         return $this->labelName;

@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Library;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\User;
+use App\Repository\UserRepository;
 use App\Entity\Book;
 use App\Form\SearchFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -11,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\ExtraClasses\BookGeneratorForTests;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class BookBinderController extends AbstractController
 {
@@ -76,25 +81,31 @@ class BookBinderController extends AbstractController
         ]);
     }
 
-    public function renderPerson(){
-        return $this->render('person.html.twig');
+    #[Route('/person', name: 'person')]
+    public function renderPerson()
+    {
+        return $this->render('person.html.twig', ['entityManager' => $this->entityManager,]);
     }
 
-    public function renderUserSettings(){
-        return $this->render('usersettings.html.twig');
+    #[Route('/myprofile', name: 'myprofile')]
+    public function renderMyProfile()
+    {
+        return $this->render('myprofile.html.twig', ['entityManager' => $this->entityManager,]);
     }
 
-    public function renderHomepage(){
+    #[Route('/usersettings', name: 'usersettings')]
+    public function renderUserSettings()
+    {
+        $libraries = $this->entityManager->getRepository(Library::class)->findAll();
+
+        return $this->render('usersettings.html.twig', [
+            'libraries' => $libraries,]);
+    }
+
+    #[Route('/home', name: 'home')]
+    public function renderHomepage()
+    {
         return $this->render('homepage.html.twig');
     }
-
-    public function renderLogin(){
-        return $this->render('login.html.twig');
-    }
-
-    public function renderRegister(){
-        return $this->render('register.html.twig');
-    }
-
 
 }
