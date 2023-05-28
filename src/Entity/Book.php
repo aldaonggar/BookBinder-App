@@ -39,10 +39,16 @@ class Book
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FavoriteBook", mappedBy="book", orphanRemoval=true)
+     */
+    private $favoritedByUsers;
+
     public function __construct()
     {
         $this->ratings = new ArrayCollection();
         $this->labels = new ArrayCollection();
+        $this->favoritedByUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -185,4 +191,48 @@ class Book
 
         return $this;
     }
+
+    /**
+     * @return Collection|FavoriteBook[]
+     */
+    public function getFavoritedByUsers(): Collection
+    {
+        return $this->favoritedByUsers;
+    }
+
+    public function addFavoritedByUser(FavoriteBook $favoritedByUser): self
+    {
+        if (!$this->favoritedByUsers->contains($favoritedByUser)) {
+            $this->favoritedByUsers[] = $favoritedByUser;
+            $favoritedByUser->setBook($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavoritedByUser(FavoriteBook $favoritedByUser): self
+    {
+        if ($this->favoritedByUsers->removeElement($favoritedByUser)) {
+            // set the owning side to null (unless already changed)
+            if ($favoritedByUser->getBook() === $this) {
+                $favoritedByUser->setBook(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function show(Book $book)
+    {
+        $usersWhoFavorited = $book->getFavoritedByUsers()->map(function($favorite) {
+            return $favorite->getUser();
+        });
+
+        return $this->render('book.html.twig', [
+            'book' => $book,
+            'usersWhoFavorited' => $usersWhoFavorited,
+        ]);
+    }
+
+
 }

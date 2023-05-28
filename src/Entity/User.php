@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -57,9 +59,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FavoriteBook", mappedBy="user", orphanRemoval=true)
+     */
+    private $favoriteBooks;
 
 
-
+    public function __construct()
+    {
+        $this->favoriteBooks = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -203,5 +212,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection|FavoriteBook[]
+     */
+    public function getFavoriteBooks(): Collection
+    {
+        return $this->favoriteBooks;
+    }
+
+    public function addFavoriteBook(FavoriteBook $favoriteBook): self
+    {
+        if (!$this->favoriteBooks->contains($favoriteBook)) {
+            $this->favoriteBooks[] = $favoriteBook;
+            $favoriteBook->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavoriteBook(FavoriteBook $favoriteBook): self
+    {
+        if ($this->favoriteBooks->removeElement($favoriteBook)) {
+            // set the owning side to null (unless already changed)
+            if ($favoriteBook->getUser() === $this) {
+                $favoriteBook->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
 
