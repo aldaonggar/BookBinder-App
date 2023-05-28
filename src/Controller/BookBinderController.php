@@ -8,7 +8,6 @@ use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Entity\Book;
 use App\Form\SearchFormType;
-use Doctrine\ORM\EntityManagerInterface;
 //use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,6 +22,13 @@ class BookBinderController extends AbstractController
 //     * @Route("/booklist.html.twig")
 //     */
 // comment test
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     public function renderBookList(EntityManagerInterface $entityManager, int $page, Request $request): Response{
         $repository = $entityManager->getRepository(Book::class);
         $books = $repository->get21Books($page);
