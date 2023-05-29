@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -42,6 +43,48 @@ class UserRepository extends ServiceEntityRepository
     public function findAllAlphabeticly()
     {
         return $this->findBy(array(), array('firstname' => 'ASC'));
+    }
+
+    public function get21People(int $page): array{
+        $query = $this->createQueryBuilder('p')
+            ->getQuery();
+
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult(($page-1)*21)
+            ->setMaxResults(21);
+
+        return $paginator->getIterator()->getArrayCopy();
+    }
+
+    public function getNumberOfPeople(): int{
+        $qb = $this->createQueryBuilder('p');
+        $qb->select('COUNT(p)');
+        $query = $qb->getQuery();
+        return (int) $query->getSingleScalarResult();
+    }
+
+    public function searchPeopleByName($searchTerm)
+    {
+        $queryBuilder = $this->createQueryBuilder('person');
+        $queryBuilder
+            ->andWhere(
+                $queryBuilder->expr()->orX(
+                    $queryBuilder->expr()->like('person.firstname', ':searchTerm'),
+                    $queryBuilder->expr()->like('person.lastname', ':searchTerm')
+                )
+            )
+            ->setParameter('searchTerm', '%' . $searchTerm . '%')
+            ->addOrderBy(
+                'CASE
+                    WHEN person.firstname LIKE :searchTerm THEN 1
+                    WHEN person.lastname LIKE :searchTerm THEN 2
+                    ELSE 3
+                END'
+            );
+
+        return $queryBuilder->getQuery()->getResult();
+
     }
 
 //    /**

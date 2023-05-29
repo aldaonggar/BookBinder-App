@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}People List{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/people.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">People List</h1>
+
+    {{ form(form) }}
+
+
+    <div class="mt-4">
+        <div class="row">
+            {% for person in peopleArray %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ person.firstname }}</h5>
+                            <p class="card-text">{{ person.lastname }}</p>
+                            <a href="{{ path('person', {'id':person.id}) }}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% if search == false %}
+            <ul class="pagination">
+                {% if currentPage != 1 and numberOfPages > 1 and currentPage != numberOfPages%}
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                    <li class="page-item">page {{ currentPage }}/{{ numberOfPages }}</li>
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif currentPage == numberOfPages and numberOfPages > 1%}
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                    <li class="page-item">page {{ numberOfPages }}/{{ numberOfPages }}</li>
+                {% elseif currentPage <= 1 and numberOfPages > 1%}
+                    <li class="page-item">page 1/{{ numberOfPages }}</li>
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif numberOfPages == 1 %}
+                    <li class="page-item">page 1/{{ numberOfPages }}</li>
+                {% endif %}
+            </ul>
+        {% elseif peopleArray is empty %}
+            <h2>No users corresponding to your search :(</h2>
+        {% endif %}
+    </div>
+{% endblock %}

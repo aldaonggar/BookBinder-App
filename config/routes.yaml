@@ -5,11 +5,11 @@ controllers:
     type: attribute
 
 listofbooks:
-    path: /booklist
+    path: /booklist/{page}
     controller: App\Controller\BookBinderController::renderBookList
 
 book:
-    path: /book
+    path: /book/{id}
     controller: App\Controller\BookBinderController::renderBook
 
 myprofile:
@@ -17,8 +17,8 @@ myprofile:
     controller: App\Controller\BookBinderController::renderMyProfile
 
 person:
-    path: /person
-    controller: App\Controller\BookBinderController::renderPerson
+    path: /person/{id}
+    controller: App\Controller\BookBinderController::renderPeople
 
 usersettings:
     path: /usersettings
@@ -30,7 +30,11 @@ home:
 
 register:
     path: /register
-    controller: App\Controller\RegistrationController::register
+    controller: App\Controller\BookBinderController::renderRegister
+
+search:
+    path: /booklist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderBookListSearch
 
 login:
     path: /login
@@ -39,3 +43,11 @@ login:
 app_logout:
     path: /logout
     methods: GET
+
+searchpeople:
+    path: /peoplelist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderPeopleListSearch
+
+listofpeople:
+    path: /peoplelist/{page}
+    controller: App\Controller\BookBinderController::renderPeopleList
