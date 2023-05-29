@@ -9,17 +9,6 @@
 {% block content %}
     <h1 class="text-center">People List</h1>
 
-    {#
-    <form class="form-inline d-flex justify-content-center mt-4 mb-4">
-    <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search by name or author" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    { form_start(form) }
-        { form_row(form.searchTerm) }
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    { form_end(form) }
-    #}
-
     {{ form(form) }}
 
 
@@ -36,38 +25,20 @@
                     </div>
                 </div>
             {% endfor %}
-
-            <!-- Add more book cards with descriptions as needed -->
-            {#
-            <ul>
-                {% for i in range(1, numberOfPages) %}
-
-                    {% if numberOfPages > 3%}
-                        {% if i < 3 %}
-                            <li><a href="">{{ i }}</a></li>
-                        {% elseif i == numberOfPages %}
-                            <li><a href="">{{ i }}</a></li>
-                        {% elseif i == 3 %}
-                            <li>...</li>
-                        {% endif %}
-                    {% else %}
-                        <li><a href="{{ path('listofbooks', {'page': i}) }}">{{ i }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            #}
         </div>
         {% if search == false %}
             <ul class="pagination">
-                {% if currentPage != 1 %}
-                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link">previous page</a></li>
-                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">next page</a></li>
+                {% if currentPage != 1 and numberOfPages > 1 and currentPage != numberOfPages%}
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
                     <li class="page-item">page {{ currentPage }}/{{ numberOfPages }}</li>
-                {% elseif currentPage == numberOfPages %}
-                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link">previous page</a></li>
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif currentPage == numberOfPages and numberOfPages > 1%}
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
                     <li class="page-item">page {{ numberOfPages }}/{{ numberOfPages }}</li>
-                {% elseif currentPage <= 1 %}
-                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">next page</a></li>
+                {% elseif currentPage <= 1 and numberOfPages > 1%}
+                    <li class="page-item">page 1/{{ numberOfPages }}</li>
+                    <li class="page-item"><a href=" {{ path('listofpeople', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif numberOfPages == 1 %}
                     <li class="page-item">page 1/{{ numberOfPages }}</li>
                 {% endif %}
             </ul>

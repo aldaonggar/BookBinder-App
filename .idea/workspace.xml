@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="created a list of all user with search. changed the other users profile pages">
-      <change beforePath="$PROJECT_DIR$/public/css/booklist.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/booklist.css" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="changed the style of booklist page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SearchFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/booklist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booklist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/people.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/people.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685377229588</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changed the style of booklist page">
+      <created>1685377400050</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685377400050</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +388,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="merged develop into booklist" />
     <MESSAGE value="created a list of all user with search. changed the other users profile pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a list of all user with search. changed the other users profile pages" />
+    <MESSAGE value="changed the style of booklist page" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the style of booklist page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
