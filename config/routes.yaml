@@ -17,8 +17,8 @@ myprofile:
     controller: App\Controller\BookBinderController::renderMyProfile
 
 person:
-    path: /person
-    controller: App\Controller\BookBinderController::renderPerson
+    path: /person/{id}
+    controller: App\Controller\BookBinderController::renderPeople
 
 usersettings:
     path: /usersettings
@@ -43,3 +43,11 @@ login:
 app_logout:
     path: /logout
     methods: GET
+
+searchpeople:
+    path: /peoplelist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderPeopleListSearch
+
+listofpeople:
+    path: /peoplelist/{page}
+    controller: App\Controller\BookBinderController::renderPeopleList

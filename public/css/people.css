@@ -1,0 +1,69 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-body {
+    background-color: #F0F0F0;
+}
+
+/* Top menu color and size */
+.custom-navbar {
+    background-color: #4E0707;
+    padding: 1rem;
+}
+
+/* Highlight the 'Books' text on the menu */
+.home-link {
+    font-weight: bold;
+    color: #F2C14E;
+}
+
+/* Book list styles */
+.book-title {
+    color: #4B4B4B;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.book-description {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    list-style: none;
+}
+
+.page-item {
+    margin: 0 0.5rem;
+    border-radius: 3px;
+    overflow: hidden; /* To make sure the child elements also adhere to the border radius */
+}
+
+.page-link {
+    display: block; /* To make the whole area clickable */
+    padding: 0.5rem 1rem; /* Add some space around the text */
+    color: #4E0707;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Makes the color fade smoothly */
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #F0F0F0;
+    background-color: #4E0707;
+}
