@@ -21,20 +21,17 @@ class FavoriteBookService
 
     public function toggleFavorite(User $user, Book $book): bool
     {
-        // Find the favorite book in the database
         $favoriteBook = $this->favoriteBookRepository->findOneBy([
             'user' => $user,
             'book' => $book,
         ]);
 
         if ($favoriteBook) {
-            // If the book is already a favorite, remove it
             $this->entityManager->remove($favoriteBook);
             $this->entityManager->flush();
 
             return false;
         } else {
-            // If the book is not a favorite, add it
             $favoriteBook = new FavoriteBook();
             $favoriteBook->setUser($user);
             $favoriteBook->setBook($book);
@@ -45,4 +42,22 @@ class FavoriteBookService
             return true;
         }
     }
+
+    public function isFavorite(User $user, Book $book): bool
+    {
+        $favoriteBook = $this->favoriteBookRepository->findOneBy([
+            'user' => $user,
+            'book' => $book,
+        ]);
+
+        return $favoriteBook !== null;
+    }
+
+    public function getFavoritedUsers(Book $book): array
+    {
+        return $this->entityManager
+            ->getRepository(FavoriteBook::class)
+            ->findBy(['book' => $book]);
+    }
+
 }

@@ -60,8 +60,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\FavoriteBook", mappedBy="user", orphanRemoval=true)
+     * @var Collection
      */
+    #[ORM\OneToMany(targetEntity: FavoriteBook::class, mappedBy: "user", orphanRemoval: true)]
     private $favoriteBooks;
 
 

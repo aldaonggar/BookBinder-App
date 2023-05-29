@@ -4,28 +4,20 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\FavoriteBookRepository")
- */
+#[ORM\Entity(repositoryClass: "App\Repository\FavoriteBookRepository")]
 class FavoriteBook
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
     private ?int $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: "App\Entity\User")]
+    #[ORM\JoinColumn(nullable: false)]
     private ?User $user;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Book")
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\ManyToOne(targetEntity: "App\Entity\Book")]
+    #[ORM\JoinColumn(nullable: false)]
     private ?Book $book;
 
     public function getId(): ?int

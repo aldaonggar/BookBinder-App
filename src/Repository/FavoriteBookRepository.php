@@ -18,6 +18,4 @@ class FavoriteBookRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, FavoriteBook::class);
     }
-
-    // You can add custom methods to this repository as needed
 }
