@@ -59,20 +59,22 @@
             </ul>
         #}
         </div>
-        {% if search == false %}
+        {% if search == false and 1 <= currentPage and currentPage <= numberOfPages%}
             <ul>
                 {% if currentPage != 1 %}
                     <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
                     <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                    <li>page {{ currentPage }}/{{ numberOfPages }}</li>
+                    <li class="test">page {{ currentPage }}/{{ numberOfPages }}</li>
                 {% elseif currentPage == numberOfPages %}
                     <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
-                    <li>page {{ numberOfPages }}/{{ numberOfPages }}</li>
-                {% elseif currentPage <= 1 %}
+                    <li class="test">page {{ numberOfPages }}/{{ numberOfPages }}</li>
+                {% elseif currentPage == 1 %}
                     <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                    <li>page 1/{{ numberOfPages }}</li>
+                    <li class="test">page 1/{{ numberOfPages }}</li>
                 {% endif %}
             </ul>
+        {% elseif currentPage < 1 or currentPage > numberOfPages %}
+            <h2>Book page is not available</h2>
         {% elseif bookArray is empty %}
             <h2>No books corresponding to your search :(</h2>
         {% endif %}
