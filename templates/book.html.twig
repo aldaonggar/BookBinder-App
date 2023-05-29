@@ -24,9 +24,7 @@
                 <button type="button" class="btn btn-secondary">Add to Reading List</button>
             </div>
         </div>
-        {% else %}
-        <h2>There's no book of specified ID :(</h2>
-        {% endif %}
+
         <div class="row mt-5">
             <div class="col-12">
                 <h3>People Interested</h3>
@@ -39,5 +37,9 @@
                 </ul>
             </div>
         </div>
+        {% else %}
+        <h2>There's no book of specified ID :(</h2>
+        {% endif %}
+
     </div>
 {% endblock %}

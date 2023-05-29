@@ -21,11 +21,11 @@ class SearchFormType extends AbstractType
                     'aria-label' => 'Search'
                 ],
             ])
-            ->add('submit', SubmitType::class, [
+            /*->add('submit', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-outline-success my-2 my-sm-0'
                 ]
-            ]);
+            ])*/;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

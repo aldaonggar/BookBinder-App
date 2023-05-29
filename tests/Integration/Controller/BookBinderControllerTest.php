@@ -78,4 +78,41 @@ class BookBinderControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h2', "There's no book of specified ID :(");
 
     }
+
+    public function testSearchPage():void{
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/login');
+
+        $form = $crawler->selectButton('Login')->form([
+            '_username' => 'yeska.omar@gmail.com',
+            '_password' => 'Hello123.',
+        ]);
+        $client->submit($form);
+
+        $crawler = $client->request('GET', '/booklist/1');
+
+        $form = $crawler->filter('form[name="search_form"]')->form();
+        $form['search_form[searchTerm]'] = 'harry';
+        $crawler = $client->submit($form);
+        $this->assertResponseRedirects('/booklist/search/harry');
+
+        $crawler = $client->request('GET', '/booklist/search/harry');
+        $elements = $crawler->filter('h5.card-title');
+        $containsTitle = false;
+        foreach ($elements as $element) {
+            if (str_contains($element->textContent, "Harry Potter and the Philosopher's Stone")) {
+                $containsTitle = true;
+                break;
+            }
+        }
+        // Assert that at least one element matching the selector contains the text "Harry Potter"
+        $this->assertTrue($containsTitle, 'No element contains the text "Harry Potter and the Philosopher\'s Stone"');
+
+        $form = $crawler->filter('form[name="search_form"]')->form();
+        $form['search_form[searchTerm]'] = 'hello';
+        $crawler = $client->submit($form);
+        $this->assertResponseRedirects('/booklist/search/hello');
+        $crawler = $client->request('GET', '/booklist/search/hello');
+        $this->assertSelectorTextContains('h2', 'No books corresponding to your search :(');
+    }
 }
