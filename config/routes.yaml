@@ -5,11 +5,11 @@ controllers:
     type: attribute
 
 listofbooks:
-    path: /booklist
+    path: /booklist/{page}
     controller: App\Controller\BookBinderController::renderBookList
 
 book:
-    path: /book
+    path: /book/{id}
     controller: App\Controller\BookBinderController::renderBook
 
 myprofile:
@@ -30,7 +30,11 @@ home:
 
 register:
     path: /register
-    controller: App\Controller\RegistrationController::register
+    controller: App\Controller\BookBinderController::renderRegister
+
+search:
+    path: /booklist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderBookListSearch
 
 login:
     path: /login
