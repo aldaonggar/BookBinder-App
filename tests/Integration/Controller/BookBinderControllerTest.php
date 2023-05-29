@@ -49,11 +49,33 @@ class BookBinderControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h2', 'Book page is not available');
     }
 
-    public function testBookPage():void{
+    public function testBookPage():void {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/booklist/1');
-        $this->assertResponseIsSuccessful();
+        $crawler = $client->request('GET', '/login');
 
+        $form = $crawler->selectButton('Login')->form([
+            '_username' => 'yeska.omar@gmail.com',
+            '_password' => 'Hello123.',
+        ]);
+        $client->submit($form);
+
+        // Assert the user was redirected to the homepage or wherever your app redirects on successful login
+        $this->assertResponseRedirects('http://localhost/home');
+
+        //test if it can properly fetch a book with the right ID
+        $client->request('GET', '/book/5');
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h2', 'The Hobbit');
+        $this->assertSelectorTextContains('h4', 'J.R.R. Tolkien');
+
+        //test if it can detect non existing book
+        $client->request('GET', '/book/0');
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h2', "There's no book of specified ID :(");
+
+        $client->request('GET', '/book/2000');
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h2', "There's no book of specified ID :(");
 
     }
 }
