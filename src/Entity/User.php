@@ -31,9 +31,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $birthday = null;
 
-    #[ORM\Column]
-    private array $roles = [];
-
     /**
      * @Assert\Length(
      *      min = 8,
@@ -44,12 +41,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *      message="Your password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character"
      * )
      */
-    #[ORM\Column]
+
+    #[ORM\Column(length: 255)]
     private ?string $password = null;
 
+    #[ORM\Column(length: 25, nullable: true)]
+    private ?string $sex = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $favoriteLibrary = null;
+
+    #[ORM\Column]
+    private array $roles = [];
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+
+
+
 
     public function getId(): ?int
     {
@@ -100,6 +110,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setBirthday(?\DateTimeInterface $birthday): self
     {
         $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    public function getSex(): ?string
+    {
+        return $this->sex;
+    }
+
+    public function setSex(?string $sex): self
+    {
+        $this->sex = $sex;
+
+        return $this;
+    }
+
+    public function getFavoriteLibrary(): ?string
+    {
+        return $this->favoriteLibrary;
+    }
+
+    public function setFavoriteLibrary(?string $favoriteLibrary): self
+    {
+        $this->favoriteLibrary = $favoriteLibrary;
 
         return $this;
     }
@@ -170,3 +204,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 }
+

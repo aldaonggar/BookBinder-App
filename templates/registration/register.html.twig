@@ -56,13 +56,16 @@
     </div>
     <div class="form-group">
         {{ form_label(registrationForm.birthday, 'Birthday') }}
-        {{ form_widget(registrationForm.birthday, {'attr': {'class': 'form-control', 'id': 'birthday'}}) }}
+        {% set max_date = "now"|date("Y") - 5 %}
+        {% set min_date = "now"|date("Y") - 100 %}
+        {{ form_widget(registrationForm.birthday, {'attr': {'class': 'form-control', 'id': 'birthday', 'type': 'date', 'min': min_date ~ '-01-01', 'max': max_date ~ '-12-31'}}) }}
     </div>
     <div class="form-group">
         {{ form_row(registrationForm.agreeTerms) }}
     </div>
-    <button type="submit" id="register-button" class="register-button" disabled>Register</button> {# Add the "disabled" attribute initially #}
+    <button type="submit" id="register-button" class="register-button">Register</button>
     {{ form_end(registrationForm) }}
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -75,10 +78,8 @@
                 }
             });
 
-            // Add event listeners for the password and repeat-password fields
             const password = document.getElementById('registration_form_plainPassword_first');
             const repeatPassword = document.getElementById('registration_form_plainPassword_second');
-            const registerButton = document.getElementById('register-button');
 
             password.addEventListener('input', validatePasswords);
             repeatPassword.addEventListener('input', validatePasswords);
@@ -115,11 +116,10 @@
                     passwordIsValid = true;
                 }
 
-                registerButton.disabled = !(passwordsMatch && passwordIsValid);
+                return (passwordsMatch && passwordIsValid);
             }
         });
     </script>
-
     <p class="login-text">Already have an account? <a href="{{ path('login') }}" class="login-button">Log in</a></p>
 </div>
 </body>

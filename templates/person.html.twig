@@ -13,10 +13,21 @@
                 <img src="https://via.placeholder.com/200" class="img-fluid rounded-circle" alt="Person's Picture">
             </div>
             <div class="col-md-8">
-                <h2>Name Surname</h2>
-                <p><strong>Gender:</strong> Male</p>
-                <p><strong>Age:</strong> 30</p>
-                <p><strong>Favorite Library:</strong> Main Library</p>
+                <h2>{{ app.user.firstname() }} {{ app.user.lastname() }}</h2>
+                <p><strong>Gender:</strong> {{ app.user.sex() }}</p>
+                <p><strong>Age:</strong> {{ app.user.birthday()|date('Y-m-d') }}</p>
+                <p><strong>Favourite Library:</strong>
+                    {% if app.user.favoriteLibrary() is not null %}
+                        {% set library = entityManager.find('App\\Entity\\Library', app.user.favoriteLibrary()) %}
+                        {% if library is not null %}
+                            {{ library.getName() }}
+                        {% else %}
+                            Unknown Library
+                        {% endif %}
+                    {% else %}
+                        No favorite library selected
+                    {% endif %}
+                </p>
             </div>
         </div>
 
@@ -24,11 +35,9 @@
             <div class="col-12">
                 <h3>Books of Interest</h3>
                 <ul class="list-group">
-                    <li class="list-group-item">Book Title 1 - Author 1</li>
-                    <li class="list-group-item">Book Title 2 - Author 2</li>
-                    <li class="list-group-item">Book Title 3 - Author 3</li>
-                    <li class="list-group-item">Book Title 4 - Author 4</li>
-                    <!-- Add more books of interest as needed -->
+                    {#{% for book in app.user.favoriteBooks()|split(',') %}
+                        <li class="list-group-item">{{ book }}</li>
+                    {% endfor %}#}
                 </ul>
             </div>
         </div>

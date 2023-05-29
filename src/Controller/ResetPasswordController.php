@@ -39,11 +39,18 @@ class ResetPasswordController extends AbstractController
         $form = $this->createForm(ResetPasswordRequestFormType::class);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            return $this->processSendingPasswordResetEmail(
-                $form->get('email')->getData(),
-                $mailer
-            );
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                return $this->processSendingPasswordResetEmail(
+                    $form->get('email')->getData(),
+                    $mailer
+                );
+            } else {
+                // if the form has errors, add them as flash messages
+                foreach ($form->getErrors(true) as $error) {
+                    $this->addFlash('reset_password_error', $error->getMessage());
+                }
+            }
         }
 
         return $this->render('reset_password/request.html.twig', [
@@ -78,11 +85,12 @@ class ResetPasswordController extends AbstractController
             // We store the token in session and remove it from the URL, to avoid the URL being
             // loaded in a browser and potentially leaking the token to 3rd party JavaScript.
             $this->storeTokenInSession($token);
-
-            return $this->redirectToRoute('app_reset_password');
+        }
+        else {
+            $token = $this->getTokenFromSession();
         }
 
-        $token = $this->getTokenFromSession();
+        //$token = $this->getTokenFromSession();
         if (null === $token) {
             throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
         }
@@ -95,7 +103,6 @@ class ResetPasswordController extends AbstractController
                 ResetPasswordExceptionInterface::MESSAGE_PROBLEM_VALIDATE,
                 $e->getReason()
             ));
-
             return $this->redirectToRoute('app_forgot_password_request');
         }
 
