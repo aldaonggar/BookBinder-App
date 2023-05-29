@@ -40,3 +40,31 @@ body {
     border-bottom: 1px solid #ccc;
     padding-bottom: 1rem;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    list-style: none;
+}
+
+.page-item {
+    margin: 0 0.5rem;
+    border-radius: 3px;
+    overflow: hidden; /* To make sure the child elements also adhere to the border radius */
+}
+
+.page-link {
+    display: block; /* To make the whole area clickable */
+    padding: 0.5rem 1rem; /* Add some space around the text */
+    color: #4E0707;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Makes the color fade smoothly */
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #F0F0F0;
+    background-color: #4E0707;
+}
+
