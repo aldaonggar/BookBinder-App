@@ -163,7 +163,8 @@ class BookBinderController extends AbstractController
         $repository = $entityManager->getRepository(User::class);
         $person = $repository->find($id);
         return $this->render('otheruser.html.twig',[
-            'person' => $person
+            'person' => $person,
+            'entityManager'=> $entityManager
         ]);
     }
 
