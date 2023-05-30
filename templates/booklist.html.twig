@@ -20,7 +20,10 @@
         { form_end(form) }
     #}
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+        {{ form_row(form.searchTerm) }}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    {{ form_end(form) }}
 
 
     <div class="mt-4">
@@ -60,21 +63,25 @@
         #}
         </div>
         {% if search == false %}
-            <ul class="pagination">
-                {% if currentPage != 1 and numberOfPages > 1 and currentPage != numberOfPages%}
-                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
-                    <li class="page-item">page {{ currentPage }}/{{ numberOfPages }}</li>
-                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
-                {% elseif currentPage == numberOfPages and numberOfPages > 1%}
-                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
-                    <li class="page-item">page {{ numberOfPages }}/{{ numberOfPages }}</li>
-                {% elseif currentPage <= 1 and numberOfPages > 1%}
-                    <li class="page-item">page 1/{{ numberOfPages }}</li>
-                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
-                {% elseif numberOfPages == 1 %}
-                    <li class="page-item">page 1/{{ numberOfPages }}</li>
-                {% endif %}
-            </ul>
+            {% if 1 <= currentPage and currentPage <= numberOfPages %}
+                <ul class="pagination">
+                    {% if currentPage != 1 and numberOfPages > 1 and currentPage != numberOfPages%}
+                        <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                        <li class="page-item">page {{ currentPage }}/{{ numberOfPages }}</li>
+                        <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                    {% elseif currentPage == numberOfPages and numberOfPages > 1%}
+                        <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                        <li class="page-item">page {{ numberOfPages }}/{{ numberOfPages }}</li>
+                    {% elseif currentPage <= 1 and numberOfPages > 1%}
+                        <li class="page-item">page 1/{{ numberOfPages }}</li>
+                        <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                    {% elseif numberOfPages == 1 %}
+                        <li class="page-item">page 1/{{ numberOfPages }}</li>
+                    {% endif %}
+                </ul>
+            {% elseif currentPage < 1 or currentPage > numberOfPages %}
+                <h2>Book page is not available</h2>
+            {% endif %}
         {% elseif bookArray is empty %}
             <h2>No books corresponding to your search :(</h2>
         {% endif %}

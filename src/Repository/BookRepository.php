@@ -41,6 +41,9 @@ class BookRepository extends ServiceEntityRepository
     }
 
     public function get21Books(int $page): array{
+        if ($page < 1){
+            return [];
+        }
         $query = $this->createQueryBuilder('b')
             ->getQuery();
 

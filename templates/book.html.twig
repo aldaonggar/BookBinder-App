@@ -8,6 +8,7 @@
 
 {% block content %}
     <div class="container mt-4">
+        {% if book is not empty %}
         <div class="row">
             <div class="col-md-4">
                 <img src="{{ book.cover }}" class="img-fluid" alt="Book Cover">
@@ -36,5 +37,9 @@
                 </ul>
             </div>
         </div>
+        {% else %}
+        <h2>There's no book of specified ID :(</h2>
+        {% endif %}
+
     </div>
 {% endblock %}
