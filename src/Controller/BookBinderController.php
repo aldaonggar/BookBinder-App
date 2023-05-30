@@ -167,4 +167,54 @@ class BookBinderController extends AbstractController
         ]);
     }
 
+    public function renderLibraryList(EntityManagerInterface $entityManager, int $page, Request $request): Response{
+        $repository = $entityManager->getRepository(Library::class);
+        $library = $repository->get21Libraries($page);
+        $numberOfPages = ceil(($repository->getNumberOfLibraries())/21);
+
+        $form = $this->createForm(SearchFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $searchTerm = $form->getData()['searchTerm'];
+
+            return $this->redirectToRoute('searchlibraries', ['searchTerm' => $searchTerm]);
+        }
+
+        return $this->render('libraries.html.twig', [
+            'libraryArray'=>$library,
+            'numberOfPages'=> $numberOfPages,
+            'currentPage'=>$page,
+            'form'=>$form->createView(),
+            'search' => false,
+        ]);
+
+        /*
+         * This chunk is just to see if the book generator works fine
+         *
+         * $bookGenerator = new BookGeneratorForTests();
+        $stringResponse = $bookGenerator->createStringResponse();
+        return new Response($stringResponse);*/
+    }
+
+    public function renderLibraryListSearch(EntityManagerInterface $entityManager, string $searchTerm, Request $request): Response{
+        $repository = $entityManager->getRepository(Library::class);
+        $library = $repository->searchLibrariesByNameAndCity($searchTerm);
+
+        $form = $this->createForm(SearchFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $searchTerm = $form->getData()['searchTerm'];
+
+            return $this->redirectToRoute('searchlibraries', ['searchTerm' => $searchTerm]);
+        }
+
+        return $this->render('libraries.html.twig', [
+            'libraryArray'=>$library,
+            'form'=>$form->createView(),
+            'search'=>true
+        ]);
+    }
+
 }
