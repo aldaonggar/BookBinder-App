@@ -40,7 +40,8 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
-    public function get21Books(int $page): array{
+    public function get21Books(int $page): array
+    {
         if ($page < 1){
             return [];
         }
@@ -55,7 +56,16 @@ class BookRepository extends ServiceEntityRepository
         return $paginator->getIterator()->getArrayCopy();
     }
 
-    public function getNumberOfBooks(): int{
+    public function getTop3Books(): array
+    {
+        $query = $this->createQueryBuilder('b')
+            ->setMaxResults(3)
+            ->getQuery();
+        return $query->execute();
+    }
+
+    public function getNumberOfBooks(): int
+    {
         $qb = $this->createQueryBuilder('b');
         $qb->select('COUNT(b)');
         $query = $qb->getQuery();

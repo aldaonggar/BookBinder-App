@@ -50,13 +50,6 @@ class BookBinderController extends AbstractController
             'form'=>$form->createView(),
             'search' => false,
         ]);
-
-        /*
-         * This chunk is just to see if the book generator works fine
-         *
-         * $bookGenerator = new BookGeneratorForTests();
-        $stringResponse = $bookGenerator->createStringResponse();
-        return new Response($stringResponse);*/
     }
 
     public function renderBookListSearch(EntityManagerInterface $entityManager, string $searchTerm, Request $request): Response{
@@ -104,9 +97,13 @@ class BookBinderController extends AbstractController
     }
 
     #[Route('/home', name: 'home')]
-    public function renderHomepage()
+    public function renderHomepage(EntityManagerInterface $em):Response
     {
-        return $this->render('homepage.html.twig');
+        $repo = $em->getRepository(Book::class);
+        $top3Books = $repo->getTop3Books();
+        return $this->render('homepage.html.twig', [
+            "top3Books"=>$top3Books,
+        ]);
     }
 
     public function renderPeopleList(EntityManagerInterface $entityManager, int $page, Request $request): Response{
