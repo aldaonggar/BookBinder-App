@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -38,6 +39,75 @@ class BookRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    public function get21Books(int $page): array{
+        if ($page < 1){
+            return [];
+        }
+        $query = $this->createQueryBuilder('b')
+            ->getQuery();
+
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult(($page-1)*21)
+            ->setMaxResults(21);
+
+        return $paginator->getIterator()->getArrayCopy();
+    }
+
+    public function getNumberOfBooks(): int{
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('COUNT(b)');
+        $query = $qb->getQuery();
+        return (int) $query->getSingleScalarResult();
+    }
+
+    public function searchByTitle($searchTerm)
+    {
+        $queryBuilder = $this->createQueryBuilder('book');
+        $queryBuilder
+            ->where($queryBuilder->expr()->like('book.title', ':searchTerm'))
+            ->setParameter('searchTerm', '%' . $searchTerm . '%');
+
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function searchBooksByAuthorAndTitle($searchTerm)
+    {
+        $queryBuilder = $this->createQueryBuilder('book');
+        $queryBuilder
+            ->andWhere(
+                $queryBuilder->expr()->orX(
+                    $queryBuilder->expr()->like('book.title', ':searchTerm'),
+                    $queryBuilder->expr()->like('book.author', ':searchTerm'),
+                    $queryBuilder->expr()->eq('book.isbn', ':searchTerm')
+                )
+            )
+            ->setParameter('searchTerm', '%' . $searchTerm . '%')
+            ->addOrderBy(
+                'CASE
+                    WHEN book.title LIKE :searchTerm THEN 1
+                    WHEN book.author LIKE :searchTerm THEN 2
+                    WHEN book.isbn = :searchTerm THEN 3
+                    ELSE 4
+                END'
+            );
+
+        return $queryBuilder->getQuery()->getResult();
+
+    }
+    public function getBooksForPage(int $page): array
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->where('20*(:page-1)+1 < b.id < 20*:page')
+            ->setParameter('page', $page)
+        ;
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+
 
 //    /**
 //     * @return Book[] Returns an array of Book objects

@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Libraries{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{{ asset('css/libraries.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2 class="title">Participating Libraries</h2>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1484100356142-db6ab6244067" class="img-fluid library-image" alt="Main Library">
+                <h3 class="library-name">Main Library</h3>
+                <p class="library-location">123 Main Street, City Center</p>
+                <p class="library-hours">Monday - Friday: 9:00 am - 6:00 pm<br>Saturday: 10:00 am - 4:00 pm<br>Sunday: Closed</p>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1484100356142-db6ab6244067" class="img-fluid library-image" alt="City Library">
+                <h3 class="library-name">City Library</h3>
+                <p class="library-location">456 Central Avenue, Downtown</p>
+                <p class="library-hours">Monday - Friday: 10:00 am - 8:00 pm<br>Saturday: 10:00 am - 6:00 pm<br>Sunday: 1:00 pm - 5:00 pm</p>
+            </div>
+            <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1484100356142-db6ab6244067" class="img-fluid library-image" alt="Regional Library">
+                <h3 class="library-name">Regional Library</h3>
+                <p class="library-location">789 Riverside Drive, East Side</p>
+                <p class="library-hours">Monday - Thursday: 9:00 am - 8:00 pm<br>Friday: 9:00 am - 6:00 pm<br>Saturday - Sunday: 10:00 am - 5:00 pm</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -26,6 +26,11 @@ class Rating
         return $this->id;
     }
 
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getBook(): ?book
     {
         return $this->book;

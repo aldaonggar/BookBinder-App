@@ -21,8 +21,8 @@ class Book
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $author = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $isbn = null;
+    #[ORM\Column(length: 30, nullable: true)]
+    private ?string $isbn = null;
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $genre = null;
@@ -32,6 +32,12 @@ class Book
 
     #[ORM\ManyToMany(targetEntity: Label::class, mappedBy: 'bookLabel')]
     private Collection $labels;
+
+    #[ORM\Column(length: 10000, nullable: true)]
+    private ?string $synopsis = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $cover = null;
 
     public function __construct()
     {
@@ -68,12 +74,12 @@ class Book
         return $this;
     }
 
-    public function getIsbn(): ?int
+    public function getIsbn(): ?string
     {
         return $this->isbn;
     }
 
-    public function setIsbn(?int $isbn): self
+    public function setIsbn(?string $isbn): self
     {
         $this->isbn = $isbn;
 
@@ -145,6 +151,38 @@ class Book
         if ($this->labels->removeElement($label)) {
             $label->removeBookLabel($this);
         }
+
+        return $this;
+    }
+
+    public function getSynopsis(): ?string
+    {
+        return $this->synopsis;
+    }
+
+    public function setSynopsis(?string $synopsis): self
+    {
+        $this->synopsis = $synopsis;
+
+        return $this;
+    }
+
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getCover(): ?string
+    {
+        return $this->cover;
+    }
+
+    public function setCover(?string $cover): self
+    {
+        $this->cover = $cover;
 
         return $this;
     }
