@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Library;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -44,6 +45,47 @@ class LibraryRepository extends ServiceEntityRepository
         return $this->findBy(array(), array('name' => 'ASC'));
     }
 
+    public function get21Libraries(int $page): array{
+        $query = $this->createQueryBuilder('l')
+            ->getQuery();
+
+        $paginator = new Paginator($query);
+        $paginator->getQuery()
+            ->setFirstResult(($page-1)*21)
+            ->setMaxResults(21);
+
+        return $paginator->getIterator()->getArrayCopy();
+    }
+
+    public function getNumberOfLibraries(): int{
+        $qb = $this->createQueryBuilder('l');
+        $qb->select('COUNT(l)');
+        $query = $qb->getQuery();
+        return (int) $query->getSingleScalarResult();
+    }
+
+    public function searchLibrariesByNameAndCity($searchTerm)
+    {
+        $queryBuilder = $this->createQueryBuilder('library');
+        $queryBuilder
+            ->andWhere(
+                $queryBuilder->expr()->orX(
+                    $queryBuilder->expr()->like('library.name', ':searchTerm'),
+                    $queryBuilder->expr()->like('library.city', ':searchTerm')
+                )
+            )
+            ->setParameter('searchTerm', '%' . $searchTerm . '%')
+            ->addOrderBy(
+                'CASE
+                    WHEN library.name LIKE :searchTerm THEN 1
+                    WHEN library.city LIKE :searchTerm THEN 2
+                    ELSE 3
+                END'
+            );
+
+        return $queryBuilder->getQuery()->getResult();
+
+    }
 
 
 //    /**
