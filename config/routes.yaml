@@ -51,3 +51,11 @@ searchpeople:
 listofpeople:
     path: /peoplelist/{page}
     controller: App\Controller\BookBinderController::renderPeopleList
+
+searchlibraries:
+    path: /librarylist/search/{searchTerm}
+    controller: App\Controller\BookBinderController::renderLibraryListSearch
+
+listoflibraries:
+    path: /librarylist/{page}
+    controller: App\Controller\BookBinderController::renderLibraryList

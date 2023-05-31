@@ -14,22 +14,52 @@
     color: #F2C14E;
 }
 
-.library-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
+.card {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
-.library-name {
-    font-size: 1.5rem;
+.card-title {
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    color: #4E0707;
 }
 
-.library-location,
-.library-hours {
+.card-text {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    list-style: none;
+}
+
+.page-item {
+    margin: 0 0.5rem;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.page-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #F2C14E;
+    text-decoration: none;
+    background-color: #4E0707;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover,
+.page-link:focus {
+    color: #4E0707;
+    background-color: #F2C14E;
+}
+
+/* Not found message */
+h2 {
+    text-align: center;
+    color: #4E0707;
 }
