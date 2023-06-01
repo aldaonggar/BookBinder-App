@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Library;
+use App\Form\UserSettingsForm;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\User;
 use App\Repository\UserRepository;
@@ -97,10 +98,16 @@ class BookBinderController extends AbstractController
     #[Route('/usersettings', name: 'usersettings')]
     public function renderUserSettings()
     {
+        $user = $this->getUser();
         $libraries = $this->entityManager->getRepository(Library::class)->findAll();
 
+        $form = $this->createForm(UserSettingsForm::class, $user, [
+            'libraries' => $libraries,
+        ]);
+
         return $this->render('usersettings.html.twig', [
-            'libraries' => $libraries,]);
+            'libraries' => $libraries,
+            'form' => $form->createView(),]);
     }
 
     #[Route('/home', name: 'home')]

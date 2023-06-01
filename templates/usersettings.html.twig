@@ -10,62 +10,53 @@
 {% block content %}
     <div class="container mt-4">
         <h2 class="text-center mb-4">User Settings</h2>
-        <form method="post" action="{{ path('editUserSettings') }}">
-            <input type="hidden" name="id" value="{{ app.user.id() }}">
+        {{ form_start(form) }}
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="firstName" name="name" value={{ app.user.firstname() }}>
+                        {{ form_label(form.firstname, 'Name') }}
+                        {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'id': 'firstName'}}) }}
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="surname">Surname</label>
-                        <input type="text" class="form-control" id="lastName" name="surname" value={{ app.user.lastname() }}>
+                        {{ form_label(form.lastname, 'Surname') }}
+                        {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'id': 'lastName'}}) }}
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="age">Age</label>
-                        <input type="date" class="form-control" id="age" name="age" value={{ app.user.birthday|date('Y-m-d') }}>
+                        {{ form_label(form.birthday, 'Age') }}
+                        {{ form_widget(form.birthday, {'attr': {'class': 'form-control', 'id': 'age'}}) }}
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="sex">Sex</label>
-                        <select class="form-control" id="sex" name="sex">
-                            <option value="Male" {{ app.user.sex == 'Male' ? 'selected' : '' }}>Male</option>
-                            <option value="Female" {{ app.user.sex == 'Female' ? 'selected' : '' }}>Female</option>
-                            <option value="Other" {{ app.user.sex == 'Other' ? 'selected' : '' }}>Other</option>
-                        </select>
+                        {{ form_label(form.sex, 'Sex') }}
+                        {{ form_widget(form.sex, {'attr': {'class': 'form-control', 'id': 'sex'}}) }}
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="favoriteLibrary">Favorite Library</label>
-                    <select class="form-control" id="favoriteLibrary" name="favoriteLibrary">
-                        {% for library in libraries %}
-                            <option value="{{ library.id }}" {% if library.id == app.user.favoriteLibrary %}selected{% endif %}>{{ library.name }}</option>
-                        {% endfor %}
-                    </select>
+                    {{ form_label(form.favoriteLibrary, 'Favorite Library') }}
+                    {{ form_widget(form.favoriteLibrary, {'attr': {'class': 'form-control', 'id': 'favoriteLibrary'}}) }}
                 </div>
             </div>
-            <div class="form-group">
-                <label for="favoriteBooks">Favorite Books</label>
-                <textarea class="form-control" id="favoriteBooks" name="favoriteBooks" rows="3">{{ "bla" }}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="profilePicture">Profile Picture</label>
-                <input type="file" class="form-control-file" id="profilePicture">
-            </div>
+{#            <div class="form-group">#}
+{#                {{ form_label(form.favoriteBooks, 'Favorite Books') }}#}
+{#                {{ form_widget(form.favoriteBooks, {'attr': {'class': 'form-control', 'id': 'favoriteBooks', 'rows': 3}}}) }}#}
+{#            </div>#}
+{#            <div class="form-group">
+                {{ form_label(form.profilePicture, 'Profile Picture') }}
+                {{ form_widget(form.profilePicture, {'attr': {'class': 'form-control-file', 'id': 'profilePicture'}}) }}
+            </div>#}
             <div class="text-center mt-4">
                 <button type="submit" id="submitBtn" class="btn btn-primary">Save Changes</button>
                 <button type="button" class="btn btn-secondary" onclick="window.history.back();">Discard Changes</button>
             </div>
-        </form>
+        {{ form_end(form) }}
     </div>
 {% endblock %}

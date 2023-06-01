@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Library;
+use App\Form\UserSettingsForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,36 +27,30 @@ class UserSettingsController extends AbstractController
      */
     public function editUserSettings(Request $request): Response
     {
-        //$user = $this->security->getUser();
-        $userId = $request->request->get('id');
+        $user = $this->getUser();
 
-        $user = $this->entityManager->getRepository(User::class)->find($userId);
         $libraries = $this->entityManager->getRepository(Library::class)->findAll();
 
+        $form = $this->createForm(UserSettingsForm::class, $user, [
+            'libraries' => $libraries,
+        ]);
 
-        if (!$user) {
-            throw $this->createNotFoundException(
-                'No user found for id '.$userId
-            );
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user->setFirstname($form->get('firstname')->getData());
+            $user->setLastname($form->get('lastname')->getData());
+
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+
+            return $this->redirectToRoute('usersettings', [
+                'libraries' => $libraries,
+            ]);
         }
 
-        $name = $request->request->get('name');
-        $surname = $request->request->get('surname');
-        $age = $request->request->get('age');
-        $birthday = new \DateTimeImmutable($age);
-        $sex = $request->request->get('sex');
-        $favoriteLibrary = $request->request->get('favoriteLibrary');
-        //$favoriteBooks = $request->request->get('favoriteBooks');
-
-        $user->setFirstname($name);
-        $user->setLastname($surname);
-        $user->setBirthday($birthday);
-        $user->setSex($sex);
-        $user->setFavoriteLibrary($favoriteLibrary);
-//        $user->($favoriteBooks);
-        $this->entityManager->flush();
-
-        return $this->redirectToRoute('usersettings', [
-            'libraries' => $libraries,]);
+        return $this->render('usersettings.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }
