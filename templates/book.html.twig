@@ -1,3 +1,4 @@
+{#templates/book.html.twig#}
 {% extends "base.html.twig" %}
 
 {% block title %}Book Details{% endblock %}
@@ -14,14 +15,15 @@
                 <img src="{{ book.cover }}" class="img-fluid" alt="Book Cover">
             </div>
             <div class="col-md-8">
-                <h2>{{ book.title }}</h2>
+                <h2>{{ book.title }}
+                    <i id="favoriteIcon" class="far fa-star text-primary clickable" data-book-id="{{ book.id }}"></i>
+                </h2>
                 <h4>{{ book.author }}</h4>
                 <p><strong>Average Rating:</strong> 4.5/5</p>
                 <p id ="bookDescription" data-isbn="{{ book.isbn }}">
 
                 </p>
                 <button type="button" class="btn btn-primary">Reserve</button>
-                <button type="button" class="btn btn-secondary">Add to Reading List</button>
             </div>
         </div>
 
@@ -29,11 +31,9 @@
             <div class="col-12">
                 <h3>People Interested</h3>
                 <ul class="list-group">
-                    <li class="list-group-item">John Doe</li>
-                    <li class="list-group-item">Jane Smith</li>
-                    <li class="list-group-item">Alice Johnson</li>
-                    <li class="list-group-item">Bob Brown</li>
-                    <!-- Add more interested people as needed -->
+                    {% for user in favoritedUsers %}
+                        <li class="list-group-item">{{ user.getUser().getFirstname() }} {{ user.getUser().getLastname()  }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

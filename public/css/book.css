@@ -75,3 +75,12 @@ body {
 .interested-people-list li:last-child {
     border-bottom: none;
 }
+
+.fas.fa-star {
+    color: #ccc; /* Default color when the book is not favorited */
+}
+
+.fas.fa-star.favorited {
+    color: #ff0; /* Color when the book is favorited */
+}
+

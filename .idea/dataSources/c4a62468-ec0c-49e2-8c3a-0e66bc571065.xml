@@ -2,27 +2,8 @@
 <dataSource name="localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.45">
     <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>a22web35|schema||a22web35||ALTER|G
-a22web35|schema||a22web35||ALTER ROUTINE|G
-a22web35|schema||a22web35||CREATE|G
-a22web35|schema||a22web35||CREATE ROUTINE|G
-a22web35|schema||a22web35||CREATE TEMPORARY TABLES|G
-a22web35|schema||a22web35||CREATE VIEW|G
-a22web35|schema||a22web35||DELETE|G
-a22web35|schema||a22web35||DROP|G
-a22web35|schema||a22web35||EVENT|G
-a22web35|schema||a22web35||EXECUTE|G
-a22web35|schema||a22web35||INDEX|G
-a22web35|schema||a22web35||INSERT|G
-a22web35|schema||a22web35||LOCK TABLES|G
-a22web35|schema||a22web35||REFERENCES|G
-a22web35|schema||a22web35||SELECT|G
-a22web35|schema||a22web35||SHOW VIEW|G
-a22web35|schema||a22web35||TRIGGER|G
-a22web35|schema||a22web35||UPDATE|G</Grants>
       <ServerVersion>8.0.30</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
