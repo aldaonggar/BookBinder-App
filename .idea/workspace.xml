@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="uncommented access_control in security.yaml">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="added a feature to be able to add books to favorites">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20230506161422.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml" afterDir="false" />
@@ -13,17 +15,25 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_2_26_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_2_26_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_4_17_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_19_2023_4_17_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/libraries.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/libraries.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230428120915.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230428121412.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230519121624.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230511094410.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230519142817.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230524175512.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230505122437.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230526120443.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230505120425.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20230528111927.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/book.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/APIHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/APIHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LibraryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LibraryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/libraries.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/libraries.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FavoriteBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FavoriteBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/FavoriteBookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FavoriteBookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/myprofile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myprofile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +54,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -176,8 +181,8 @@
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="2OjjLxkrTszGeUOujk0A6c50Oyo" />
@@ -197,8 +202,8 @@
     &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;test__login__registration&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/KULEUVEN/SoftwareEngineering/BookBinder/a22web35/tests&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;favorites&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/KULEUVEN/SoftwareEngineering/BookBinder/a22web35/migrations&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -216,9 +221,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\KULEUVEN\SoftwareEngineering\BookBinder\a22web35\migrations" />
       <recent name="C:\Users\user\Desktop\KULEUVEN\SoftwareEngineering\BookBinder\a22web35\tests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\KULEUVEN\SoftwareEngineering\BookBinder\a22web35\migrations" />
       <recent name="C:\Users\user\Desktop\KULEUVEN\SoftwareEngineering\BookBinder\a22web35" />
     </key>
   </component>
@@ -278,9 +285,10 @@
       <workItem from="1684944007127" duration="3071000" />
       <workItem from="1685046513505" duration="640000" />
       <workItem from="1685101235553" duration="6336000" />
-      <workItem from="1685465997067" duration="84000" />
-      <workItem from="1685471194850" duration="1355000" />
-      <workItem from="1685473214159" duration="1390000" />
+      <workItem from="1685205984083" duration="7684000" />
+      <workItem from="1685215683122" duration="754000" />
+      <workItem from="1685297379235" duration="7544000" />
+      <workItem from="1685362756084" duration="11441000" />
     </task>
     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
       <created>1684498920162</created>
@@ -331,35 +339,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685108638316</updated>
     </task>
-    <task id="LOCAL-00012" summary="commit before pull">
-      <created>1685368448344</created>
+    <task id="LOCAL-00012" summary="added a feature to be able to add books to favorites">
+      <created>1685298529590</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1685368448344</updated>
+      <updated>1685298529591</updated>
     </task>
-    <task id="LOCAL-00013" summary="created a list of all user with search. changed the other users profile pages">
-      <created>1685377229588</created>
+    <task id="LOCAL-00013" summary="added a feature to be able to add books to favorites">
+      <created>1685298583910</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1685377229588</updated>
+      <updated>1685298583910</updated>
     </task>
-    <task id="LOCAL-00014" summary="changed the style of booklist page">
-      <created>1685377400050</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1685377400050</updated>
-    </task>
-    <task id="LOCAL-00015" summary="uncommented access_control in security.yaml">
-      <created>1685384001233</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1685384001233</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +375,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="booklist" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -411,22 +405,8 @@
     <MESSAGE value="EmailVerifierTest done" />
     <MESSAGE value="changed the birthday range in registration form" />
     <MESSAGE value="..." />
-    <MESSAGE value="merged develop into booklist" />
-    <MESSAGE value="created a list of all user with search. changed the other users profile pages" />
-    <MESSAGE value="changed the style of booklist page" />
-    <MESSAGE value="uncommented access_control in security.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="uncommented access_control in security.yaml" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/base.html.twig</url>
-          <line>17</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added a feature to be able to add books to favorites" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a feature to be able to add books to favorites" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

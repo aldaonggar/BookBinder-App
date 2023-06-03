@@ -89,9 +89,14 @@ class BookBinderController extends AbstractController
 
 
     #[Route('/myprofile', name: 'myprofile')]
-    public function renderMyProfile()
+    public function renderMyProfile(): Response
     {
-        return $this->render('myprofile.html.twig', ['entityManager' => $this->entityManager,]);
+        $user = $this->getUser();
+        $favoritedBooks = $user->getFavoriteBooks();
+
+        return $this->render('myprofile.html.twig', [
+            'favoritedBooks' => $favoritedBooks,
+        ]);
     }
 
     #[Route('/usersettings', name: 'usersettings')]
