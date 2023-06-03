@@ -17,7 +17,7 @@ class SearchFormType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Enter search term',
-                    'class'=> 'form-control mr-sm-2 w-50',
+                    'class'=> 'form-control mr-sm-2 w-95',
                     'aria-label' => 'Search'
                 ],
             ])

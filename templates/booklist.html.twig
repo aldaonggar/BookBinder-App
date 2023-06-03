@@ -60,17 +60,19 @@
         #}
         </div>
         {% if search == false %}
-            <ul>
-                {% if currentPage != 1 %}
-                    <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
-                    <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                    <li>page {{ currentPage }}/{{ numberOfPages }}</li>
-                {% elseif currentPage == numberOfPages %}
-                    <li><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}">previous page</a></li>
-                    <li>page {{ numberOfPages }}/{{ numberOfPages }}</li>
-                {% elseif currentPage <= 1 %}
-                    <li><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}">next page</a></li>
-                    <li>page 1/{{ numberOfPages }}</li>
+            <ul class="pagination">
+                {% if currentPage != 1 and numberOfPages > 1 and currentPage != numberOfPages%}
+                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                    <li class="page-item">page {{ currentPage }}/{{ numberOfPages }}</li>
+                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif currentPage == numberOfPages and numberOfPages > 1%}
+                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage-1}) }}" class="page-link"><-</a></li>
+                    <li class="page-item">page {{ numberOfPages }}/{{ numberOfPages }}</li>
+                {% elseif currentPage <= 1 and numberOfPages > 1%}
+                    <li class="page-item">page 1/{{ numberOfPages }}</li>
+                    <li class="page-item"><a href=" {{ path('listofbooks', {'page': currentPage+1}) }}" class="page-link">-></a></li>
+                {% elseif numberOfPages == 1 %}
+                    <li class="page-item">page 1/{{ numberOfPages }}</li>
                 {% endif %}
             </ul>
         {% elseif bookArray is empty %}
