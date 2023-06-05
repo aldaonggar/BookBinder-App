@@ -37,16 +37,11 @@
 
         <h3 class="mt-5">Favorite Books</h3>
         <ul class="list-group">
-            {#{% for book in app.user.favoriteBooks()|split(',') %}
-                <li class="list-group-item">{{ book }}</li>
-            {% endfor %}#}
+            {% for favoriteBook in favoritedBooks %}
+                <li class="list-group-item">{{ favoriteBook.book.title }} by {{ favoriteBook.book.author }}</li>
+            {% else %}
+                <li class="list-group-item">No favorite books yet.</li>
+            {% endfor %}
         </ul>
-
-        {#<h3 class="mt-5">Favorite Libraries</h3>
-        <ul>
-            <li> {{ user['favoriteLibrary'] }} </li>
-            <li>City Library</li>
-            <!-- Add more favorite libraries as needed -->
-        </ul>#}
     </div>
 {% endblock %}
