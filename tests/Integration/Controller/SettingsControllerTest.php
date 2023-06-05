@@ -65,7 +65,7 @@ class SettingsControllerTest extends WebTestCase
         $this->assertSame('Male', $user->getSex());
     }
 
-    public function editUserSettingsTestInvalidName (){
+    public function testEditUserSettingsInvalidName (){
         $email = 'test' . uniqid() . '@example.com';
 
         // Request the registration page
@@ -108,7 +108,7 @@ class SettingsControllerTest extends WebTestCase
         $entityManager = $this->client->getContainer()->get('doctrine.orm.entity_manager');
         $user = $entityManager->getRepository(User::class)->find(1);
 
-        $this->assertNotSame('John123', $user->getFirstname());
+        $this->assertFalse($user->getFirstName() == "John123");
 
         // BookTest case 1: Invalid name with numbers
         $this->client->request('POST', '/editUserSettings', [
@@ -128,7 +128,7 @@ class SettingsControllerTest extends WebTestCase
         $this->assertNotSame('John@#§', $user->getFirstname());
     }
 
-    public function editUserSettingsTestInvalidSurname (){
+    public function testEditUserSettingsInvalidSurname (){
         $email = 'test' . uniqid() . '@example.com';
 
         // Request the registration page
@@ -170,8 +170,7 @@ class SettingsControllerTest extends WebTestCase
 
         $entityManager = $this->client->getContainer()->get('doctrine.orm.entity_manager');
         $user = $entityManager->getRepository(User::class)->find(1);
-
-        $this->assertNotSame('Doe678', $user->getLastname());
+        $this->assertFalse($user->getLastName() == "Doe678");
 
         // BookTest case 1: Invalid name with signs
         $this->client->request('POST', '/editUserSettings', [

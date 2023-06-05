@@ -70,7 +70,7 @@ class PersonTest extends WebTestCase
         ]);
         $this->client->submit($form);
 
-        $crawler = $this->client->request('GET', '/person');
+        $crawler = $this->client->request('GET', '/person/1');
         $this->assertResponseIsSuccessful();
     }
 
