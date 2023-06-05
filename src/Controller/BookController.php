@@ -71,7 +71,13 @@ class BookController extends AbstractController
 
         $repository = $entityManager->getRepository(Book::class);
         $book = $repository->find($id);
-        $favoritedUsers = $this->favoriteBookService->getFavoritedUsers($book);
+        if ($book != null){
+            $favoritedUsers = $this->favoriteBookService->getFavoritedUsers($book);
+        } else {
+            $favoritedUsers = [];
+        }
+
+
         return $this->render('book.html.twig',[
             'book' => $book,
             'favoritedUsers' => $favoritedUsers,

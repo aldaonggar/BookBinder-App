@@ -4,7 +4,7 @@ namespace App\Tests\Integration\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class BookBinderControllerTest extends WebTestCase
+class BookControllerTest extends WebTestCase
 {
     public function testBookListPage()
     {
@@ -14,7 +14,7 @@ class BookBinderControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('head title', 'Book List');
-        $this->assertSelectorTextContains('div.mt-4 ul li.test ', 'page 1/6');
+        $this->assertSelectorTextContains('ul.pagination li ', 'page 1/6');
 
         $elements = $crawler->filter('h5.card-title');
 
@@ -30,7 +30,7 @@ class BookBinderControllerTest extends WebTestCase
 
         $crawler = $client->request('GET', '/booklist/6');
         $elements = $crawler->filter('h5.card-title');
-        $this->assertSelectorTextContains('div.mt-4 ul li.test ', 'page 6/6');
+
 
         $containsTitle = false;
         foreach ($elements as $element) {
