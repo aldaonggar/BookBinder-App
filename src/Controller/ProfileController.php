@@ -23,7 +23,14 @@ class ProfileController extends AbstractController
     #[Route('/myprofile', name: 'myprofile')]
     public function renderMyProfile(EntityManagerInterface $entityManager):Response
     {
-        return $this->render('myprofile.html.twig', ['entityManager' => $entityManager,]);
+        $user = $this->getUser();
+        $favoritedBooks = $user->getFavoriteBooks();
+
+
+        return $this->render('myprofile.html.twig', [
+            'entityManager' => $entityManager,
+            'favoritedBooks'=>$favoritedBooks,
+        ]);
     }
 
     #[Route('/usersettings', name: 'usersettings')]

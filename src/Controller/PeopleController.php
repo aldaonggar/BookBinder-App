@@ -58,9 +58,11 @@ class PeopleController extends AbstractController
     {
         $repository = $entityManager->getRepository(User::class);
         $person = $repository->find($id);
+        $favoritedBooks = $person->getFavoriteBooks();
         return $this->render('otheruser.html.twig',[
             'person' => $person,
-            'entityManager'=> $entityManager
+            'entityManager'=> $entityManager,
+            'favoritedBooks' => $favoritedBooks,
         ]);
     }
 }
