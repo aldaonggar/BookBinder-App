@@ -12,7 +12,7 @@ class FavoriteBook
     #[ORM\Column(type: "integer")]
     private ?int $id;
 
-    #[ORM\ManyToOne(targetEntity: "App\Entity\User")]
+    #[ORM\ManyToOne(targetEntity: "App\Entity\User", inversedBy: "favoriteBooks")]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user;
 

@@ -62,7 +62,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var Collection
      */
-    #[ORM\OneToMany(targetEntity: FavoriteBook::class, mappedBy: "user", orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: "user", targetEntity: FavoriteBook::class, orphanRemoval: true)]
     private $favoriteBooks;
 
 

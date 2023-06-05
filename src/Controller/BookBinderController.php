@@ -89,6 +89,7 @@ class BookBinderController extends AbstractController
 
         return $this->render('myprofile.html.twig', [
             'favoritedBooks' => $favoritedBooks,
+            'entityManager' => $this->entityManager,
         ]);
     }
 
@@ -164,9 +165,11 @@ class BookBinderController extends AbstractController
     public function renderPeople(EntityManagerInterface $entityManager, int $id){
         $repository = $entityManager->getRepository(User::class);
         $person = $repository->find($id);
+        $favoriteBooks = $person->getFavoriteBooks();
         return $this->render('otheruser.html.twig',[
             'person' => $person,
-            'entityManager'=> $entityManager
+            'entityManager'=> $entityManager,
+            'favoritedBooks' => $favoriteBooks,
         ]);
     }
 
