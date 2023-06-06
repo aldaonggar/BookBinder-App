@@ -72,15 +72,6 @@ class BookRepository extends ServiceEntityRepository
         return (int) $query->getSingleScalarResult();
     }
 
-    public function searchByTitle($searchTerm)
-    {
-        $queryBuilder = $this->createQueryBuilder('book');
-        $queryBuilder
-            ->where($queryBuilder->expr()->like('book.title', ':searchTerm'))
-            ->setParameter('searchTerm', '%' . $searchTerm . '%');
-
-        return $queryBuilder->getQuery()->getResult();
-    }
 
     public function searchBooksByAuthorAndTitle($searchTerm)
     {
@@ -105,17 +96,6 @@ class BookRepository extends ServiceEntityRepository
 
         return $queryBuilder->getQuery()->getResult();
 
-    }
-    public function getBooksForPage(int $page): array
-    {
-        $qb = $this->createQueryBuilder('b')
-            ->where('20*(:page-1)+1 < b.id < 20*:page')
-            ->setParameter('page', $page)
-        ;
-
-        $query = $qb->getQuery();
-
-        return $query->execute();
     }
 
 
