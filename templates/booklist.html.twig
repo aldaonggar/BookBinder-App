@@ -9,16 +9,6 @@
 {% block content %}
     <h1 class="text-center">Book List</h1>
 
-    {#
-        <form class="form-inline d-flex justify-content-center mt-4 mb-4">
-        <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search by name or author" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        { form_start(form) }
-            { form_row(form.searchTerm) }
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        { form_end(form) }
-    #}
 
     {{ form_start(form) }}
         {{ form_row(form.searchTerm) }}
@@ -42,25 +32,7 @@
                 </div>
             {% endfor %}
 
-            <!-- Add more book cards with descriptions as needed -->
-        {#
-            <ul>
-                {% for i in range(1, numberOfPages) %}
 
-                    {% if numberOfPages > 3%}
-                        {% if i < 3 %}
-                            <li><a href="">{{ i }}</a></li>
-                        {% elseif i == numberOfPages %}
-                            <li><a href="">{{ i }}</a></li>
-                        {% elseif i == 3 %}
-                            <li>...</li>
-                        {% endif %}
-                    {% else %}
-                        <li><a href="{{ path('listofbooks', {'page': i}) }}">{{ i }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        #}
         </div>
         {% if search == false %}
             {% if 1 <= currentPage and currentPage <= numberOfPages %}

@@ -65,8 +65,9 @@
     </div>
     <button type="submit" id="register-button" class="register-button">Register</button>
     {{ form_end(registrationForm) }}
+    <script src="{{ asset('javascript/registerScript.js') }}"></script>
 
-
+    {#
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('.register-form');
@@ -120,6 +121,7 @@
             }
         });
     </script>
+    #}
     <p class="login-text">Already have an account? <a href="{{ path('login') }}" class="login-button">Log in</a></p>
 </div>
 </body>

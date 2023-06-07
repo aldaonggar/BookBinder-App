@@ -6,23 +6,23 @@ controllers:
 
 listofbooks:
     path: /booklist/{page}
-    controller: App\Controller\BookBinderController::renderBookList
+    controller: App\Controller\BookController::renderBookList
 
 book:
     path: /book/{id}
-    controller: App\Controller\BookBinderController::renderBook
+    controller: App\Controller\BookController::renderBook
 
 myprofile:
     path: /myprofile
-    controller: App\Controller\BookBinderController::renderMyProfile
+    controller: App\Controller\ProfileController::renderMyProfile
 
 person:
     path: /person/{id}
-    controller: App\Controller\BookBinderController::renderPeople
+    controller: App\Controller\PeopleController::renderPeople
 
 usersettings:
     path: /usersettings
-    controller: App\Controller\BookBinderController::renderUserSettings
+    controller: App\Controller\ProfileController::renderUserSettings
 
 home:
     path: /home
@@ -30,11 +30,11 @@ home:
 
 register:
     path: /register
-    controller: App\Controller\BookBinderController::renderRegister
+    controller: App\Controller\RegistrationController::register
 
 search:
     path: /booklist/search/{searchTerm}
-    controller: App\Controller\BookBinderController::renderBookListSearch
+    controller: App\Controller\BookController::renderBookListSearch
 
 login:
     path: /login
@@ -46,8 +46,16 @@ app_logout:
 
 searchpeople:
     path: /peoplelist/search/{searchTerm}
-    controller: App\Controller\BookBinderController::renderPeopleListSearch
+    controller: App\Controller\PeopleController::renderPeopleListSearch
 
 listofpeople:
     path: /peoplelist/{page}
-    controller: App\Controller\BookBinderController::renderPeopleList
+    controller: App\Controller\PeopleController::renderPeopleList
+
+searchlibraries:
+    path: /librarylist/search/{searchTerm}
+    controller: App\Controller\LibraryController::renderLibraryListSearch
+
+listoflibraries:
+    path: /librarylist/{page}
+    controller: App\Controller\LibraryController::renderLibraryList

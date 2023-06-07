@@ -1,11 +1,24 @@
-{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset password</title>
     <link rel="stylesheet" href="{{ asset('css/reset_password.css') }}">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
     <div class="register-container">
         <h2>Reset your password</h2>
         {{ form_start(resetForm) }}
         <div class="form-group">
             {{ form_label(resetForm.plainPassword.first, 'New Password') }}
-            {{ form_widget(resetForm.plainPassword.first) }}
+            {{ form_widget(resetForm.plainPassword.first, {'attr': {'id': 'password'}})}}
         </div>
         <ul id="password-requirements">
             <li>Minimum 8 characters long</li>
@@ -17,12 +30,15 @@
         <p id="password-validation-message"></p> {# Add this line for displaying the password validation message #}
         <div class="form-group">
             {{ form_label(resetForm.plainPassword.second, 'Repeat New Password') }}
-            {{ form_widget(resetForm.plainPassword.second) }}
+
+            {{ form_widget(resetForm.plainPassword.second, {'attr': {'id': 'repeatPassword'}})}}
         </div>
         <p id="password-match-message"></p> {# Add this line for displaying the password matching message #}
         <button id="reset-password-button" class="register-button" disabled>Reset password</button> {# Add the "disabled" attribute initially #}
         {{ form_end(resetForm) }}
+
     </div>
+
 
     <script>
         const passwordInput = document.querySelector('#{{ resetForm.plainPassword.first.vars.id }}');
@@ -40,7 +56,7 @@
 
             const requirements = [
                 /.{8,}/, // Minimum 8 characters long
-                /.*[!@#$%^&*(){}[\]<>?/|,:;~]/, // At least one special character
+                /.*[!@#$%^&*(){}[\]<>?/|,:;~.]/, // At least one special character
                 /.*[A-Z]/, // At least one uppercase letter
                 /.*[a-z]/, // At least one lowercase letter
                 /.*\d/ // At least one digit
@@ -59,4 +75,6 @@
             resetPasswordButton.disabled = !(isValid && password === confirmPassword); // Enable/disable the button based on validation
         }
     </script>
-{% endblock %}
+    
+</body>
+</html>

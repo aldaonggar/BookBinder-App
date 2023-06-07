@@ -40,7 +40,8 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
-    public function get21Books(int $page): array{
+    public function get21Books(int $page): array
+    {
         if ($page < 1){
             return [];
         }
@@ -55,22 +56,22 @@ class BookRepository extends ServiceEntityRepository
         return $paginator->getIterator()->getArrayCopy();
     }
 
-    public function getNumberOfBooks(): int{
+    public function getTop3Books(): array
+    {
+        $query = $this->createQueryBuilder('b')
+            ->setMaxResults(3)
+            ->getQuery();
+        return $query->execute();
+    }
+
+    public function getNumberOfBooks(): int
+    {
         $qb = $this->createQueryBuilder('b');
         $qb->select('COUNT(b)');
         $query = $qb->getQuery();
         return (int) $query->getSingleScalarResult();
     }
 
-    public function searchByTitle($searchTerm)
-    {
-        $queryBuilder = $this->createQueryBuilder('book');
-        $queryBuilder
-            ->where($queryBuilder->expr()->like('book.title', ':searchTerm'))
-            ->setParameter('searchTerm', '%' . $searchTerm . '%');
-
-        return $queryBuilder->getQuery()->getResult();
-    }
 
     public function searchBooksByAuthorAndTitle($searchTerm)
     {
@@ -95,17 +96,6 @@ class BookRepository extends ServiceEntityRepository
 
         return $queryBuilder->getQuery()->getResult();
 
-    }
-    public function getBooksForPage(int $page): array
-    {
-        $qb = $this->createQueryBuilder('b')
-            ->where('20*(:page-1)+1 < b.id < 20*:page')
-            ->setParameter('page', $page)
-        ;
-
-        $query = $qb->getQuery();
-
-        return $query->execute();
     }
 
 

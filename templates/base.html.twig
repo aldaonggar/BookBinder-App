@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Website Title{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     {% block additional_styles %}{% endblock %}
 </head>
 <body class="main-body">
@@ -17,6 +18,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('listofpeople', {'page': 1}) }}">People</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('listoflibraries', {'page': 1}) }}">Libraries</a>
             </li>
         </ul>
     </div>
@@ -35,6 +39,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="{{ asset('script/APIHandler.js') }}"></script>
+<script src="{{ asset('javascript/APIHandler.js') }}"></script>
+<script src="{{ asset('javascript/checkUserSettings.js') }}"></script>
+
+
 </body>
 </html>

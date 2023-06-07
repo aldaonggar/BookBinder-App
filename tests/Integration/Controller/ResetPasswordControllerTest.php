@@ -60,7 +60,7 @@ class ResetPasswordControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/reset-password');
 
         $form = $crawler->selectButton('Reset password')->form();
-        $form['reset_password_request_form[email]'] = 'test@example.com';
+        $form['reset_password_request_form[email]'] = 'testhello5353@gmail.com';
 
         $this->client->submit($form);
 

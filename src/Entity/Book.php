@@ -27,22 +27,17 @@ class Book
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $genre = null;
 
-    #[ORM\OneToMany(mappedBy: 'book', targetEntity: Rating::class)]
-    private Collection $ratings;
-
-    #[ORM\ManyToMany(targetEntity: Label::class, mappedBy: 'bookLabel')]
-    private Collection $labels;
-
-    #[ORM\Column(length: 10000, nullable: true)]
-    private ?string $synopsis = null;
-
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $cover = null;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FavoriteBook", mappedBy="book", orphanRemoval=true)
+     */
+    private $favoritedByUsers;
+
     public function __construct()
     {
-        $this->ratings = new ArrayCollection();
-        $this->labels = new ArrayCollection();
+        $this->favoritedByUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -99,75 +94,6 @@ class Book
     }
 
     /**
-     * @return Collection<int, Rating>
-     */
-    public function getRatings(): Collection
-    {
-        return $this->ratings;
-    }
-
-    public function addRating(Rating $rating): self
-    {
-        if (!$this->ratings->contains($rating)) {
-            $this->ratings->add($rating);
-            $rating->setBook($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRating(Rating $rating): self
-    {
-        if ($this->ratings->removeElement($rating)) {
-            // set the owning side to null (unless already changed)
-            if ($rating->getBook() === $this) {
-                $rating->setBook(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Label>
-     */
-    public function getLabels(): Collection
-    {
-        return $this->labels;
-    }
-
-    public function addLabel(Label $label): self
-    {
-        if (!$this->labels->contains($label)) {
-            $this->labels->add($label);
-            $label->addBookLabel($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLabel(Label $label): self
-    {
-        if ($this->labels->removeElement($label)) {
-            $label->removeBookLabel($this);
-        }
-
-        return $this;
-    }
-
-    public function getSynopsis(): ?string
-    {
-        return $this->synopsis;
-    }
-
-    public function setSynopsis(?string $synopsis): self
-    {
-        $this->synopsis = $synopsis;
-
-        return $this;
-    }
-
-    /**
      * @param int|null $id
      */
     public function setId(?int $id): void
@@ -186,4 +112,48 @@ class Book
 
         return $this;
     }
+
+    /**
+     * @return Collection|FavoriteBook[]
+     */
+    public function getFavoritedByUsers(): Collection
+    {
+        return $this->favoritedByUsers;
+    }
+
+    public function addFavoritedByUser(FavoriteBook $favoritedByUser): self
+    {
+        if (!$this->favoritedByUsers->contains($favoritedByUser)) {
+            $this->favoritedByUsers[] = $favoritedByUser;
+            $favoritedByUser->setBook($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavoritedByUser(FavoriteBook $favoritedByUser): self
+    {
+        if ($this->favoritedByUsers->removeElement($favoritedByUser)) {
+            // set the owning side to null (unless already changed)
+            if ($favoritedByUser->getBook() === $this) {
+                $favoritedByUser->setBook(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function show(Book $book)
+    {
+        $usersWhoFavorited = $book->getFavoritedByUsers()->map(function($favorite) {
+            return $favorite->getUser();
+        });
+
+        return $this->render('book.html.twig', [
+            'book' => $book,
+            'usersWhoFavorited' => $usersWhoFavorited,
+        ]);
+    }
+
+
 }
