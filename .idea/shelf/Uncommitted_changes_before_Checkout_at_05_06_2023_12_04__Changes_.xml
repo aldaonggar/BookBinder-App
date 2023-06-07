@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_05_06_2023_12_04_[Changes]" date="1685959495949" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_06_2023_12_04_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 05/06/2023 12:04 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/mysql.osA4Bg.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" />
+    <option name="AFTER_PATH" value=".idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_06_2023_12_04_[Changes]/information_schema.FNRwLQ.zip" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

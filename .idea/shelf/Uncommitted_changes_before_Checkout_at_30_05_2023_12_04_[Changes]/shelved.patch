@@ -1,0 +1,13 @@
+Index: .phpunit.result.cache
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"version\":1,\"defects\":[],\"times\":{\"App\\\\Tests\\\\Controller\\\\BookBinderControllerTest::testTestFunction\":0.024,\"App\\\\Tests\\\\Controller\\\\BookBinderControllerWebTest::testSomething\":6.248,\"App\\\\Tests\\\\Controller\\\\BookBinderControllerWebTest::testHome\":1.274}}
+===================================================================
+diff --git a/.phpunit.result.cache b/.phpunit.result.cache
+--- a/.phpunit.result.cache	
++++ b/.phpunit.result.cache	
+@@ -1,1 +1,1 @@
+-{"version":1,"defects":[],"times":{"App\\Tests\\Controller\\BookBinderControllerTest::testTestFunction":0.024,"App\\Tests\\Controller\\BookBinderControllerWebTest::testSomething":6.248,"App\\Tests\\Controller\\BookBinderControllerWebTest::testHome":1.274}}
+\ No newline at end of file
++{"version":1,"defects":{"App\\Tests\\Unit\\BookList\\BookRepositoryTest::testGet21Books":3,"Warning":6,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testBookListPage":3,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testSearchPage":3},"times":{"App\\Tests\\Controller\\BookBinderControllerTest::testTestFunction":0.024,"App\\Tests\\Controller\\BookBinderControllerWebTest::testSomething":6.248,"App\\Tests\\Controller\\BookBinderControllerWebTest::testHome":1.274,"App\\Tests\\Unit\\BookList\\BookRepositoryTest::testGet21Books":0.696,"Warning":0.014,"App\\Tests\\Unit\\BookList\\BookRepositoryTest::testSearchBooks":0.948,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testShowBookListPage":8.465,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testBookListPage":1.297,"App\\Tests\\Integration\\Controller\\LoginControllerTest::testShowLoginPage":0.659,"App\\Tests\\Integration\\Controller\\LoginControllerTest::testLoginWithBadCredentials":0.665,"App\\Tests\\Integration\\Controller\\LoginControllerTest::testLoginWithBadCredentials2":0.26,"App\\Tests\\Integration\\Controller\\LoginControllerTest::testLoginWithGoodCredentials":6.963,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testBookPage":1.191,"App\\Tests\\Integration\\Controller\\BookBinderControllerTest::testSearchPage":1.442}}
+\ No newline at end of file

@@ -1,0 +1,331 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"eb9002e2-75b1-432b-9932-32d4a77d8622\" name=\"Changes\" comment=\"added a feature to be able to add books to favorites\">\r\n      <change afterPath=\"$PROJECT_DIR$/migrations/Version20230506161422.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/composer.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/composer.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230428120915.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230428121412.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230519121624.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/migrations/Version20230511094410.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230519142817.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230524175512.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/migrations/Version20230505122437.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230526120443.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/migrations/Version20230505120425.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/migrations/Version20230528111927.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/book.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/css/book.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/script/APIHandler.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/script/APIHandler.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/BookBinderController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/BookBinderController.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Controller/BookController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Controller/BookController.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Entity/FavoriteBook.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Entity/FavoriteBook.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Entity/User.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Entity/User.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Service/FavoriteBookService.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Service/FavoriteBookService.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/templates/book.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/book.html.twig\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/templates/myprofile.html.twig\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/templates/myprofile.html.twig\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" showQuickActionsPanel=\"false\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n    <execution>\r\n      <phar pharPath=\"$PROJECT_DIR$/composer_2.phar\" interpreterId=\"48a6d343-8adf-46b4-8700-717658cac8b6\" />\r\n    </execution>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpDebugGeneral\" listening_started=\"true\" />\r\n  <component name=\"PhpServers\">\r\n    <servers>\r\n      <server host=\"localhost\" id=\"fdac117e-d4a8-41f9-b76d-d2f2f030cdf5\" name=\"localhost\" port=\"8080\" />\r\n      <server host=\"localhost\" id=\"675bb680-d037-4f99-8d9f-2a4bfc719787\" name=\"localhost (1)\" port=\"88\" />\r\n    </servers>\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"PHP 8.2.3\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/php-webdriver/webdriver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/masterminds/html5\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/deprecations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/runtime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/rate-limiter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/password-hasher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/panther\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/google-mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/data-fixtures\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OjjLxkrTszGeUOujk0A6c50Oyo\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,\r\n    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;favorites&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/KULEUVEN/SoftwareEngineering/BookBinder/a22web35/migrations&quot;,\r\n    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;php.test.frameworks.configurable&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\user\\Desktop\\KULEUVEN\\SoftwareEngineering\\BookBinder\\a22web35\\migrations\" />\r\n      <recent name=\"C:\\Users\\user\\Desktop\\KULEUVEN\\SoftwareEngineering\\BookBinder\\a22web35\\tests\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\user\\Desktop\\KULEUVEN\\SoftwareEngineering\\BookBinder\\a22web35\\migrations\" />\r\n      <recent name=\"C:\\Users\\user\\Desktop\\KULEUVEN\\SoftwareEngineering\\BookBinder\\a22web35\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"PHP Built-in Web Server.bookbinder\">\r\n    <configuration name=\"UnitTest\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\">\r\n      <CommandLine>\r\n        <PhpTestInterpreterSettings>\r\n          <option name=\"interpreterName\" value=\"PHP 8.1\" />\r\n        </PhpTestInterpreterSettings>\r\n      </CommandLine>\r\n      <TestRunner configuration_file=\"$PROJECT_DIR$/phpunit.xml.dist\" scope=\"XML\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"bookbinder\" type=\"PhpBuiltInWebServerConfigurationType\" factoryName=\"PHP Built-in Web Server\" document_root=\"$PROJECT_DIR$/public\" port=\"88\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"PHP Built-in Web Server.bookbinder\" />\r\n      <item itemvalue=\"PHPUnit.UnitTest\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"eb9002e2-75b1-432b-9932-32d4a77d8622\" name=\"Changes\" comment=\"\" />\r\n      <created>1682080832620</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682080832620</updated>\r\n      <workItem from=\"1682080833849\" duration=\"4748000\" />\r\n      <workItem from=\"1682686040107\" duration=\"579000\" />\r\n      <workItem from=\"1682692384168\" duration=\"3299000\" />\r\n      <workItem from=\"1682696178322\" duration=\"2585000\" />\r\n      <workItem from=\"1683055442498\" duration=\"153000\" />\r\n      <workItem from=\"1683055603398\" duration=\"1410000\" />\r\n      <workItem from=\"1683286083871\" duration=\"26720000\" />\r\n      <workItem from=\"1683549047722\" duration=\"12346000\" />\r\n      <workItem from=\"1683633214929\" duration=\"67000\" />\r\n      <workItem from=\"1683724707469\" duration=\"1582000\" />\r\n      <workItem from=\"1683797133360\" duration=\"1373000\" />\r\n      <workItem from=\"1683810791604\" duration=\"18149000\" />\r\n      <workItem from=\"1683894585500\" duration=\"316000\" />\r\n      <workItem from=\"1683894950669\" duration=\"3337000\" />\r\n      <workItem from=\"1683899895371\" duration=\"6169000\" />\r\n      <workItem from=\"1684159734023\" duration=\"71000\" />\r\n      <workItem from=\"1684159820526\" duration=\"196000\" />\r\n      <workItem from=\"1684160040912\" duration=\"35000\" />\r\n      <workItem from=\"1684160088838\" duration=\"3701000\" />\r\n      <workItem from=\"1684492077741\" duration=\"63000\" />\r\n      <workItem from=\"1684496229074\" duration=\"1102000\" />\r\n      <workItem from=\"1684497359891\" duration=\"9011000\" />\r\n      <workItem from=\"1684600842231\" duration=\"3845000\" />\r\n      <workItem from=\"1684607726571\" duration=\"111000\" />\r\n      <workItem from=\"1684607850266\" duration=\"3444000\" />\r\n      <workItem from=\"1684766361068\" duration=\"2811000\" />\r\n      <workItem from=\"1684866678514\" duration=\"2523000\" />\r\n      <workItem from=\"1684944007127\" duration=\"3071000\" />\r\n      <workItem from=\"1685046513505\" duration=\"640000\" />\r\n      <workItem from=\"1685101235553\" duration=\"6336000\" />\r\n      <workItem from=\"1685205984083\" duration=\"7684000\" />\r\n      <workItem from=\"1685215683122\" duration=\"754000\" />\r\n      <workItem from=\"1685297379235\" duration=\"7544000\" />\r\n      <workItem from=\"1685362756084\" duration=\"11441000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"LoginController Unit testing done. ;)\">\r\n      <created>1684498920162</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684498920162</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"LoginController Unit testing done. ;)\">\r\n      <created>1684499557595</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684499557595</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"ChangePasswordFormType Unit testing done. ;)\">\r\n      <created>1684502887476</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684502887477</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"ResetPasswordRequestFormType Unit testing done. ;)\">\r\n      <created>1684506353707</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1684506353707</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"EmailVerifierTest done\">\r\n      <created>1685105480086</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685105480086</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"changed the birthday range in registration form\">\r\n      <created>1685108220064</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685108220064</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"...\">\r\n      <created>1685108638316</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685108638316</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"added a feature to be able to add books to favorites\">\r\n      <created>1685298529590</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685298529591</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"added a feature to be able to add books to favorites\">\r\n      <created>1685298583910</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685298583910</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"14\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"CUSTOM_BOOLEAN_PROPERTIES\">\r\n                <map>\r\n                  <entry key=\"Show.Git.Branches\" value=\"true\" />\r\n                </map>\r\n              </option>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n        <entry key=\"f63717c5-3bd5-4d7a-88ab-5bdc8d693561\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"start of the database\" />\r\n    <MESSAGE value=\"need to commit for pull\" />\r\n    <MESSAGE value=\"fixed composer issues\" />\r\n    <MESSAGE value=\"added real books to the homepage\" />\r\n    <MESSAGE value=\"added libraries page\" />\r\n    <MESSAGE value=\"commit before pull\" />\r\n    <MESSAGE value=\"LoginController Unit testing done. ;)\" />\r\n    <MESSAGE value=\"ChangePasswordFormType Unit testing done. ;)\" />\r\n    <MESSAGE value=\"ResetPasswordRequestFormType Unit testing done. ;)\" />\r\n    <MESSAGE value=\"EmailVerifierTest done\" />\r\n    <MESSAGE value=\"changed the birthday range in registration form\" />\r\n    <MESSAGE value=\"...\" />\r\n    <MESSAGE value=\"added a feature to be able to add books to favorites\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added a feature to be able to add books to favorites\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/a22web35@UnitTest.xml\" NAME=\"UnitTest Coverage Results\" MODIFIED=\"1683899131412\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"PhpCoverage\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,36 +4,35 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="added a feature to be able to add books to favorites">
+-      <change afterPath="$PROJECT_DIR$/migrations/Version20230506161422.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_05_2023_12_29__Changes_.xml" afterDir="false" />
++    <list default="true" id="eb9002e2-75b1-432b-9932-32d4a77d8622" name="Changes" comment="deleting some unused classes">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a62468-ec0c-49e2-8c3a-0e66bc571065/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_05_2023_12_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_05_2023_12_02__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_05_2023_17_20__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_34__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2023_13_35__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_05_2023_13_58__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_05_2023_13_59__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_05_2023_12_45__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_12_2023_5_45_PM__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230428120915.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230428121412.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230519121624.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230511094410.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230519142817.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230524175512.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230505122437.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230526120443.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20230505120425.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/migrations/Version20230528111927.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/book.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/script/APIHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/APIHandler.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/BookBinderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookBinderController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Controller/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Entity/FavoriteBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FavoriteBook.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FavoriteBookRepository.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Service/FavoriteBookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FavoriteBookService.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/book.html.twig" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/templates/myprofile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myprofile.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230505120425.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230505122437.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230506161422.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230511094410.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230525185907.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230528185421.php" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/migrations/Version20230528201720.php" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -54,6 +53,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="refactor" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -64,9 +68,10 @@
+     <servers>
+       <server host="localhost" id="fdac117e-d4a8-41f9-b76d-d2f2f030cdf5" name="localhost" port="8080" />
+       <server host="localhost" id="675bb680-d037-4f99-8d9f-2a4bfc719787" name="localhost (1)" port="88" />
++      <server host="127.0.0.1" id="ce1fcd0e-aa49-48f1-868f-ef5f0660b909" name="127.0.0.1" port="9080" />
+     </servers>
+   </component>
+-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.2.3">
++  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+     <include_path>
+       <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
+       <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
+@@ -181,8 +186,9 @@
+       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+       <path value="$PROJECT_DIR$/vendor/psr/cache" />
+       <path value="$PROJECT_DIR$/vendor/composer" />
+-      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
++      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
++      <path value="$PROJECT_DIR$/vendor/dbrekelmans/bdi" />
+     </include_path>
+   </component>
+   <component name="ProjectId" id="2OjjLxkrTszGeUOujk0A6c50Oyo" />
+@@ -230,6 +236,22 @@
+     </key>
+   </component>
+   <component name="RunManager" selected="PHP Built-in Web Server.bookbinder">
++    <configuration name="BookTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
++      <TestRunner class="App\Tests\Integration\Controller\BookTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Controller/BookTest.php" scope="Class" />
++      <method v="2" />
++    </configuration>
++    <configuration name="LibraryControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
++      <TestRunner class="App\Tests\Integration\Controller\LibraryControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Controller/LibraryControllerTest.php" scope="Class" />
++      <method v="2" />
++    </configuration>
++    <configuration name="PantherBookControllerTest.testBookImages" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
++      <TestRunner class="App\Tests\Integration\Controller\PantherBookControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Controller/PantherBookControllerTest.php" method="testBookImages" scope="Method" />
++      <method v="2" />
++    </configuration>
++    <configuration name="PeopleListTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
++      <TestRunner class="App\Tests\Integration\Controller\PeopleListTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Integration/Controller/PeopleListTest.php" scope="Class" />
++      <method v="2" />
++    </configuration>
+     <configuration name="UnitTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+       <CommandLine>
+         <PhpTestInterpreterSettings>
+@@ -237,6 +259,10 @@
+         </PhpTestInterpreterSettings>
+       </CommandLine>
+       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" />
++      <method v="2" />
++    </configuration>
++    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
++      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests" />
+       <method v="2" />
+     </configuration>
+     <configuration name="bookbinder" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$/public" port="88">
+@@ -245,7 +271,21 @@
+     <list>
+       <item itemvalue="PHP Built-in Web Server.bookbinder" />
+       <item itemvalue="PHPUnit.UnitTest" />
++      <item itemvalue="PHPUnit.BookTest" />
++      <item itemvalue="PHPUnit.LibraryControllerTest" />
++      <item itemvalue="PHPUnit.PantherBookControllerTest.testBookImages" />
++      <item itemvalue="PHPUnit.PeopleListTest" />
++      <item itemvalue="PHPUnit.tests" />
+     </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="PHPUnit.tests" />
++        <item itemvalue="PHPUnit.PeopleListTest" />
++        <item itemvalue="PHPUnit.LibraryControllerTest" />
++        <item itemvalue="PHPUnit.BookTest" />
++        <item itemvalue="PHPUnit.PantherBookControllerTest.testBookImages" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -289,6 +329,7 @@
+       <workItem from="1685215683122" duration="754000" />
+       <workItem from="1685297379235" duration="7544000" />
+       <workItem from="1685362756084" duration="11441000" />
++      <workItem from="1686069322426" duration="6779000" />
+     </task>
+     <task id="LOCAL-00005" summary="LoginController Unit testing done. ;)">
+       <created>1684498920162</created>
+@@ -353,7 +394,49 @@
+       <option name="project" value="LOCAL" />
+       <updated>1685298583910</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="some fixes to make everything work after merging">
++      <created>1685961522392</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1685961522392</updated>
++    </task>
++    <task id="LOCAL-00015" summary="a few fixes to make the old test work in the new refactored version">
++      <created>1685962430776</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1685962430776</updated>
++    </task>
++    <task id="LOCAL-00016" summary="fixed a few test codes + PantherBookControllerTest.php added to test images">
++      <created>1685969888598</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1685969888598</updated>
++    </task>
++    <task id="LOCAL-00017" summary="tested the library list functionality">
++      <created>1685970679137</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1685970679137</updated>
++    </task>
++    <task id="LOCAL-00018" summary="tested the people list functionality">
++      <created>1685971703994</created>
++      <option name="number" value="00018" />
++      <option name="presentableId" value="LOCAL-00018" />
++      <option name="project" value="LOCAL" />
++      <updated>1685971703994</updated>
++    </task>
++    <task id="LOCAL-00019" summary="deleting some unused classes">
++      <created>1686073048235</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1686073048235</updated>
++    </task>
++    <option name="localTasksCounter" value="20" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -375,7 +458,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="origin/master" />
++                        <option value="develop" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -406,13 +489,32 @@
+     <MESSAGE value="changed the birthday range in registration form" />
+     <MESSAGE value="..." />
+     <MESSAGE value="added a feature to be able to add books to favorites" />
+-    <option name="LAST_COMMIT_MESSAGE" value="added a feature to be able to add books to favorites" />
++    <MESSAGE value="some fixes to make everything work after merging" />
++    <MESSAGE value="a few fixes to make the old test work in the new refactored version" />
++    <MESSAGE value="fixed a few test codes + PantherBookControllerTest.php added to test images" />
++    <MESSAGE value="tested the library list functionality" />
++    <MESSAGE value="tested the people list functionality" />
++    <MESSAGE value="deleting some unused classes" />
++    <option name="LAST_COMMIT_MESSAGE" value="deleting some unused classes" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="php">
++          <url>file://$PROJECT_DIR$/templates/base.html.twig</url>
++          <line>17</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+     <select />
+   </component>
+   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+-    <SUITE FILE_PATH="coverage/a22web35@UnitTest.xml" NAME="UnitTest Coverage Results" MODIFIED="1683899131412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/a22web35@BookControllerTest.xml" NAME="BookControllerTest Coverage Results" MODIFIED="1685964867140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/a22web35@tests.xml" NAME="tests Coverage Results" MODIFIED="1686071819668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
++    <SUITE FILE_PATH="coverage/a22web35@UnitTest.xml" NAME="UnitTest Coverage Results" MODIFIED="1685110563707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/php.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"PhpIncludePathManager\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/php-webdriver/webdriver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/masterminds/html5\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/deprecations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/runtime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/rate-limiter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/password-hasher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/panther\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/google-mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/data-fixtures\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"PhpProjectSharedConfiguration\" php_language_level=\"8.1\" />\r\n  <component name=\"PhpUnit\">\r\n    <phpunit_settings>\r\n      <PhpUnitSettings configuration_file_path=\"$PROJECT_DIR$/phpunit.xml.dist\" custom_loader_path=\"$PROJECT_DIR$/vendor/autoload.php\" phpunit_phar_path=\"\" use_configuration_file=\"true\" />\r\n    </phpunit_settings>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/php.xml b/.idea/php.xml
+--- a/.idea/php.xml	
++++ b/.idea/php.xml	
+@@ -117,6 +117,7 @@
+       <path value="$PROJECT_DIR$/vendor/composer" />
+       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
++      <path value="$PROJECT_DIR$/vendor/dbrekelmans/bdi" />
+     </include_path>
+   </component>
+   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-231.8770.65\">\r\n    <data-source name=\"bookbinder\" uuid=\"c4a62468-ec0c-49e2-8c3a-0e66bc571065\">\r\n      <database-info product=\"MySQL\" version=\"8.0.30\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)\" dbms=\"MYSQL\" exact-version=\"8.0.30\" exact-driver-version=\"8.0\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"exact\" quoted-identifiers=\"exact\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>a22web35</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"a22web35\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n    <data-source name=\"localhost\" uuid=\"1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a\">\r\n      <database-info product=\"MySQL\" version=\"8.0.31\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)\" dbms=\"MYSQL\" exact-version=\"8.0.31\" exact-driver-version=\"8.0\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>root</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\">\r\n            <name qname=\"a22web35\" />\r\n            <name qname=\"a22web35_test\" />\r\n          </node>\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	
++++ b/.idea/dataSources.local.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-231.8770.65">
++  <component name="dataSourceStorageLocal" created-in="IU-223.8617.56">
+     <data-source name="bookbinder" uuid="c4a62468-ec0c-49e2-8c3a-0e66bc571065">
+       <database-info product="MySQL" version="8.0.30" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.30" exact-driver-version="8.0">
+         <extra-name-characters>#@</extra-name-characters>
+@@ -15,22 +15,9 @@
+         </introspection-scope>
+       </schema-mapping>
+     </data-source>
+-    <data-source name="localhost" uuid="1ae1da32-3c9f-471c-8fa4-7fe9bc1fa53a">
+-      <database-info product="MySQL" version="8.0.31" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.31" exact-driver-version="8.0">
+-        <extra-name-characters>#@</extra-name-characters>
+-        <identifier-quote-string>`</identifier-quote-string>
+-      </database-info>
+-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+-      <secret-storage>master_key</secret-storage>
+-      <user-name>root</user-name>
+-      <schema-mapping>
+-        <introspection-scope>
+-          <node kind="schema">
+-            <name qname="a22web35" />
+-            <name qname="a22web35_test" />
+-          </node>
+-        </introspection-scope>
+-      </schema-mapping>
++    <data-source name="a22web35@localhost" uuid="63dd7852-83d7-4ca6-9c23-9e17209b2c9f">
++      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
++      <schema-mapping />
+     </data-source>
+   </component>
+ </project>
+\ No newline at end of file
