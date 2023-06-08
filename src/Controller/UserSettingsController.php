@@ -26,7 +26,6 @@ class UserSettingsController extends AbstractController
      */
     public function editUserSettings(Request $request): Response
     {
-        //$user = $this->security->getUser();
         $userId = $request->request->get('id');
 
         $user = $this->entityManager->getRepository(User::class)->find($userId);
@@ -45,14 +44,12 @@ class UserSettingsController extends AbstractController
         $birthday = new \DateTimeImmutable($age);
         $sex = $request->request->get('sex');
         $favoriteLibrary = $request->request->get('favoriteLibrary');
-        //$favoriteBooks = $request->request->get('favoriteBooks');
 
         $user->setFirstname($name);
         $user->setLastname($surname);
         $user->setBirthday($birthday);
         $user->setSex($sex);
         $user->setFavoriteLibrary($favoriteLibrary);
-//        $user->($favoriteBooks);
         $this->entityManager->flush();
 
         return $this->redirectToRoute('usersettings', [
