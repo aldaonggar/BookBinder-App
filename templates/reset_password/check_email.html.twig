@@ -1,21 +1,26 @@
 {# templates/reset_password/check_email.html.twig #}
-{% extends "base.html.twig" %}
-{% block title %}Password Reset Email Sent{% endblock %}
-
-{% block stylesheets %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check email</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap">
     <style>
+        .hidden {
+            display: none;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 24px;
         }
     </style>
-{% endblock %}
-
-{% block body %}
+</head>
+<body>
     <p>
         If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
         This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
     </p>
     <p>If you don't receive an email, please check your spam folder or <a href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
-{% endblock %}
+</body>
+</html>
