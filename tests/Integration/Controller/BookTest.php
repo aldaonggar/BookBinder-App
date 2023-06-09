@@ -42,7 +42,7 @@ class BookTest extends WebTestCase
         ]);
         $this->client->submit($form);
 
-        $book = $this->getBookFromDatabase();
+        $book = $this->getBookFromDatabaseBetter();
         $crawler = $this->client->request('GET', '/book/' . $book->getId());
         $this->assertResponseIsSuccessful();
     }
@@ -73,7 +73,7 @@ class BookTest extends WebTestCase
         ]);
         $this->client->submit($form);
 
-        $book = $this->getBookFromDatabase();
+        $book = $this->getBookFromDatabaseBetter();
         $crawler = $this->client->request('GET', '/book/' . $book->getId());
         $this->assertResponseIsSuccessful();
 
@@ -109,7 +109,7 @@ class BookTest extends WebTestCase
         ]);
         $this->client->submit($form);
 
-        $book = $this->getBookFromDatabase();
+        $book = $this->getBookFromDatabaseBetter();
         $crawler = $this->client->request('GET', '/book/' . $book->getId());
         $this->assertResponseIsSuccessful();
 
@@ -155,7 +155,7 @@ class BookTest extends WebTestCase
         ]);
         $this->client->submit($form);
 
-        $book = $this->getBookFromDatabase();
+        $book = $this->getBookFromDatabaseBetter();
         $crawler = $this->client->request('GET', '/book/' . $book->getId());
         $this->assertResponseIsSuccessful();
 
@@ -197,6 +197,20 @@ class BookTest extends WebTestCase
         $entityManager->persist($book);
         $entityManager->flush();
 
+        return $book;
+    }
+
+    private function getBookFromDatabaseBetter(){
+        // Generate a random book ID between 1 and 110
+        $randomId = rand(1, 110);
+        $entityManager = $this->client->getContainer()->get('doctrine.orm.entity_manager');
+
+        // Fetch the book with the random ID from the database
+        $book = $entityManager->getRepository(Book::class)->find($randomId);
+
+        if (!$book) {
+            throw new \Exception('Book not found');
+        }
         return $book;
     }
 }

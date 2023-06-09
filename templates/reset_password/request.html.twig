@@ -1,6 +1,19 @@
 {# templates/reset_password/request.html.twig #}
 
-{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset password request</title>
+    <link rel="stylesheet" href="{{ asset('css/reset_password.css') }}">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <div class="login-container">
         <h2>Reset your password</h2>
@@ -13,7 +26,8 @@
         <button class="login-button">Reset password</button>
         {{ form_end(requestForm) }}
     </div>
-{% endblock %}
 
+</body>
+</html>
 
 

@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch(`/get-favorite-status/${bookId}`)
         .then(response => response.json())
         .then(data => {
+            console.log('favorite', data.isFavorite)
             if (data.isFavorite) {
                 starIcon.classList.remove('far');
                 starIcon.classList.add('fas');
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
             .then(response => response.json())
             .then(data => {
+                console.log('favorite', data.isFavorite)
                 if (data.isFavorite) {
                     starIcon.classList.remove('far');
                     starIcon.classList.add('fas');

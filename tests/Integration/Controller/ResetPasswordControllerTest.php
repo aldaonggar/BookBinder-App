@@ -69,7 +69,7 @@ class ResetPasswordControllerTest extends WebTestCase
 
         $crawler = $this->client->followRedirect();
 
-        $title = 'Password Reset Email Sent';
+        $title = 'If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password';
         $this->assertStringContainsString($title, $this->client->getResponse()->getContent());
     }
 
