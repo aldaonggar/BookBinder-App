@@ -23,4 +23,4 @@ deploy-job:
  # rsync is a copy/sync tool we use to copy the current folder ./ to studev
  # we ignore the .git folder and the .env file
  # we delete the files on the remote server that are not present in the local copy
- - rsync -rv --exclude=".git/" --exclude=".htaccess" --exclude=".env" --delete  ./ a22webxx@shell.studev.groept.be:/var/www/html
+ - rsync -rv --exclude=".git/" --exclude=".htaccess" --exclude=".env" --delete  ./ a22web35@shell.studev.groept.be:/var/www/html
